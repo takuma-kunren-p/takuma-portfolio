@@ -1,0 +1,1331 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   01. 共通ボタン (.btn)
+   【役割】サイト全域で使用するプライマリ・セカンダリ・テキストボタン
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 34px;
+  border-radius: var(--radius-sm, 6px);
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/* プライマリボタン（発光エメラルドグラデーション） */
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-primary-light, #182836) 0%, var(--color-primary, #0F1923) 100%);
+  color: #FFFFFF;
+  border: 1px solid rgba(0, 209, 160, 0.4);
+  box-shadow: 0 6px 20px rgba(15, 25, 35, 0.3);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--color-accent-dark, #009E78) 0%, var(--color-primary, #0F1923) 100%);
+  border-color: var(--color-accent, #00D1A0);
+  box-shadow: 0 0 20px rgba(0, 209, 160, 0.45);
+  transform: translateY(-2px);
+}
+
+/* セカンダリボタン（枠線ベース・白背景） */
+.btn-secondary {
+  background-color: var(--color-bg-card, #FFFFFF);
+  color: var(--color-primary, #0F1923);
+  border: 1.5px solid var(--color-primary, #0F1923);
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(15, 25, 35, 0.06);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary, #0F1923);
+  color: #FFFFFF;
+  border-color: var(--color-primary, #0F1923);
+  box-shadow: 0 8px 24px rgba(15, 25, 35, 0.15);
+  transform: translateY(-2px);
+}
+
+/* テキストリンク型ボタン */
+.btn-text {
+  font-family: var(--font-base);
+  font-weight: 700;
+  color: var(--color-primary, #0F1923);
+  padding: 8px 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-text:hover {
+  color: var(--color-accent-dark, #009E78);
+}
+
+/* ==========================================================================
+   02. TOP プロローグセクション
+   【役割】王国布告カード・日誌と大地図の魔導フレーム枠
+   ========================================================================== */
+.prologue-section {
+  background-color: var(--color-bg, #F4F7F6);
+}
+
+.prologue-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.lead-para {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  line-height: 1.85;
+  color: var(--color-primary, #0F1923);
+  margin-bottom: 20px;
+}
+
+/* 王国布告カード（ゴールドの左線・白背景） */
+.royal-decree {
+  position: relative;
+  margin: 32px 0;
+  padding: 28px 32px;
+  background-color: var(--color-bg-card, #FFFFFF);
+  border-left: 4px solid var(--color-gold, #FFB834);
+  border-radius: 0 var(--radius-md, 12px) var(--radius-md, 12px) 0;
+  box-shadow: 0 6px 20px rgba(15, 25, 35, 0.08);
+}
+
+.decree-with-banner {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.decree-thumb-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: var(--radius-sm, 6px);
+  box-shadow: 0 4px 12px rgba(15, 25, 35, 0.1);
+  border: 1px solid var(--color-gold, #FFB834);
+}
+
+.decree-seal {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  border: 1px dashed var(--color-gold, #FFB834);
+  color: var(--color-gold, #FFB834);
+  font-size: 0.75rem;
+  font-family: var(--font-serif);
+  padding: 3px 8px;
+  letter-spacing: 0.2em;
+}
+
+.decree-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  letter-spacing: 0.15em;
+  color: var(--color-gold, #FFB834);
+  margin-bottom: 8px;
+}
+
+.decree-body {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: var(--color-text-main, #14222D) !important;
+  margin-bottom: 0 !important;
+}
+
+.summary-note {
+  font-size: 0.9rem;
+  color: var(--color-text-muted, #566D7E);
+  border-left: 2px solid var(--color-accent, #00D1A0);
+  padding-left: 14px;
+}
+
+/* 冒険日誌と大地図の魔導フレーム枠 */
+.antique-frame {
+  position: relative;
+  padding: 12px;
+  background: linear-gradient(135deg, #182836 0%, #0F1923 100%);
+  border: 1px solid rgba(0, 209, 160, 0.35);
+  border-radius: var(--radius-md, 12px);
+  box-shadow: 0 16px 40px rgba(15, 25, 35, 0.25);
+}
+
+.map-art-frame {
+  height: 440px;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-sm, 6px);
+}
+
+.map-art-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.map-art-frame:hover img {
+  transform: scale(1.05);
+}
+
+/* ==========================================================================
+   03. 循環サイクル（親グリッド・カード・ステップ別カラー統合）
+   【役割】TOP・EXPLOREで使用する01〜04ステップのカード
+   ========================================================================== */
+.cycle-section {
+  background-color: var(--color-bg-subtle, #E6EEEC);
+}
+
+.cycle-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.cycle-card {
+  background-color: var(--color-bg-card, #FFFFFF);
+  padding: 36px 28px;
+  border-radius: var(--radius-md, 12px);
+  border: 1px solid var(--color-border, rgba(15, 25, 35, 0.08));
+  box-shadow: 0 4px 16px rgba(15, 25, 35, 0.06);
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.cycle-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 36px rgba(15, 25, 35, 0.14);
+}
+
+.card-icon-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--color-border, rgba(15, 25, 35, 0.08));
+  padding-bottom: 12px;
+}
+
+.step-num {
+  font-family: var(--font-en);
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.step-symbol {
+  font-family: var(--font-en);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--color-text-muted, #566D7E);
+}
+
+.card-heading {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-primary, #0F1923);
+  margin-bottom: 12px;
+  line-height: 1.45;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: var(--color-text-muted, #566D7E);
+  line-height: 1.75;
+}
+
+/* --- 01〜04 ステップ固有の属性カラー定義 --- */
+/* 01: 探索（スカイブルー） */
+.cycle-card[data-step="01"]:hover { border-color: #38BDF8; box-shadow: 0 16px 36px rgba(56, 189, 248, 0.2); }
+.cycle-card[data-step="01"] .step-num { color: #0284C7; }
+
+/* 02: 開拓（フレッシュグリーン） */
+.cycle-card[data-step="02"]:hover { border-color: #10B981; box-shadow: 0 16px 36px rgba(16, 185, 129, 0.2); }
+.cycle-card[data-step="02"] .step-num { color: #059669; }
+
+/* 03: 準備（ウォームアンバー / ゴールド） */
+.cycle-card[data-step="03"]:hover { border-color: #F59E0B; box-shadow: 0 16px 36px rgba(245, 158, 11, 0.2); }
+.cycle-card[data-step="03"] .step-num { color: #D97706; }
+
+/* 04: 極地遠征（ミスティックパープル） */
+.cycle-card[data-step="04"]:hover { border-color: #A855F7; box-shadow: 0 16px 36px rgba(168, 85, 247, 0.2); }
+.cycle-card[data-step="04"] .step-num { color: #7E22CE; }
+
+/* ==========================================================================
+   04. 五大地域セクション（カルーセル・カード・背景画像・発光色統合）
+   【役割】TOP五大地域カルーセル（横スライド・左右ボタン・属性カラーホバー）
+   ========================================================================== */
+.regions-section {
+  background-color: var(--color-primary, #0F1923);
+  color: #FFFFFF;
+  position: relative;
+}
+
+.regions-section .section-subtitle {
+  color: var(--color-accent-light, #5FF5D2);
+  background: rgba(0, 209, 160, 0.15);
+}
+
+.regions-section .section-title {
+  color: #FFFFFF;
+}
+
+.regions-section .section-desc {
+  color: #A3B8C7;
+}
+
+.regions-carousel-container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+/* 横スクロールトラック */
+.regions-grid.carousel-track {
+  display: flex !important;
+  gap: 24px;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  padding: 10px 4px 24px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.regions-grid.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* 大型パノラマカード */
+.regions-grid.carousel-track .region-card {
+  flex: 0 0 340px;
+  width: 340px;
+  height: 440px;
+  position: relative;
+  border-radius: var(--radius-md, 12px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 28px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+}
+
+.regions-grid.carousel-track .region-card:hover {
+  transform: translateY(-6px);
+}
+
+/* カード背景画像レイヤー */
+.region-bg-art {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  transition: transform 0.6s ease;
+}
+
+.region-card:hover .region-bg-art {
+  transform: scale(1.06);
+}
+
+/* 各エリアの背景画像設定 */
+.card-grass .region-bg-art {
+  background: linear-gradient(180deg, rgba(15,25,35,0.1) 0%, rgba(15,25,35,0.92) 80%), url('../assets/images/region-grass.webp') center/cover no-repeat;
+}
+.card-forest .region-bg-art {
+  background: linear-gradient(180deg, rgba(15,25,35,0.1) 0%, rgba(15,25,35,0.92) 80%), url('../assets/images/region-forest.webp') center/cover no-repeat;
+}
+.card-mountain .region-bg-art {
+  background: linear-gradient(180deg, rgba(15,25,35,0.1) 0%, rgba(15,25,35,0.92) 80%), url('../assets/images/region-mountain.webp') center/cover no-repeat;
+}
+.card-mine .region-bg-art {
+  background: linear-gradient(180deg, rgba(15,25,35,0.1) 0%, rgba(15,25,35,0.92) 80%), url('../assets/images/region-mine.webp') center/cover no-repeat;
+}
+.card-volcano .region-bg-art {
+  background: linear-gradient(180deg, rgba(15,25,35,0.1) 0%, rgba(15,25,35,0.92) 80%), url('../assets/images/region-volcano.webp') center/cover no-repeat;
+}
+
+.region-content {
+  position: relative;
+  z-index: 2;
+}
+
+.region-name {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  color: #FFFFFF;
+  margin: 6px 0 8px;
+}
+
+.region-desc {
+  font-size: 0.85rem;
+  color: #D3DFE6;
+  line-height: 1.6;
+}
+
+/* 各エリア固有の属性タグ & ホバー発光カラー */
+/* 1. 草原（青） */
+.card-grass .region-tag {
+  color: #7DD3FC;
+  background: rgba(2, 132, 199, 0.3);
+  border: 1px solid rgba(56, 189, 248, 0.5);
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+.card-grass:hover { border-color: #38BDF8; box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 20px rgba(56, 189, 248, 0.4); }
+
+/* 2. 森林（濃緑） */
+.card-forest .region-tag {
+  color: #A7F3D0;
+  background: rgba(5, 150, 105, 0.3);
+  border: 1px solid rgba(16, 185, 129, 0.5);
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+.card-forest:hover { border-color: #10B981; box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 20px rgba(16, 185, 129, 0.4); }
+
+/* 3. 山岳（黄） */
+.card-mountain .region-tag {
+  color: #FEF08A;
+  background: rgba(202, 138, 4, 0.3);
+  border: 1px solid rgba(234, 179, 8, 0.5);
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+.card-mountain:hover { border-color: #FACC15; box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 20px rgba(250, 204, 21, 0.4); }
+
+/* 4. 鉱山（橙） */
+.card-mine .region-tag {
+  color: #FED7AA;
+  background: rgba(234, 88, 12, 0.3);
+  border: 1px solid rgba(249, 115, 22, 0.5);
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+.card-mine:hover { border-color: #FB923C; box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 20px rgba(251, 146, 60, 0.4); }
+
+/* 5. 火山（赤） */
+.card-volcano .region-tag {
+  color: #FECACA;
+  background: rgba(220, 38, 38, 0.3);
+  border: 1px solid rgba(239, 68, 68, 0.5);
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+.card-volcano:hover { border-color: #F87171; box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 20px rgba(248, 113, 113, 0.4); }
+
+/* カルーセル左右アローボタン */
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.carousel-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(24, 40, 54, 0.9);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--color-accent, #00D1A0);
+  color: var(--color-accent-light, #5FF5D2);
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: 0 0 12px rgba(0, 209, 160, 0.25);
+  user-select: none;
+}
+
+.carousel-btn:hover {
+  background: var(--color-accent, #00D1A0);
+  color: var(--color-primary, #0F1923);
+  box-shadow: 0 0 20px rgba(0, 209, 160, 0.6);
+  transform: scale(1.08);
+}
+
+/* ==========================================================================
+   05. キャラクタープレビュー（TOP 3大プリセットカード）
+   【役割】TOPで3人の冒険者を横並び紹介するカード
+   ========================================================================== */
+.adventurers-section {
+  background-color: var(--color-bg, #F4F7F6);
+}
+
+.characters-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.char-card {
+  background-color: var(--color-bg-card, #FFFFFF);
+  border-radius: var(--radius-md, 12px);
+  border: 1px solid var(--color-border, rgba(15, 25, 35, 0.08));
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(15, 25, 35, 0.06);
+  position: relative;
+  transition: all var(--transition-normal);
+}
+
+.char-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 36px rgba(15, 25, 35, 0.14);
+  border-color: var(--color-accent, #00D1A0);
+}
+
+.char-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 3;
+  background-color: rgba(15, 25, 35, 0.85);
+  color: var(--color-accent-light, #5FF5D2);
+  border: 1px solid var(--color-accent, #00D1A0);
+  font-family: var(--font-en);
+  font-size: 0.75rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.1em;
+}
+
+.char-avatar {
+  height: 260px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: var(--color-bg-subtle, #E6EEEC);
+}
+
+.char-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.6s ease;
+}
+
+.char-card:hover .char-avatar-img {
+  transform: scale(1.06);
+}
+
+.char-info {
+  padding: 28px 24px;
+}
+
+.char-role {
+  font-family: var(--font-en);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-accent-dark, #009E78);
+}
+
+.char-name {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  margin: 6px 0 12px;
+  color: var(--color-primary, #0F1923);
+}
+
+.char-summary {
+  font-size: 0.875rem;
+  color: var(--color-text-muted, #566D7E);
+  line-height: 1.75;
+}
+
+/* ==========================================================================
+   06. ニュースセクション
+   【役割】TOP・INFORMATIONで使用する更新情報リストとカテゴリバッジ
+   ========================================================================== */
+.news-section {
+  background-color: var(--color-bg-subtle, #E6EEEC);
+}
+
+.news-list {
+  background-color: var(--color-bg-card, #FFFFFF);
+  border-radius: var(--radius-md, 12px);
+  border: 1px solid var(--color-border, rgba(15, 25, 35, 0.08));
+  box-shadow: 0 4px 16px rgba(15, 25, 35, 0.06);
+  margin-bottom: 32px;
+  overflow: hidden;
+}
+
+.news-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 20px 28px;
+  border-bottom: 1px solid var(--color-border, rgba(15, 25, 35, 0.08));
+  transition: background-color var(--transition-fast);
+}
+
+.news-item:last-child {
+  border-bottom: none;
+}
+
+.news-item:hover {
+  background-color: rgba(0, 209, 160, 0.04);
+}
+
+.news-date {
+  font-family: var(--font-en);
+  font-size: 0.85rem;
+  color: var(--color-text-muted, #566D7E);
+}
+
+.news-badge {
+  font-family: var(--font-en);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 12px;
+  letter-spacing: 0.05em;
+}
+
+.news-badge.info { background: #E0EBF2; color: #144365; }
+.news-badge.update { background: #D6F5EC; color: #007A5A; }
+.news-badge.system { background: #FFF0D6; color: #8A5B00; }
+
+.news-link {
+  flex: 1;
+  font-size: 0.95rem;
+  color: var(--color-text-main, #14222D);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.news-link:hover {
+  color: var(--color-accent-dark, #009E78);
+}
+
+/* ==========================================================================
+   07. WORLDページ専用コンポーネント
+   【役割】イントロ解説、種族NPC立ち絵、未踏域の二大脅威、三代伝承、五大地域タブ詳細
+   ========================================================================== */
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.intro-text {
+  font-size: 1rem;
+  margin-bottom: 18px;
+  color: var(--color-text-main, #14222D);
+}
+
+.highlight-box {
+  background-color: var(--color-bg-card, #FFFFFF);
+  border-left: 4px solid var(--color-accent, #00D1A0);
+  padding: 24px 28px;
+  border-radius: 0 var(--radius-md, 12px) var(--radius-md, 12px) 0;
+  box-shadow: 0 4px 16px rgba(15, 25, 35, 0.06);
+  margin-top: 28px;
+}
+
+.highlight-title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--color-primary, #0F1923);
+  margin-bottom: 8px;
+}
+
+.highlight-desc {
+  font-size: 0.925rem;
+  color: var(--color-text-muted, #566D7E);
+  margin-bottom: 0;
+  line-height: 1.7;
+}
+
+/* 種族カード & NPC立ち絵リスト */
+.spec-card {
+  background-color: var(--color-bg-card, #FFFFFF);
+  border: 1px solid var(--color-border, rgba(15, 25, 35, 0.08));
+  border-radius: var(--radius-md, 12px);
+  padding: 32px 28px;
+  box-shadow: 0 4px 16px rgba(15, 25, 35, 0.06);
+}
+
+.spec-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: var(--color-primary, #0F1923);
+  margin-bottom: 8px;
+}
+
+.spec-card-summary {
+  font-size: 0.875rem;
+  color: var(--color-text-muted, #566D7E);
+  margin-bottom: 24px;
+}
+
+.race-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.race-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding-bottom: 16px;
+  border-bottom: 1px dashed var(--color-border, rgba(15, 25, 35, 0.1));
+}
+
+.race-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.race-tag {
+  font-family: var(--font-en);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm, 6px);
+  white-space: nowrap;
+}
+
+.race-info h4 {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--color-primary, #0F1923);
+  margin-bottom: 4px;
+}
+
+.race-info p {
+  font-size: 0.825rem;
+  color: var(--color-text-muted, #566D7E);
+  line-height: 1.6;
+}
+
+/* NPC立ち絵サムネイル付き種族アイテム */
+.race-item-with-npc {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 16px;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px dashed rgba(15, 25, 35, 0.12);
+}
+
+.race-npc-thumb {
+  width: 80px;
+  height: 95px;
+  border-radius: var(--radius-sm, 6px);
+  background: radial-gradient(circle at center, rgba(0, 209, 160, 0.1) 0%, rgba(15, 25, 35, 0.05) 100%);
+  border: 1px solid rgba(0, 209, 160, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.race-npc-img {
+  max-height: 90px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25));
+  transition: transform var(--transition-fast);
+}
+
+.race-item-with-npc:hover .race-npc-img {
+  transform: scale(1.08);
+}
+
+/* 未踏域の二大脅威（魔族 & 原生モンスター） */
+.threats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.threat-card {
+  background-color: var(--color-bg-card, #FFFFFF);
+  border: 1px solid var(--color-border, rgba(15, 25, 35, 0.08));
+  border-radius: var(--radius-md, 12px);
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(15, 25, 35, 0.06);
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+}
+
+.threat-card:hover { transform: translateY(-6px); }
+.threat-card.fiend:hover { border-color: #C084FC; box-shadow: 0 12px 28px rgba(168, 85, 247, 0.25); }
+.threat-card.beast:hover { border-color: #38BDF8; box-shadow: 0 12px 28px rgba(56, 189, 248, 0.25); }
+
+.threat-img-wrap {
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+  background-color: #080D12;
+}
+
+.threat-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.threat-card:hover .threat-img { transform: scale(1.06); }
+
+.threat-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  font-family: var(--font-en);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  padding: 4px 12px;
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+}
+
+.threat-badge.fiend { background: rgba(88, 28, 135, 0.85); color: #E9D5FF; border: 1px solid #C084FC; }
+.threat-badge.beast { background: rgba(7, 89, 133, 0.85); color: #BAE6FD; border: 1px solid #38BDF8; }
+
+.threat-body { padding: 22px 24px; }
+.threat-title { font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: 6px; }
+.threat-desc { font-size: 0.875rem; color: var(--color-text-muted, #566D7E); line-height: 1.7; margin-bottom: 0; }
+
+/* 三代伝承（神々の国・破滅の地・魔物の王国） */
+.edge-section {
+  background-color: var(--color-primary, #0F1923);
+  color: #FFFFFF;
+}
+
+.edge-section .section-subtitle { color: var(--color-accent-light, #5FF5D2); }
+.edge-section .section-title { color: #FFFFFF; }
+.edge-section .section-desc { color: #A3B8C7; }
+
+.legends-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.legend-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md, 12px);
+  padding: 32px 24px;
+  position: relative;
+  transition: all var(--transition-normal);
+}
+
+.legend-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-accent, #00D1A0);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 20px rgba(0, 209, 160, 0.35);
+}
+
+.legend-icon { font-size: 1.6rem; margin-bottom: 12px; }
+.legend-type { font-family: var(--font-serif); font-size: 0.75rem; letter-spacing: 0.15em; display: block; margin-bottom: 4px; }
+.legend-name { font-family: var(--font-serif); font-size: 1.4rem; color: #FFFFFF; margin-bottom: 12px; }
+.legend-desc { font-size: 0.875rem; color: #CCD8DE; line-height: 1.75; }
+
+/* 冒険日誌カード */
+.diary-note-card {
+  background: rgba(8, 13, 18, 0.7);
+  border-left: 3px solid var(--color-gold, #FFB834);
+  border-radius: 0 var(--radius-md, 12px) var(--radius-md, 12px) 0;
+  padding: 28px 32px;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+.diary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.diary-label { font-family: var(--font-serif); font-size: 0.8125rem; color: var(--color-gold-light, #FFE29A); letter-spacing: 0.15em; }
+.diary-author { font-size: 0.75rem; color: #9AB0BC; }
+.diary-text { font-family: var(--font-serif); font-size: 0.95rem; line-height: 1.85; color: #E6EFF3; margin-bottom: 12px; font-style: italic; }
+.diary-footer { font-size: 0.75rem; color: #8397A3; margin-bottom: 0; }
+
+/* 五大地域詳細タブシステム（図鑑UI） */
+.region-tabs-nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.region-tab-btn {
+  background-color: var(--color-bg-card, #FFFFFF);
+  border: 1px solid var(--color-border, rgba(15, 25, 35, 0.08));
+  padding: 12px 24px;
+  border-radius: var(--radius-sm, 6px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 14px rgba(15, 25, 35, 0.05);
+}
+
+.region-tab-btn .tab-en { font-family: var(--font-en); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; }
+.region-tab-btn .tab-jp { font-family: var(--font-serif); font-size: 0.95rem; color: var(--color-primary, #0F1923); margin-top: 2px; }
+.region-tab-btn:hover { border-color: var(--color-accent, #00D1A0); transform: translateY(-2px); }
+
+.region-tab-btn.active {
+  background: linear-gradient(135deg, var(--color-primary-light, #182836) 0%, var(--color-primary, #0F1923) 100%);
+  border-color: var(--color-accent, #00D1A0);
+  box-shadow: 0 0 20px rgba(0, 209, 160, 0.35);
+}
+
+.region-tab-btn.active .tab-jp { color: #FFFFFF; }
+
+.region-detail-panel { display: none; }
+.region-detail-panel.active { display: block; animation: fadeInPanel 0.4s ease forwards; }
+
+.panel-layout {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  background-color: var(--color-bg-card, #FFFFFF);
+  border-radius: var(--radius-md, 12px);
+  border: 1px solid var(--color-border, rgba(15, 25, 35, 0.08));
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(15, 25, 35, 0.08);
+}
+
+.panel-visual {
+  position: relative;
+  min-height: 420px;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #FFFFFF;
+}
+
+.panel-tag {
+  font-family: var(--font-en);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  background-color: rgba(8, 13, 18, 0.8);
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--color-accent, #00D1A0);
+  align-self: flex-start;
+}
+
+.panel-badge { font-size: 0.8125rem; color: var(--color-accent-light, #5FF5D2); letter-spacing: 0.1em; display: block; margin-bottom: 4px; }
+.panel-visual-title { font-family: var(--font-serif); font-size: 2.2rem; font-weight: 700; margin-bottom: 6px; text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
+.panel-visual-sub { font-size: 0.95rem; color: #E2ECE7; }
+
+/* パネル背景画像 */
+.panel-visual-grass { background: linear-gradient(135deg, rgba(8,13,18,0.75) 0%, rgba(8,13,18,0.4) 100%), url('../assets/images/region-grass.webp') center/cover !important; }
+.panel-visual-forest { background: linear-gradient(135deg, rgba(8,13,18,0.75) 0%, rgba(8,13,18,0.4) 100%), url('../assets/images/region-forest.webp') center/cover !important; }
+.panel-visual-mountain { background: linear-gradient(135deg, rgba(8,13,18,0.75) 0%, rgba(8,13,18,0.4) 100%), url('../assets/images/region-mountain.webp') center/cover !important; }
+.panel-visual-mine { background: linear-gradient(135deg, rgba(8,13,18,0.75) 0%, rgba(8,13,18,0.4) 100%), url('../assets/images/region-mine.webp') center/cover !important; }
+.panel-visual-volcano { background: linear-gradient(135deg, rgba(8,13,18,0.75) 0%, rgba(8,13,18,0.4) 100%), url('../assets/images/region-volcano.webp') center/cover !important; }
+
+.panel-body { padding: 44px 38px; display: flex; flex-direction: column; justify-content: center; }
+.panel-theme-badge { font-family: var(--font-serif); font-size: 0.85rem; font-weight: 700; margin-bottom: 10px; }
+.panel-heading { font-family: var(--font-serif); font-size: 1.45rem; color: var(--color-primary, #0F1923); margin-bottom: 16px; line-height: 1.4; }
+.panel-text { font-size: 0.95rem; color: var(--color-text-muted, #566D7E); line-height: 1.85; margin-bottom: 24px; }
+.panel-benefits { background-color: var(--color-bg-subtle, #E6EEEC); border-radius: var(--radius-sm, 6px); padding: 20px 22px; display: flex; flex-direction: column; gap: 14px; }
+.benefit-item { display: flex; flex-direction: column; gap: 2px; }
+.benefit-label { font-family: var(--font-serif); font-size: 0.75rem; font-weight: 700; color: var(--color-primary, #0F1923); letter-spacing: 0.05em; }
+.benefit-val { font-size: 0.875rem; color: var(--color-text-muted, #566D7E); }
+.panel-note { margin-top: 24px; font-size: 0.85rem; color: var(--color-text-muted, #566D7E); }
+
+/* ==========================================================================
+   08. ADVENTURERSページ専用コンポーネント
+   【役割】キャラメイク3大要素、開発思想コールアウト、プリセット詳細図鑑
+   ========================================================================== */
+.creation-elements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.element-card {
+  background-color: var(--color-bg-card, #FFFFFF);
+  border: 1px solid var(--color-border, rgba(15, 25, 35, 0.08));
+  border-radius: var(--radius-md, 12px);
+  padding: 32px 24px;
+  box-shadow: 0 4px 16px rgba(15, 25, 35, 0.06);
+  position: relative;
+  transition: all var(--transition-normal);
+}
+
+.element-card:hover { transform: translateY(-6px); box-shadow: 0 12px 28px rgba(15, 25, 35, 0.12); }
+.element-icon { font-family: var(--font-en); font-size: 1.8rem; font-weight: 800; margin-bottom: 12px; line-height: 1; }
+.element-type { font-family: var(--font-en); font-size: 0.75rem; letter-spacing: 0.15em; display: block; margin-bottom: 4px; }
+.element-name { font-family: var(--font-serif); font-size: 1.3rem; color: var(--color-primary, #0F1923); margin-bottom: 12px; }
+.element-desc { font-size: 0.875rem; color: var(--color-text-muted, #566D7E); line-height: 1.75; }
+.element-desc strong { color: var(--color-primary, #0F1923); }
+
+/* コア思想コールアウト */
+.policy-callout {
+  background: linear-gradient(135deg, rgba(0, 209, 160, 0.08) 0%, rgba(15, 25, 35, 0.04) 100%);
+  border-left: 4px solid var(--color-accent, #00D1A0);
+  border-radius: 0 var(--radius-md, 12px) var(--radius-md, 12px) 0;
+  padding: 32px 36px;
+  max-width: 960px;
+  margin: 0 auto;
+  box-shadow: 0 4px 16px rgba(15, 25, 35, 0.06);
+}
+
+.policy-badge { font-family: var(--font-en); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; color: var(--color-accent-dark, #009E78); margin-bottom: 6px; }
+.policy-title { font-family: var(--font-serif); font-size: 1.25rem; color: var(--color-primary, #0F1923); margin-bottom: 12px; }
+.policy-desc { font-size: 0.925rem; color: var(--color-text-main, #14222D); line-height: 1.85; margin-bottom: 0; }
+
+/* プリセット選択タブ */
+.preset-nav {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.preset-nav-btn {
+  background-color: var(--color-bg-card, #FFFFFF);
+  border: 1px solid var(--color-border, rgba(15, 25, 35, 0.08));
+  border-radius: var(--radius-sm, 6px);
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 14px rgba(15, 25, 35, 0.05);
+}
+
+.preset-nav-btn .p-num { font-family: var(--font-en); font-size: 1.2rem; font-weight: 700; }
+.preset-nav-btn .p-name { font-family: var(--font-serif); font-size: 0.95rem; color: var(--color-primary, #0F1923); font-weight: 600; }
+.preset-nav-btn:hover { border-color: var(--color-accent, #00D1A0); transform: translateY(-2px); }
+.preset-nav-btn.active { background: linear-gradient(135deg, var(--color-primary-light, #182836) 0%, var(--color-primary, #0F1923) 100%); border-color: var(--color-accent, #00D1A0); box-shadow: 0 0 20px rgba(0, 209, 160, 0.35); }
+.preset-nav-btn.active .p-name { color: #FFFFFF; }
+
+.preset-detail-panel { display: none; }
+.preset-detail-panel.active { display: block; animation: fadeInPanel 0.4s ease forwards; }
+
+.preset-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  background-color: var(--color-bg-card, #FFFFFF);
+  border: 1px solid var(--color-border, rgba(15, 25, 35, 0.08));
+  border-radius: var(--radius-md, 12px);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(15, 25, 35, 0.08);
+}
+
+.preset-visual {
+  position: relative;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.visual-fighter { background: radial-gradient(circle at center, #E0F4ED 0%, #A2DEC8 100%); }
+.visual-witch { background: radial-gradient(circle at center, #EFE2F5 0%, #BFA2D4 100%); }
+.visual-scout { background: radial-gradient(circle at center, #E6EEF3 0%, #A8C2D4 100%); }
+
+.char-portrait-img {
+  max-height: 440px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 16px 24px rgba(15, 25, 35, 0.35));
+  z-index: 2;
+  transition: transform 0.4s ease;
+}
+
+.preset-visual:hover .char-portrait-img { transform: translateY(-6px) scale(1.03); }
+
+.preset-data { padding: 48px 40px; }
+.char-category { font-family: var(--font-en); font-size: 0.75rem; letter-spacing: 0.15em; font-weight: 700; display: block; margin-bottom: 4px; }
+.char-full-name { font-family: var(--font-serif); font-size: 1.85rem; color: var(--color-primary, #0F1923); line-height: 1.3; margin-bottom: 8px; }
+.char-quote { font-family: var(--font-serif); font-size: 0.95rem; color: var(--color-text-muted, #566D7E); font-style: italic; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--color-border, rgba(15, 25, 35, 0.08)); }
+
+.profile-block { background-color: var(--color-bg-subtle, #E6EEEC); border-radius: var(--radius-sm, 6px); padding: 16px 20px; margin-bottom: 24px; }
+.profile-dl { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 20px; }
+.profile-dl dt { font-size: 0.75rem; color: var(--color-text-muted, #566D7E); margin-bottom: 2px; }
+.profile-dl dd { font-size: 0.875rem; color: var(--color-primary, #0F1923); font-weight: 600; }
+
+.traits-title { font-family: var(--font-serif); font-size: 1rem; color: var(--color-primary, #0F1923); margin-bottom: 8px; }
+.traits-desc { font-size: 0.875rem; color: var(--color-text-muted, #566D7E); line-height: 1.75; margin-bottom: 20px; }
+
+.status-bars { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+.status-row { display: grid; grid-template-columns: 120px 1fr 30px; align-items: center; gap: 12px; }
+.st-label { font-size: 0.8125rem; color: var(--color-primary, #0F1923); font-weight: 600; }
+.st-bar-wrap { height: 8px; background-color: #DDE5E7; border-radius: 4px; overflow: hidden; }
+.st-bar { height: 100%; border-radius: 4px; }
+.st-val { font-family: var(--font-en); font-weight: 700; font-size: 0.875rem; text-align: right; }
+
+.skills-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.skill-tag { font-size: 0.75rem; font-family: var(--font-serif); border: 1px solid; padding: 4px 12px; border-radius: 20px; font-weight: 600; }
+
+/* ==========================================================================
+   09. EXPLOREページ専用コンポーネント
+   【役割】遠征バナー、タイムライン、素材アイコン、開拓進化、サバイバル比較
+   ========================================================================== */
+.explore-banner-card {
+  position: relative;
+  height: 380px;
+  border-radius: var(--radius-md, 12px);
+  overflow: hidden;
+  margin-bottom: 56px;
+  box-shadow: 0 16px 36px rgba(15, 25, 35, 0.2);
+  border: 1px solid var(--color-border, rgba(15, 25, 35, 0.08));
+}
+
+.explore-banner-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+.explore-banner-card:hover img { transform: scale(1.04); }
+.explore-banner-caption { position: absolute; bottom: 0; left: 0; width: 100%; padding: 32px 36px; background: linear-gradient(0deg, rgba(8, 13, 18, 0.92) 0%, transparent 100%); color: #FFFFFF; }
+.explore-banner-caption h3 { font-family: var(--font-serif); font-size: 1.6rem; margin-bottom: 4px; }
+.explore-banner-caption p { font-size: 0.95rem; color: var(--color-accent-light, #5FF5D2); margin-bottom: 0; }
+
+/* タイムライン */
+.loop-timeline { display: flex; flex-direction: column; gap: 32px; max-width: 900px; margin: 0 auto; position: relative; }
+.loop-step-item { display: grid; grid-template-columns: 60px 1fr; gap: 28px; position: relative; }
+.step-indicator { display: flex; flex-direction: column; align-items: center; position: relative; }
+.step-digit { width: 54px; height: 54px; border-radius: 50%; background: linear-gradient(135deg, var(--color-primary-light, #182836) 0%, var(--color-primary, #0F1923) 100%); font-family: var(--font-en); font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(15, 25, 35, 0.3); border: 1px solid; z-index: 2; }
+.step-line { width: 2px; flex: 1; background: linear-gradient(180deg, var(--color-accent, #00D1A0) 0%, rgba(15, 25, 35, 0.15) 100%); margin-top: 12px; margin-bottom: -16px; }
+.step-card { background-color: var(--color-bg-card, #FFFFFF); border: 1px solid var(--color-border, rgba(15, 25, 35, 0.08)); border-radius: var(--radius-md, 12px); padding: 32px 36px; box-shadow: 0 4px 16px rgba(15, 25, 35, 0.06); transition: all var(--transition-normal); }
+.step-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(15, 25, 35, 0.12); }
+.step-tag { font-family: var(--font-en); font-size: 0.75rem; letter-spacing: 0.15em; font-weight: 700; display: block; margin-bottom: 6px; }
+.step-title { font-family: var(--font-serif); font-size: 1.4rem; color: var(--color-primary, #0F1923); margin-bottom: 12px; }
+.step-body { font-size: 0.95rem; color: var(--color-text-muted, #566D7E); line-height: 1.85; margin-bottom: 18px; }
+.step-features { display: flex; flex-wrap: wrap; gap: 12px 18px; }
+.step-features span { font-size: 0.8125rem; font-family: var(--font-serif); padding: 4px 12px; border-radius: 20px; }
+
+/* 素材アイコン列 */
+.material-icons-row { display: flex; gap: 12px; margin-top: 16px; flex-wrap: wrap; }
+.material-icon-pill { display: inline-flex; align-items: center; gap: 8px; padding: 4px 12px 4px 6px; background-color: var(--color-bg-subtle, #E6EEEC); border: 1px solid rgba(15, 25, 35, 0.1); border-radius: 20px; transition: all var(--transition-fast); }
+.material-icon-pill:hover { transform: translateY(-2px); background-color: #FFFFFF; box-shadow: 0 4px 12px rgba(15, 25, 35, 0.08); }
+.mat-thumb-img { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); }
+.mat-label { font-family: var(--font-serif); font-size: 0.8125rem; font-weight: 700; color: var(--color-primary, #0F1923); }
+
+/* 開拓進化ビジュアル */
+.outpost-evolution-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 18px; }
+.outpost-stage-card { position: relative; height: 140px; border-radius: var(--radius-sm, 6px); overflow: hidden; border: 1px solid rgba(15, 25, 35, 0.12); box-shadow: 0 4px 12px rgba(15, 25, 35, 0.08); }
+.outpost-stage-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.outpost-stage-card:hover img { transform: scale(1.06); }
+.outpost-badge-label { position: absolute; bottom: 8px; left: 8px; font-family: var(--font-en); font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.1em; padding: 3px 10px; border-radius: 12px; background: rgba(8, 13, 18, 0.82); backdrop-filter: blur(6px); color: #FFFFFF; }
+.outpost-badge-label.s1 { color: #A7F3D0; border: 1px solid #10B981; }
+.outpost-badge-label.s2 { color: #FDE68A; border: 1px solid #F59E0B; }
+
+/* サバイバルステータス */
+.status-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 56px; }
+.status-card { background-color: var(--color-bg-card, #FFFFFF); border: 1px solid var(--color-border, rgba(15, 25, 35, 0.08)); border-radius: var(--radius-md, 12px); padding: 28px 24px; box-shadow: 0 4px 16px rgba(15, 25, 35, 0.06); }
+.status-header { margin-bottom: 12px; }
+.status-badge { font-family: var(--font-en); font-size: 0.6875rem; font-weight: 700; padding: 3px 10px; border-radius: 12px; display: inline-block; margin-bottom: 8px; }
+.status-title { font-family: var(--font-serif); font-size: 1.25rem; color: var(--color-primary, #0F1923); }
+.status-text { font-size: 0.875rem; color: var(--color-text-muted, #566D7E); line-height: 1.75; }
+
+/* 休息・料理の進化比較 */
+.prep-comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.prep-box { background-color: var(--color-bg-card, #FFFFFF); border: 1px solid var(--color-border, rgba(15, 25, 35, 0.08)); border-radius: var(--radius-md, 12px); padding: 36px 32px; box-shadow: 0 4px 16px rgba(15, 25, 35, 0.06); }
+.prep-type { font-family: var(--font-en); font-size: 0.75rem; letter-spacing: 0.15em; font-weight: 700; display: block; margin-bottom: 4px; }
+.prep-heading { font-family: var(--font-serif); font-size: 1.35rem; color: var(--color-primary, #0F1923); margin-bottom: 10px; }
+.prep-lead { font-size: 0.875rem; color: var(--color-text-muted, #566D7E); margin-bottom: 24px; }
+
+.evo-item-with-img { display: grid; grid-template-columns: 90px 1fr; gap: 16px; align-items: center; background-color: var(--color-bg-subtle, #E6EEEC); border-radius: var(--radius-sm, 6px); padding: 12px; border-left: 3px solid rgba(15, 25, 35, 0.2); }
+.evo-thumb-img { width: 90px; height: 70px; object-fit: cover; border-radius: var(--radius-sm, 6px); box-shadow: 0 4px 10px rgba(15, 25, 35, 0.1); }
+.evo-level { font-family: var(--font-serif); font-size: 0.95rem; font-weight: 700; color: var(--color-primary, #0F1923); display: block; margin-bottom: 2px; }
+
+.food-showcase-img { width: 100%; height: 180px; object-fit: cover; border-radius: var(--radius-sm, 6px); margin-bottom: 18px; box-shadow: 0 4px 14px rgba(15, 25, 35, 0.1); }
+.evolution-list { display: flex; flex-direction: column; gap: 14px; }
+.evo-item { background-color: var(--color-bg-subtle, #E6EEEC); border-radius: var(--radius-sm, 6px); padding: 14px 18px; border-left: 3px solid rgba(15, 25, 35, 0.2); }
+
+/* 自由な攻略 */
+.flexibility-card { background-color: var(--color-bg-card, #FFFFFF); border: 1px solid var(--color-border, rgba(15, 25, 35, 0.08)); border-radius: var(--radius-md, 12px); padding: 56px 48px; box-shadow: 0 10px 30px rgba(15, 25, 35, 0.08); position: relative; max-width: 1000px; margin: 0 auto; }
+.flex-title { font-family: var(--font-serif); font-size: clamp(1.6rem, 3.2vw, 2.3rem); color: var(--color-primary, #0F1923); margin-bottom: 16px; }
+.flex-text { font-size: 1rem; color: var(--color-text-muted, #566D7E); line-height: 1.9; margin-bottom: 32px; }
+.flex-examples { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-bottom: 32px; }
+.flex-ex-item { background-color: var(--color-bg-subtle, #E6EEEC); border-radius: var(--radius-sm, 6px); padding: 24px 20px; }
+.flex-ex-item h4 { font-family: var(--font-serif); font-size: 1.1rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+.flex-ex-item h4::before { content: '▸'; }
+.flex-ex-item p { font-size: 0.875rem; color: var(--color-text-muted, #566D7E); line-height: 1.7; margin-bottom: 0; }
+.flex-conclusion { font-family: var(--font-serif); font-size: 1.05rem; color: var(--color-primary, #0F1923); text-align: center; border-top: 1px solid var(--color-border, rgba(15, 25, 35, 0.08)); padding-top: 24px; margin-bottom: 0; }
+
+/* ==========================================================================
+   10. INFORMATIONページ専用コンポーネント
+   【役割】作品スペック表、お知らせフィルタボタン、アーカイブ一覧
+   ========================================================================== */
+.specs-table-wrap {
+  background-color: var(--color-bg-card, #FFFFFF);
+  border: 1px solid var(--color-border, rgba(15, 25, 35, 0.08));
+  border-radius: var(--radius-md, 12px);
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(15, 25, 35, 0.06);
+}
+
+.specs-table { width: 100%; border-collapse: collapse; text-align: left; }
+.specs-table th, .specs-table td { padding: 22px 30px; border-bottom: 1px solid var(--color-border, rgba(15, 25, 35, 0.08)); vertical-align: top; font-size: 0.95rem; line-height: 1.75; }
+.specs-table tr:last-child th, .specs-table tr:last-child td { border-bottom: none; }
+.specs-table th { width: 26%; font-family: var(--font-serif); color: var(--color-primary, #0F1923); background-color: var(--color-bg-subtle, #E6EEEC); font-weight: 700; white-space: nowrap; }
+.specs-table td { color: var(--color-text-muted, #566D7E); }
+.spec-main-title { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 700; color: var(--color-primary, #0F1923); display: block; }
+.spec-en-title { font-family: var(--font-en); font-size: 0.8125rem; letter-spacing: 0.15em; color: var(--color-accent-dark, #009E78); }
+.spec-catch { font-family: var(--font-serif); font-weight: 700; color: var(--color-primary, #0F1923) !important; }
+.spec-tba { color: #7A8992 !important; font-style: italic; }
+
+.news-filter-nav { display: flex; justify-content: center; gap: 12px; margin-bottom: 36px; flex-wrap: wrap; }
+.filter-btn { background-color: var(--color-bg-card, #FFFFFF); border: 1px solid var(--color-border, rgba(15, 25, 35, 0.08)); padding: 8px 22px; border-radius: 20px; font-family: var(--font-en); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; color: var(--color-primary, #0F1923); transition: all var(--transition-fast); box-shadow: 0 4px 12px rgba(15, 25, 35, 0.05); }
+.filter-btn:hover { border-color: var(--color-accent, #00D1A0); color: var(--color-accent-dark, #009E78); }
+.filter-btn.active { background: linear-gradient(135deg, var(--color-primary-light, #182836) 0%, var(--color-primary, #0F1923) 100%); border-color: var(--color-accent, #00D1A0); color: #FFFFFF; box-shadow: 0 0 16px rgba(0, 209, 160, 0.35); }
+
+.archive-list { display: flex; flex-direction: column; gap: 16px; }
+.archive-item { background-color: var(--color-bg-card, #FFFFFF); border: 1px solid var(--color-border, rgba(15, 25, 35, 0.08)); border-radius: var(--radius-md, 12px); padding: 24px 28px; box-shadow: 0 4px 16px rgba(15, 25, 35, 0.05); transition: all var(--transition-normal); }
+.archive-item:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(15, 25, 35, 0.1); border-color: var(--color-accent, #00D1A0); }
+.archive-item.is-hidden { display: none; }
+.archive-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.archive-date { font-family: var(--font-en); font-size: 0.8125rem; color: var(--color-text-muted, #566D7E); }
+.archive-title { font-family: var(--font-serif); font-size: 1.15rem; color: var(--color-primary, #0F1923); margin-bottom: 6px; }
+.archive-desc { font-size: 0.875rem; color: var(--color-text-muted, #566D7E); line-height: 1.7; margin-bottom: 0; }
+.credo-quote { font-family: var(--font-serif); font-size: 1.2rem; color: var(--color-accent-dark, #009E78); font-weight: 700; margin: 16px 0; line-height: 1.6; }
+
+/* ==========================================================================
+   11. アコーディオン共通コンポーネント (.accordion-item)
+   【役割】全ページの詳細解説折りたたみ・開閉アニメーション
+   ========================================================================== */
+.accordion-item {
+  background-color: var(--color-bg-card, #FFFFFF);
+  border: 1px solid var(--color-border, rgba(15, 25, 35, 0.1));
+  border-radius: var(--radius-md, 12px);
+  margin-top: 24px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(15, 25, 35, 0.05);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.accordion-item:hover {
+  border-color: var(--color-accent, #00D1A0);
+  box-shadow: 0 6px 20px rgba(0, 209, 160, 0.15);
+}
+
+.accordion-trigger {
+  width: 100%;
+  padding: 16px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-serif, serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primary, #0F1923);
+  background: var(--color-bg-card, #FFFFFF);
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.accordion-trigger:hover {
+  background-color: rgba(0, 209, 160, 0.05);
+  color: var(--color-accent-dark, #009E78);
+}
+
+.accordion-icon {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--color-accent, #00D1A0);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  line-height: 1;
+}
+
+.accordion-item.is-open .accordion-icon {
+  transform: rotate(45deg);
+}
+
+.accordion-content {
+  display: none;
+  padding: 14px 22px 22px;
+  font-size: 0.9rem;
+  color: var(--color-text-muted, #566D7E);
+  line-height: 1.85;
+  border-top: 1px solid var(--color-border, rgba(15, 25, 35, 0.08));
+  background-color: #FAFCFB;
+}
+
+.accordion-content p {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.accordion-content p:first-child {
+  margin-top: 0;
+}
+
+.accordion-item.is-open .accordion-content {
+  display: block;
+  animation: fadeInPanel 0.35s ease forwards;
+}
+
+/* ==========================================================================
+   12. 次ページ共通導線バナー (.next-page-banner)
+   【役割】各ページ最下部で次のコンテンツへ誘導する帯バナー
+   ========================================================================== */
+.next-page-banner {
+  background: linear-gradient(180deg, var(--color-bg-subtle, #E6EEEC) 0%, var(--color-bg, #F4F7F6) 100%);
+  border-top: 1px solid var(--color-border, rgba(15, 25, 35, 0.08));
+}
+
+.next-subtitle {
+  font-family: var(--font-en);
+  font-size: 0.8125rem;
+  letter-spacing: 0.2em;
+  color: var(--color-accent-dark, #009E78);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.next-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3.2vw, 2.3rem);
+  color: var(--color-primary, #0F1923);
+  margin-bottom: 12px;
+}
+
+.next-desc {
+  font-size: 0.95rem;
+  color: var(--color-text-muted, #566D7E);
+  margin-bottom: 28px;
+  line-height: 1.8;
+}

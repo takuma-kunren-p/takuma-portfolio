@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="『WORLD STRANGER（ワールドストレンジャー）』のゲーム体験。探索、開拓、休息、食事、そして更なる遠征へとつながる循環サイクル。">
+  <title>EXPLORE（探索と開拓） | WORLD STRANGER 公式サイト</title>
+
+  <!-- Google Fonts（欧文Cinzel・和文Shippori Mincho / Noto Sans JP） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@500;700&display=swap"
+    rel="stylesheet">
+
+  <!-- 機能別分割CSSの読み込み -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body class="page-explore">
+
+  <!-- ==========================================================================
+       01. グローバルヘッダー
+       【役割】全ページ共通ナビゲーション・公式ロゴ・スクロール追従背景ガラス化
+       【連携】js/main.js, css/style.css
+       ========================================================================== -->
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">
+        <img src="assets/images/logo-title.webp" alt="WORLD STRANGER" class="site-logo-img">
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="メニューを開閉する" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link">TOP</a></li>
+          <li class="nav-item"><a href="world.html" class="nav-link">WORLD</a></li>
+          <li class="nav-item"><a href="adventurers.html" class="nav-link">ADVENTURERS</a></li>
+          <li class="nav-item"><a href="explore.html" class="nav-link current">EXPLORE</a></li>
+          <li class="nav-item"><a href="information.html" class="nav-link">INFORMATION</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ==========================================================================
+         02. シネマティックヘッダー（ファーストビュー）
+         【役割】キービジュアル背景（loop-advance）、4色浮遊光、4ステップミニサイクルバー
+         【連携】js/main.js (initFloatingLights), css/style.css (05, 06)
+         ========================================================================== -->
+    <section class="page-hero">
+      <div class="floating-lights" id="floatingLights"></div>
+
+      <div class="container text-center">
+        <div class="page-hero-content">
+          <div class="page-hero-badge reveal-up">
+            <span class="badge-icon">✦</span>
+            <span>CORE EXPEDITION CYCLE</span>
+          </div>
+
+          <h1 class="page-title reveal-up" data-delay="100">EXPLORE</h1>
+
+          <p class="page-lead reveal-up" data-delay="200">
+            探索で世界を知り、開拓で世界を変え、変わった世界を足場にさらに先へ。<br>
+            生活と遠征の準備が、次の過酷な未踏域を切り拓く。
+          </p>
+
+          <!-- 4ステップのミニサイクルフロー（青・緑・橙・紫） -->
+          <div class="hero-cycle-flow reveal-up" data-delay="300">
+            <span class="flow-step s1">01 DISCOVER</span>
+            <span class="flow-arrow">➔</span>
+            <span class="flow-step s2">02 CULTIVATE</span>
+            <span class="flow-arrow">➔</span>
+            <span class="flow-step s3">03 PREPARE</span>
+            <span class="flow-arrow">➔</span>
+            <span class="flow-step s4">04 ADVANCE</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         03. 探索と開拓の循環システム
+         【役割】遠征隊バナー、4大ループタイムライン（素材アイコン・開拓進化画像組み込み）
+         【連携】css/components.css (09 探索循環パーツ)
+         ========================================================================== -->
+    <section class="section cycle-deep-section">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-subtitle">CORE LOOP</span>
+          <h2 class="section-title">四つの段階が織りなす「冒険の循環」</h2>
+          <p class="section-desc">開拓を楽しんだすべての時間が、次の未踏域を攻略する確かな力となる。</p>
+        </div>
+
+        <!-- 遠征隊の象徴バナー (loop-advance.webp) -->
+        <div class="explore-banner-card reveal-on-scroll">
+          <img src="assets/images/loop-advance.webp" alt="未踏の大地へ進む開拓遠征隊">
+          <div class="explore-banner-caption">
+            <h3>仲間と共に、世界の先端へ</h3>
+            <p>整えた拠点を足場に、さらなる極限領域へと挑む。</p>
+          </div>
+        </div>
+
+        <!-- 循環タイムライン -->
+        <div class="loop-timeline reveal-on-scroll">
+          <!-- STEP 1: 探索（薬草・鉱石・獣肉アイコン付き） -->
+          <div class="loop-step-item">
+            <div class="step-indicator">
+              <span class="step-digit" style="border-color:#38BDF8; color:#38BDF8;">1</span>
+              <div class="step-line"></div>
+            </div>
+            <div class="step-card" style="border-left: 4px solid #38BDF8;">
+              <span class="step-tag" style="color:#0284C7;">STEP 01 / DISCOVERY</span>
+              <h3 class="step-title">未踏の大地を探索・素材発見</h3>
+              <p class="step-body">
+                地図にない渓谷や古代遺跡へ歩みを進め、未知の動植物や希少鉱石を採取。現地での観察が生死を分ける。
+              </p>
+
+              <!-- 素材アイコン列（UI化） -->
+              <div class="material-icons-row">
+                <div class="material-icon-pill" title="森林の自生薬草">
+                  <img src="assets/images/icon-herb.webp" alt="薬草アイコン" class="mat-thumb-img">
+                  <span class="mat-label">高純度薬草</span>
+                </div>
+                <div class="material-icon-pill" title="地底鉱脈の魔力結晶">
+                  <img src="assets/images/icon-ore.webp" alt="鉱石アイコン" class="mat-thumb-img">
+                  <span class="mat-label">未知の魔鉱石</span>
+                </div>
+                <div class="material-icon-pill" title="草原原生生物の肉">
+                  <img src="assets/images/icon-food-meat.webp" alt="肉アイコン" class="mat-thumb-img">
+                  <span class="mat-label">上質な獣肉</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 2: 開拓（野営地➔開拓都市の進化ビジュアル付き） -->
+          <div class="loop-step-item">
+            <div class="step-indicator">
+              <span class="step-digit" style="border-color:#10B981; color:#10B981;">2</span>
+              <div class="step-line"></div>
+            </div>
+            <div class="step-card" style="border-left: 4px solid #10B981;">
+              <span class="step-tag" style="color:#059669;">STEP 02 / CULTIVATION</span>
+              <h3 class="step-title">キャンプを開拓拠点へ育成</h3>
+              <p class="step-body">
+                持ち帰った素材と現地住民の力を結集し、最初は小さな野営地だったキャンプを堅牢な開拓拠点へと発展させる。
+              </p>
+
+              <!-- 開拓進化ビジュアル（outpost-stage1 ➔ outpost-stage2） -->
+              <div class="outpost-evolution-wrap">
+                <div class="outpost-stage-card">
+                  <img src="assets/images/outpost-stage1.webp" alt="初期キャンプ・野営地">
+                  <span class="outpost-badge-label s1">STAGE 1 : 臨時野営地</span>
+                </div>
+                <div class="outpost-stage-card">
+                  <img src="assets/images/outpost-stage2.webp" alt="発展した開拓都市・砦">
+                  <span class="outpost-badge-label s2">STAGE 2 : 防衛開拓拠点</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 3: 準備（ウォームアンバー） -->
+          <div class="loop-step-item">
+            <div class="step-indicator">
+              <span class="step-digit" style="border-color:#F59E0B; color:#F59E0B;">3</span>
+              <div class="step-line"></div>
+            </div>
+            <div class="step-card" style="border-left: 4px solid #F59E0B;">
+              <span class="step-tag" style="color:#D97706;">STEP 03 / PREPARATION</span>
+              <h3 class="step-title">生活の質が次の冒険を助ける</h3>
+              <p class="step-body">
+                良質なベッドでの睡眠による疲労完全回復、寒暑に耐える温かな滋養料理、鍛え上げた武具が次の遠征の足腰となる。
+              </p>
+              <div class="step-features">
+                <span style="color:#B45309; background:#FEF3C7;">✦ 熟睡による成長ボーナス</span>
+                <span style="color:#B45309; background:#FEF3C7;">✦ 環境耐性バフ料理</span>
+                <span style="color:#B45309; background:#FEF3C7;">✦ 名匠による装備鍛造</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 4: 極地遠征（ミスティックパープル） -->
+          <div class="loop-step-item">
+            <div class="step-indicator">
+              <span class="step-digit" style="border-color:#C084FC; color:#C084FC;">4</span>
+            </div>
+            <div class="step-card"
+              style="border-left: 4px solid #C084FC; background: linear-gradient(180deg, #FFFFFF 0%, #FAF5FF 100%);">
+              <span class="step-tag" style="color:#7E22CE;">STEP 04 / ADVANCE</span>
+              <h3 class="step-title">整えた足を足場に、さらなる極限へ</h3>
+              <p class="step-body">
+                前回の遠征では耐えられなかった猛吹雪や灼熱地帯へ突入。新たな拠点を築きながら、「世界の先端」の実証へと迫る。
+              </p>
+              <div class="step-features">
+                <span style="color:#6B21A8; background:#F3E8FF;">✦ 極限気候帯の突破</span>
+                <span style="color:#6B21A8; background:#F3E8FF;">✦ 高難度遺跡の調査</span>
+                <span style="color:#6B21A8; background:#F3E8FF;">✦ 「世界の先端」への到達</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         04. 生存ステータスと遠征準備システム
+         【役割】HP/MP・スタミナ・コンディションカード、寝床＆料理の進化比較、アコーディオン
+         【連携】js/interactions.js (initAccordionSystem), css/components.css (09 サバイバル)
+         ========================================================================== -->
+    <section class="section survival-section">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-subtitle">SURVIVAL & PREPARATION</span>
+          <h2 class="section-title">準備が、次の冒険の運命を変える</h2>
+          <p class="section-desc">HPやMPだけではない。過酷な未踏域を生き抜くためのリアルな探索コンディション。</p>
+        </div>
+
+        <!-- ステータスカードグリッド -->
+        <div class="status-grid reveal-on-scroll">
+          <div class="status-card" style="border-top: 3px solid #EF4444;">
+            <div class="status-header">
+              <span class="status-badge" style="background:#FEE2E2; color:#B91C1C;">VITALS</span>
+              <h3 class="status-title">HP & MP（生命と魔力）</h3>
+            </div>
+            <p class="status-text">
+              環境ダメージやモンスターとの激戦で消耗。安全な休息や高品質な薬草で回復する基本生命線。
+            </p>
+          </div>
+
+          <div class="status-card" style="border-top: 3px solid #10B981;">
+            <div class="status-header">
+              <span class="status-badge" style="background:#D1FAE5; color:#047857;">ACTION</span>
+              <h3 class="status-title">スタミナ（行動力）</h3>
+            </div>
+            <p class="status-text">
+              崖登りや全力疾走、回避で消費。険しい高低差のある未踏域では、スタミナ管理が生死に直結する。
+            </p>
+          </div>
+
+          <div class="status-card" style="border-top: 3px solid #F59E0B;">
+            <div class="status-header">
+              <span class="status-badge" style="background:#FEF3C7; color:#B45309;">CONDITION</span>
+              <h3 class="status-title">空腹・渇き・疲労</h3>
+            </div>
+            <p class="status-text">
+              長旅で蓄積する疲労度。放置すると最大能力値が低下するため、定期的な補給と休息が不可欠。
+            </p>
+          </div>
+        </div>
+
+        <!-- 休息と食事の進化比較（camp-*.webp, food-stew.webp 適用） -->
+        <div class="prep-comparison-grid reveal-on-scroll">
+          <!-- 休息の進化 -->
+          <div class="prep-box">
+            <div class="prep-box-header">
+              <span class="prep-type" style="color:#0284C7;">REST & SLEEP</span>
+              <h3 class="prep-heading">寝床の進化がもたらす恩恵</h3>
+            </div>
+            <p class="prep-lead">
+              どこで体を休めるかによって、翌朝の回復効率が劇的に変化する。
+            </p>
+
+            <div class="evolution-list">
+              <div class="evo-item-with-img">
+                <img src="assets/images/camp-1-wild.webp" alt="野宿の様子" class="evo-thumb-img">
+                <div>
+                  <span class="evo-level">野宿（焚き火のみ）</span>
+                  <p>最低限の回復。夜間の冷え込みで疲労が残りやすい。</p>
+                </div>
+              </div>
+
+              <div class="evo-item-with-img">
+                <img src="assets/images/camp-2-tent.webp" alt="テントでの野営" class="evo-thumb-img">
+                <div>
+                  <span class="evo-level">テント（野営具）</span>
+                  <p>風雨を防ぎ、一定のスタミナと疲労を安全に回復。</p>
+                </div>
+              </div>
+
+              <div class="evo-item-with-img best" style="border-left-color:#10B981; background:#F0FDF4;">
+                <img src="assets/images/camp-3-lodge.webp" alt="ロッジ個室での熟睡" class="evo-thumb-img">
+                <div>
+                  <span class="evo-level" style="color:#047857;">拠点の個室（良質なベッド）</span>
+                  <p>疲労が完全解消され、次の探索時に経験値・スタミナ上限ボーナスが付与。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 食事の進化 -->
+          <div class="prep-box">
+            <div class="prep-box-header">
+              <span class="prep-type" style="color:#EA580C;">COOKING & MEALS</span>
+              <h3 class="prep-heading">料理が生み出す環境適応効果</h3>
+            </div>
+
+            <img src="assets/images/food-stew.webp" alt="開拓地で作る温かな香草シチュー" class="food-showcase-img">
+
+            <p class="prep-lead">
+              現地の食材と拠点の調理設備で、遠征目的に合わせた耐性バフを得る。
+            </p>
+
+            <div class="evolution-list">
+              <div class="evo-item">
+                <span class="evo-level">現地調達の干し肉</span>
+                <p>最低限のカロリー補給。追加の特殊バフは得られない。</p>
+              </div>
+              <div class="evo-item">
+                <span class="evo-level">香草入りの温シチュー</span>
+                <p>疲労を癒やし、寒冷地での「凍え」を一定時間防止。</p>
+              </div>
+              <div class="evo-item best" style="border-left-color:#F59E0B; background:#FFFBEB;">
+                <span class="evo-level" style="color:#B45309;">極地適応の専門フルコース</span>
+                <p>火山地帯の「灼熱」や森林の「猛毒」に対する高い耐性を付与。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- アコーディオン（キャンプ設営詳細） -->
+        <div class="accordion-item reveal-on-scroll">
+          <button class="accordion-trigger" type="button" aria-expanded="false">
+            <span>キャンプ設備の増築ルールと調理バフの詳細を読む</span>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              拠点の発展には、各地で採取した木材、石材、鉱石が必要です。設備を強化するごとに、クラフトできる武具のランクや保存食の賞味期間が延長されます。
+            </p>
+            <p>
+              また、料理は食材の組み合わせによってHP回復速度の上昇や、特定の属性魔法に対する耐性など、目的の遠征地に合わせたカスタマイズが可能です。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         05. 工夫と自由な攻略
+         【役割】攻略アプローチの3連カード（力・魔法・開拓）
+         【連携】css/components.css (09 自由な攻略)
+         ========================================================================== -->
+    <section class="section flexibility-section">
+      <div class="container">
+        <div class="flexibility-card reveal-on-scroll">
+          <span class="section-subtitle">FREEDOM OF APPROACH</span>
+          <h2 class="flex-title">壁を越える方法は、ひとつではない</h2>
+          <p class="flex-text">
+            そそり立つ断崖、猛毒の湿地、強大なモンスター――未踏の地には幾重もの障害が待ち受けます。<br>
+            だが本作に「特定のスキルがないと進めない」行き止まりはありません。
+          </p>
+
+          <div class="flex-examples">
+            <div class="flex-ex-item" style="border-top: 3px solid #EF4444;">
+              <h4 style="color:#B91C1C;">力や技で突破する</h4>
+              <p>強靭な腕力で崖をよじ登る、あるいは斥候の道具作成で即席のロープや迂回路を設ける白兵突破。</p>
+            </div>
+            <div class="flex-ex-item" style="border-top: 3px solid #8B5CF6;">
+              <h4 style="color:#6D28D9;">知識や魔法で解決する</h4>
+              <p>魔術で毒霧を風で吹き飛ばす、あるいは現地植物から調薬した解毒薬で安全に進む知略突破。</p>
+            </div>
+            <div class="flex-ex-item" style="border-top: 3px solid #10B981;">
+              <h4 style="color:#047857;">開拓と仲間で乗り越える</h4>
+              <p>山岳拠点を整備して安全な石畳の峠道を開通させ、獣車で難所を迂回する開拓突破。</p>
+            </div>
+          </div>
+
+          <p class="flex-conclusion">
+            君が選び、育ててきた知識と仲間、そして開拓地のすべてが、未知なる大地を踏破する鍵となる。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         06. 次ページ導線バナー（INFORMATIONへ）
+         【役割】作品概要・ニュース情報ページへのリンク
+         【連携】css/components.css (12 次ページ共通導線バナー)
+         ========================================================================== -->
+    <section class="section next-page-banner">
+      <div class="container text-center reveal-on-scroll">
+        <span class="next-subtitle">ABOUT & INFORMATION</span>
+        <h2 class="next-title">作品の概要と最新のお知らせ</h2>
+        <p class="next-desc">
+          『WORLD STRANGER』の制作コンセプトや基本情報、<br>
+          これまでに公開されたトピックスをまとめて確認しよう。
+        </p>
+        <a href="information.html" class="btn btn-primary">INFORMATION（作品概要・情報）を見る <span>→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       07. サイトフッター
+       【役割】全ページ共通最下部・公式ロゴ画像・サイトマップ・免責・著作権表示
+       【連携】css/style.css (07 サイトフッター)
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <img src="assets/images/logo-title.webp" alt="WORLD STRANGER" class="footer-logo-img">
+          </a>
+          <p class="footer-catch">君の足跡が世界を作る。</p>
+        </div>
+
+        <nav class="footer-nav">
+          <ul class="footer-nav-list">
+            <li><a href="index.html">TOP</a></li>
+            <li><a href="world.html">WORLD</a></li>
+            <li><a href="adventurers.html">ADVENTURERS</a></li>
+            <li><a href="explore.html">EXPLORE</a></li>
+            <li><a href="information.html">INFORMATION</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-disclaimer">
+          ※当サイトは架空のゲーム作品『WORLD STRANGER』の企画・プロモーション用Webサイトです。実在の人物・団体・商品とは一切関係ありません。
+        </p>
+        <p class="footer-copyright">
+          &copy; 2026 WORLD STRANGER Project. All Rights Reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 分割JSスクリプトの読み込み -->
+  <script src="js/main.js"></script>
+  <script src="js/interactions.js"></script>
+</body>
+
+</html>

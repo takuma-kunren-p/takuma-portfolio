@@ -1,0 +1,220 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   01. 中画面・タブレット対応 (max-width: 900px)
+   【対象】iPad等のタブレット、ウィンドウ幅を縮小したPC画面
+   【主な挙動】ハンバーガーメニュー化、2カラムグリッドの1カラム折り返し
+   ========================================================================== */
+@media screen and (max-width: 900px) {
+  /* 共通セクション余白の圧縮 */
+  .section {
+    padding: 80px 0;
+  }
+
+  /* --- グローバルナビゲーションのモバイル化 --- */
+  .nav-toggle {
+    display: flex; /* ハンバーガーボタンを表示 */
+  }
+
+  .site-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background-color: var(--color-primary-dark, #080D12);
+    box-shadow: var(--shadow-lg);
+    padding: 100px 32px;
+    transition: right var(--transition-normal);
+    z-index: 105;
+    border-left: 1px solid rgba(0, 209, 160, 0.3);
+  }
+
+  /* JS操作で .is-open 付与時に右からスライドイン */
+  .site-nav.is-open {
+    right: 0;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  /* --- TOPページ：プロローグ（布告と地図）の縦積み化 --- */
+  .prologue-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .antique-frame {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /* --- WORLDページ：イントロ・詳細パネルの1カラム化 --- */
+  .intro-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .panel-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .panel-visual {
+    min-height: 240px;
+  }
+
+  .panel-body {
+    padding: 28px 20px;
+  }
+
+  /* --- ADVENTURERSページ：プリセット詳細の1カラム化 --- */
+  .characters-preview {
+    grid-template-columns: 1fr;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .preset-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .preset-visual {
+    min-height: 320px;
+  }
+
+  .preset-data {
+    padding: 32px 20px;
+  }
+
+  .profile-dl {
+    grid-template-columns: 1fr;
+  }
+
+  /* --- EXPLOREページ：循環タイムライン & 比較の調整 --- */
+  .prep-comparison-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .loop-step-item {
+    grid-template-columns: 44px 1fr;
+    gap: 16px;
+  }
+
+  .step-digit {
+    width: 44px;
+    height: 44px;
+    font-size: 1.25rem;
+  }
+
+  .step-card {
+    padding: 24px 20px;
+  }
+
+  .flexibility-card {
+    padding: 36px 24px;
+  }
+
+  /* --- フッターの縦積み配置 --- */
+  .footer-top {
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .footer-nav-list {
+    flex-wrap: wrap;
+    gap: 16px 20px;
+  }
+}
+
+/* ==========================================================================
+   02. スマートフォン標準対応 (max-width: 768px)
+   【対象】一般的なスマートフォン（縦向き）
+   【主な挙動】バナー・カード内複合レイアウトの縦並び最適化、テーブルのブロック化
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+  /* TOP：王国布告（バナー画像とテキストの縦積み） */
+  .decree-with-banner {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .decree-thumb-img {
+    height: 120px;
+  }
+
+  /* WORLD：二大脅威カード（魔族と原生獣）の1列化 */
+  .threats-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* EXPLORE：キャンプ進化サムネイルの縦積み化 */
+  .evo-item-with-img {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .evo-thumb-img {
+    width: 100%;
+    height: 140px;
+  }
+
+  /* INFORMATION：スペック表のモバイル縦積みブロック化 */
+  .specs-table th,
+  .specs-table td {
+    display: block;
+    width: 100%;
+    padding: 14px 20px;
+  }
+
+  .specs-table th {
+    border-bottom: none;
+    padding-bottom: 4px;
+    background-color: transparent;
+  }
+
+  .specs-table td {
+    padding-top: 0;
+  }
+
+  .archive-item {
+    padding: 20px;
+  }
+}
+
+/* ==========================================================================
+   03. 小型スマートフォン対応 (max-width: 600px)
+   ========================================================================== */
+@media screen and (max-width: 600px) {
+  /* セクション余白の更なる圧縮 */
+  .section {
+    padding: 60px 0;
+  }
+
+  /* ニュース項目の縦並び化 */
+  .news-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  /* CTAボタンを押しやすい全幅表示に */
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  /* ADVENTURERS：ステータスバーの幅調整 */
+  .status-row {
+    grid-template-columns: 100px 1fr 24px;
+    gap: 8px;
+  }
+
+  /* EXPLORE：開拓進化画像（野営地➔砦）の1列化 */
+  .outpost-evolution-wrap {
+    grid-template-columns: 1fr;
+  }
+}

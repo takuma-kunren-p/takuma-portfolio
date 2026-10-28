@@ -1,0 +1,691 @@
+/* 基本スタイル */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0
+}
+
+html {
+  scroll-behavior: smooth
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Zen Kaku Gothic New", "Hiragino Sans", sans-serif;
+  line-height: 1.9;
+  background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 96px 96px;
+  background-position: -1px -1px;
+  transition: background-color .3s, color .3s
+}
+
+a {
+  color: inherit
+}
+
+img {
+  max-width: 100%;
+  display: block
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px
+}
+
+.hud {
+  font-family: "Space Grotesk", monospace;
+  font-size: .78rem;
+  letter-spacing: .08em;
+  color: var(--text-sub)
+}
+
+.wrap {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px
+}
+
+.plus {
+  position: relative
+}
+
+.plus::before,
+.plus::after {
+  content: "+";
+  position: absolute;
+  font-family: "Space Grotesk";
+  color: var(--accent-text);
+  font-size: 1rem;
+  line-height: 1;
+  z-index: 1
+}
+
+.plus::before {
+  top: -9px;
+  left: -5px
+}
+
+.plus::after {
+  bottom: -9px;
+  right: -5px
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line)
+}
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  gap: 16px
+}
+
+.logo {
+  font-family: "Space Grotesk";
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: .04em
+}
+
+.logo i {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  box-shadow: var(--glow);
+  border-radius: 50%;
+  margin-right: 8px
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 6px
+}
+
+.nav a {
+  text-decoration: none;
+  padding: 6px 14px;
+  border: 1px solid transparent;
+  font-size: .92rem
+}
+
+.nav a:hover,
+.nav a[aria-current="page"] {
+  border-color: var(--accent);
+  box-shadow: var(--glow)
+}
+
+.tools {
+  display: flex;
+  gap: 8px
+}
+
+.btn-sm {
+  font-family: "Space Grotesk";
+  font-size: .78rem;
+  background: none;
+  color: var(--text);
+  border: 1px solid var(--line);
+  padding: 5px 10px;
+  cursor: pointer
+}
+
+.btn-sm:hover {
+  border-color: var(--accent);
+  box-shadow: var(--glow)
+}
+
+.burger {
+  display: none;
+  width: 42px;
+  height: 38px;
+  background: none;
+  border: 1px solid var(--line);
+  cursor: pointer;
+  position: relative;
+  color: var(--text)
+}
+
+.burger span,
+.burger span::before,
+.burger span::after {
+  position: absolute;
+  left: 10px;
+  width: 20px;
+  height: 2px;
+  background: currentColor;
+  content: "";
+  transition: .25s
+}
+
+.burger span {
+  top: 17px
+}
+
+.burger span::before {
+  left: 0;
+  top: -6px
+}
+
+.burger span::after {
+  left: 0;
+  top: 6px
+}
+
+.burger[aria-expanded="true"] span {
+  background: transparent
+}
+
+.burger[aria-expanded="true"] span::before {
+  top: 0;
+  transform: rotate(45deg)
+}
+
+.burger[aria-expanded="true"] span::after {
+  top: 0;
+  transform: rotate(-45deg)
+}
+
+.hero {
+  padding: 0;
+  /* 外側の余白を無くしてヘッダー直下に密着 */
+  border-bottom: 1px solid var(--line);
+}
+
+.hero .status {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--line);
+  padding: 4px 14px;
+  background: var(--bg)
+}
+
+.hero-visual {
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  /* 画面の高さの約75%（参考サイトのように広く取る） */
+  min-height: 520px;
+  /* 画面が小さくても潰れない最小高さ */
+  max-height: 780px;
+  /* 大きなディスプレイでも広がりすぎない上限 */
+  display: flex;
+  align-items: center;
+  /* 文字を垂直方向の中央に配置 */
+  overflow: hidden;
+}
+
+/* HTMLで差し込んだ画像のスタイリング */
+.hero-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* 縦横比を崩さず枠いっぱいにトリミング */
+  object-position: center;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(255, 250, 250, 0.85) 0%, rgba(255, 250, 250, 0.4) 60%, transparent 100%);
+  z-index: 1;
+}
+
+/* ダークモード時のオーバーレイの調整 */
+:root[data-theme="dark"] .hero-overlay {
+  background: linear-gradient(to right, rgba(32, 55, 68, 0.9) 0%, rgba(32, 55, 68, 0.5) 60%, transparent 100%);
+}
+
+/* --- 文字コンテンツの配置 --- */
+.hero-wrap {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.hero-content {
+  max-width: 640px;
+  /* 文字が横に広がりすぎないように制限 */
+}
+
+.lamp {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: var(--glow);
+  animation: blink 3.2s ease-in-out infinite
+}
+
+@keyframes blink {
+  50% {
+    opacity: .35
+  }
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 9vw, 6.5rem);
+  line-height: 1.15;
+  font-weight: 900;
+  letter-spacing: .04em;
+  margin: 24px 0 20px;
+  background: transparent;
+  display: block;
+
+  /* --- 文字の縁取り（白くくっきりした輪郭 ＋ 周囲の光彩） --- */
+  text-shadow:
+    2px 2px 0 var(--bg),
+    -2px 2px 0 var(--bg),
+    2px -2px 0 var(--bg),
+    -2px -2px 0 var(--bg),
+    0 2px 0 var(--bg),
+    0 -2px 0 var(--bg),
+    2px 0 0 var(--bg),
+    -2px 0 0 var(--bg),
+    0 0 16px var(--bg);
+}
+
+.hero p.lead {
+  max-width: 34em;
+  font-size: 1.05rem;
+  font-weight: 700;
+  /* 少し太くして写真の上でも読みやすく */
+  line-height: 1.8;
+  background: transparent;
+
+  /* --- リード文の縁取り（小さめの文字に合わせて1pxのフチ取り） --- */
+  text-shadow:
+    1px 1px 0 var(--bg),
+    -1px 1px 0 var(--bg),
+    1px -1px 0 var(--bg),
+    -1px -1px 0 var(--bg),
+    0 0 10px var(--bg);
+}
+
+
+.hero h1 span {
+  display: block;
+  width: fit-content;
+  animation: scan 0.45s steps(10) both;
+}
+
+.hero h1 span:nth-child(2) {
+  animation-delay: 0.18s;
+  /* わずかに遅らせることでリズムを生む */
+}
+
+@keyframes scan {
+  from {
+    clip-path: inset(0 100% 0 0)
+  }
+
+  to {
+    clip-path: inset(0 0 0 0)
+  }
+}
+
+.hero p.lead {
+  max-width: 34em;
+  font-size: 1.1rem;
+  background: transparent;
+  /* ← var(--bg) から transparent に変更 */
+}
+
+.actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 36px
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px 26px;
+  border: 1px solid var(--accent);
+  font-weight: 700;
+  background: var(--bg);
+  color: var(--text);
+  transition: transform .2s, box-shadow .2s
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+  box-shadow: var(--glow)
+}
+
+.btn:hover {
+  box-shadow: var(--glow);
+  transform: translateY(-2px)
+}
+
+section.block {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--line)
+}
+
+.sec-head {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 40px;
+  background: var(--bg);
+  padding: 8px 24px 8px 16px;
+  border-left: 3px solid var(--accent);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 0 0 6px var(--bg);
+}
+
+.sec-head .no {
+  font-family: "Space Grotesk";
+  color: var(--accent-text);
+  font-weight: 700
+}
+
+.sec-head h1,
+.sec-head h2 {
+  font-size: 1.7rem;
+  font-weight: 900
+}
+
+/* css/style.css の .grid3 を以下のように修正 */
+
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  /* minmax(0, 1fr) で画面外へのはみ出しを確実に防止 */
+  gap: 24px;
+}
+
+/* グリッド内のカードが画像サイズに引っ張られてはみ出さないようにする */
+.grid3>* {
+  min-width: 0;
+}
+
+.panel {
+  border: 1px solid var(--line);
+  background: var(--bg);
+  padding: 28px;
+  position: relative;
+  box-shadow: 0 0 0 6px var(--bg);
+  /* 外側の線被りを防ぐ */
+}
+
+.panel h2,
+.panel h3 {
+  margin: 8px 0 8px;
+  font-size: 1.15rem
+}
+
+.panel p {
+  color: var(--text-sub);
+  font-size: .95rem
+}
+
+.zone-label {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--accent);
+  padding-top: 8px;
+  margin-bottom: 24px;
+  background: var(--bg)
+}
+
+.zone-label b {
+  color: var(--accent-text)
+}
+
+.work-large {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  margin-bottom: 64px;
+  box-shadow: 0 0 0 6px var(--bg);
+  /* 外側の線被りを防ぐ */
+}
+
+.work-large .body {
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px
+}
+
+.work-large h2,
+.work-large h3 {
+  font-size: 1.6rem
+}
+
+.work-large img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 280px;
+  border-right: 1px solid var(--line)
+}
+
+/* --- 大型作品の左右反転（左：説明文 / 右：画像） --- */
+.work-large.reverse {
+  grid-template-columns: 1fr 1.3fr;
+}
+
+.work-large.reverse .body {
+  order: 1;
+  /* 説明文を確実に左（1番目）に配置 */
+}
+
+.work-large.reverse img {
+  order: 2;
+  /* 画像を確実に右（2番目）に配置 */
+  border-right: 0;
+  border-left: 1px solid var(--line);
+  /* 仕切り線を画像の左側に設定 */
+}
+
+.work-small {
+  border: 1px solid var(--line);
+  background: var(--bg);
+  box-shadow: 0 0 0 6px var(--bg);
+  /* 外側の線被りを防ぐ */
+}
+
+.work-small img {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 16/10;
+  border-bottom: 1px solid var(--line)
+}
+
+.work-small .body {
+  padding: 20px
+}
+
+.work-small h3 {
+  font-size: 1.05rem
+}
+
+.work-small {
+  border: 1px solid var(--line);
+  background: var(--bg);
+  box-shadow: 0 0 0 6px var(--bg);
+  display: flex;
+  flex-direction: column;
+  /* 縦並びにして下部揃えを有効化 */
+}
+
+.work-small .body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  /* コンテンツ領域をカード全体まで広げる */
+}
+
+/* 小作品カード内のボタンの配置とサイズ調整 */
+.work-small .actions {
+  margin-top: auto;
+  /* 説明文の長さに関わらずボタンを最下部に押し下げる */
+  padding-top: 16px;
+}
+
+.work-small .actions .btn {
+  display: block;
+  text-align: center;
+  padding: 8px 16px;
+  /* 小作品カードに合わせた使いやすいサイズ感 */
+  font-size: 0.88rem;
+}
+
+.tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 6px
+}
+
+.tags span {
+  border: 1px solid var(--accent);
+  padding: 0 8px;
+  font-size: .72rem;
+  font-family: "Space Grotesk"
+}
+
+.work-small:hover,
+.work-large:hover,
+.panel:hover {
+  box-shadow: var(--glow);
+}
+
+.profile {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 40px;
+  align-items: start
+}
+
+.profile img {
+  border: 1px solid var(--accent);
+  box-shadow: var(--glow);
+  aspect-ratio: 1;
+  object-fit: cover
+}
+
+/* --- スキルカードのコンテナ --- */
+.skill-card {
+  border: 1px solid var(--line);
+  background: var(--bg);
+  box-shadow: 0 0 0 6px var(--bg);
+  /* グリッド線との重なりを防ぐクッション */
+  display: flex;
+  flex-direction: column;
+  transition: transform .2s, box-shadow .2s;
+}
+
+/* ホバー時にサイバー風のシアンに発光 */
+.skill-card:hover {
+  box-shadow: var(--glow);
+  transform: translateY(-2px);
+}
+
+/* --- カード上部：名前エリア（画像のように中央揃え＆下線で分割） --- */
+.skill-card-head {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--line);
+  text-align: center;
+  background: var(--bg);
+}
+
+.skill-card-head h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  color: var(--text);
+  margin: 0;
+}
+
+/* --- カード下部：説明文エリア --- */
+.skill-card-body {
+  padding: 24px 20px;
+  flex-grow: 1;
+  background: var(--bg);
+}
+
+.skill-card-body p {
+  color: var(--text-sub);
+  font-size: .92rem;
+  line-height: 1.85;
+  margin: 0;
+}
+
+form {
+  display: grid;
+  gap: 16px;
+  max-width: 640px
+}
+
+label {
+  display: grid;
+  gap: 4px
+}
+
+input,
+textarea {
+  font: inherit;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  padding: 10px 12px;
+  border-radius: 0
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: var(--glow)
+}
+
+button.btn {
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  width: fit-content
+}
+
+footer {
+  padding: 32px 0;
+  background: var(--bg);
+  border-top: 1px solid var(--line)
+}
+
+footer .wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px
+}
+
+@media (prefers-reduced-motion:reduce) {
+  * {
+    animation: none !important;
+    transition: none !important
+  }
+}

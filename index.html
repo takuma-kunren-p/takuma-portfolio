@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ホーム | じっくり学ぶ。</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/js.js"></script>
+  <script src="js/translation.js" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="index.html"><i></i>TAKUMAのホームページ</a>
+      <nav class="nav" id="nav" aria-label="メイン">
+        <a href="index.html" data-i18n="nav.home" aria-current="page">ホーム</a>
+        <a href="contents.html" data-i18n="nav.contents">作品集</a>
+        <a href="about.html" data-i18n="nav.about">自己紹介</a>
+      </nav>
+      <div class="tools">
+        <button class="btn-sm" id="themeBtn" type="button" aria-label="Theme">LIGHT / DARK</button>
+        <button class="btn-sm" id="langBtn" type="button" aria-label="Language">EN</button>
+        <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false"
+          aria-controls="nav"><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <!-- 画面横幅いっぱいに広がるメインビジュアル領域 -->
+      <div class="hero-visual">
+        <!-- 【HTML側で画像を差し込み】 ※srcはご用意された画像ファイル名に合わせてください -->
+        <img class="hero-img" src="img/top.webp" alt="メインビジュアル" width="1920" height="1080">
+
+        <!-- 文字を読みやすくする薄いオーバーレイレイヤー -->
+        <div class="hero-overlay"></div>
+
+        <!-- テキストコンテンツ（中央揃えの幅を維持） -->
+        <div class="wrap hero-wrap">
+          <div class="hero-content">
+            <span class="status hud"><span class="lamp"></span><span data-i18n="hero.status">学習中</span></span>
+            <h1 class="hero-title">
+              <span data-i18n="hero.title1">じっくり</span>
+              <span data-i18n="hero.title2">学ぶ。</span>
+            </h1>
+            <p class="lead" data-i18n="hero.lead">TAKUMAが職業訓練を通じて学んできた、これまでの学習記録を紹介するホームページです。</p>
+            <div class="actions">
+              <a class="btn primary" href="contents.html" data-i18n="hero.c1">制作物ページへ</a>
+              <a class="btn" href="about.html" data-i18n="hero.c2">自己紹介ページへ</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="wrap">
+        <div class="sec-head"><span class="no">[ 01 ]</span>
+          <h2 data-i18n="home.h">学習内容</h2>
+        </div>
+        <div class="grid3">
+          <div class="panel plus"><span class="hud">[ A ]</span>
+            <h3 data-i18n="home.1h">officeソフト活用</h3>
+            <p data-i18n="home.1p">資格取得を通じて、Word、Excel、PowerPointなどのofficeソフトを習得してきました。</p>
+          </div>
+          <div class="panel plus"><span class="hud">[ B ]</span>
+            <h3 data-i18n="home.2h">Web制作</h3>
+            <p data-i18n="home.2p">資格取得を通じてHTML、CSSを自分で記述し、ホームページを制作することを学びました。</p>
+          </div>
+          <div class="panel plus"><span class="hud">[ C ]</span>
+            <h3 data-i18n="home.3h">生成AI活用</h3>
+            <p data-i18n="home.3p">複数の生成AIを活用し、文章やメディアコンテンツ生成、ホームページのバイブコーディングまで。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="wrap">
+        <div class="sec-head"><span class="no">[ 02 ]</span>
+          <h2 data-i18n="home.latest">最新の作品</h2>
+        </div>
+        <article class="work-large plus">
+          <img src="img/s/WSgame_s.webp" alt="最新作品" width="800" height="500">
+          <div class="body">
+            <span class="hud">PROJECT / WORLD STRANGER</span>
+            <h3 data-i18n="c.l.t">WORLD STRANGER公式ホームページ</h3>
+            <p data-i18n="c.l.p">架空のゲームの公式ホームページ。<br>「全ての作業をAIツール上で完結させる」がコンセプト。手動での修正を一切せずにAIへの指示のみで制作。</p>
+            <div class="tags"><span>HTML</span><span>Google AI studio</span></div>
+            <div class="actions"><a class="btn primary" href="contents.html" data-i18n="home.more">すべての制作物を見る</a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap hud"><span data-i18n="f.note">TAKUMAのホームページ</span><span>&copy; <span id="year"> - 2026</span>
+        TAKUMA's HP</span></div>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="君の足跡が世界を作る。世界踏破アクションRPG『WORLD STRANGER（ワールドストレンジャー）』公式サイト。">
+  <title>WORLD STRANGER（ワールドストレンジャー）公式サイト</title>
+
+  <!-- Google Fonts（欧文Cinzel・和文Shippori Mincho / Noto Sans JP） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@500;700&display=swap"
+    rel="stylesheet">
+
+  <!-- 機能別分割CSSの読み込み（順序重要：基本 ➔ UIパーツ ➔ アニメーション ➔ レスポンシブ） -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body class="page-top">
+
+  <!-- ==========================================================================
+       01. グローバルヘッダー
+       【役割】全ページ共通ナビゲーション・公式ロゴ・スクロール追従背景ガラス化
+       【連携】js/main.js (initHeaderScroll, initMobileNav), css/style.css
+       ========================================================================== -->
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <!-- 公式タイトルロゴリンク -->
+      <a href="index.html" class="site-logo">
+        <img src="assets/images/logo-title.webp" alt="WORLD STRANGER ワールドストレンジャー" class="site-logo-img">
+      </a>
+
+      <!-- モバイル用ハンバーガー開閉ボタン -->
+      <button class="nav-toggle" id="navToggle" aria-label="メニューを開閉する" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- メインナビゲーション -->
+      <nav class="site-nav" id="siteNav">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link current">TOP</a></li>
+          <li class="nav-item"><a href="world.html" class="nav-link">WORLD</a></li>
+          <li class="nav-item"><a href="adventurers.html" class="nav-link">ADVENTURERS</a></li>
+          <li class="nav-item"><a href="explore.html" class="nav-link">EXPLORE</a></li>
+          <li class="nav-item"><a href="information.html" class="nav-link">INFORMATION</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ==========================================================================
+         02. ヒーローセクション（ファーストビュー）
+         【役割】キービジュアル、中央巨大ロゴ、キャッチコピー、4色浮遊光、スクロール誘導
+         【連携】js/main.js (initFloatingLights), css/style.css, css/animations.css
+         ========================================================================== -->
+    <section class="hero-section" aria-label="メインビジュアル">
+      <div class="hero-bg">
+        <div class="hero-bg-image"></div>
+        <div class="hero-bg-overlay"></div>
+        <!-- 4色浮遊光パーティクルコンテナ（main.jsから動的生成） -->
+        <div class="floating-lights" id="floatingLights"></div>
+      </div>
+
+      <div class="hero-content">
+        <p class="hero-catch reveal-up">君の足跡が世界を作る。</p>
+        <h1 class="hero-title reveal-up" data-delay="100">
+          <span class="title-sub">世界踏破アクションRPG</span>
+          <img src="assets/images/logo-title.webp" alt="WORLD STRANGER" class="hero-title-logo-img">
+        </h1>
+        <p class="hero-intro reveal-up" data-delay="200">
+          観測されながらも踏破されぬ広大な大地へ。<br>
+          開拓の時代を駆ける、君だけの冒険が今始まる。
+        </p>
+        <div class="hero-actions reveal-up" data-delay="300">
+          <a href="#prologue" class="btn btn-primary">世界を知る <span class="arrow">↓</span></a>
+        </div>
+      </div>
+
+      <!-- 最下部スクロール誘導インジケーター -->
+      <div class="scroll-indicator" aria-hidden="true">
+        <span class="scroll-text">SCROLL</span>
+        <span class="scroll-bar"></span>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         03. プロローグセクション
+         【役割】物語の導入、王国布告（item_1）、詳細アコーディオン、大地図（item-map-diary）
+         【連携】js/interactions.js (initAccordionSystem), css/components.css
+         ========================================================================== -->
+    <section class="section prologue-section" id="prologue">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-subtitle">PROLOGUE</span>
+          <h2 class="section-title">空白の大地と、国王の布告</h2>
+        </div>
+
+        <div class="prologue-layout">
+          <div class="prologue-text reveal-on-scroll">
+            <p class="lead-para">
+              観測されながらも、誰一人踏破し得ない未踏の大地。<br>
+              地図の先に眠る伝説――「世界の先端」を求め、開拓の時代が幕を開ける。
+            </p>
+
+            <!-- 王国布告カード（バナー画像と布告文） -->
+            <blockquote class="royal-decree royal-decree-with-img">
+              <div class="decree-with-banner">
+                <img src="assets/images/item_1.webp" alt="王国の封蝋と布告状" class="decree-thumb-img">
+                <div>
+                  <div class="decree-seal">王室印</div>
+                  <h3 class="decree-title">王国布告</h3>
+                  <p class="decree-body">
+                    「国内外より、出自、種族を問わず広く冒険者を募る。<br>
+                    目的は世界の開拓、最終目標は世界の先端の実証と踏破。<br>
+                    報酬はその冒険で手に入れた土地、もの、そのすべてと、並び立つ者のない栄誉である。」
+                  </p>
+                </div>
+              </div>
+            </blockquote>
+
+            <!-- 詳細解説折りたたみアコーディオン -->
+            <div class="accordion-item">
+              <button class="accordion-trigger" type="button" aria-expanded="false">
+                <span>伝承と冒険者日誌の背景を読む</span>
+                <span class="accordion-icon">+</span>
+              </button>
+              <div class="accordion-content">
+                <p>
+                  科学と魔法の発展により遠方の大地が観測されるも、過酷な気候や強大なモンスター、敵対的な「魔族」が進出を阻んできました。
+                </p>
+                <p>
+                  神々の国か、破滅の地か、魔物の王国か――生涯を賭けて挑み、志半ばで倒れた伝説の冒険者が国王へ遺した一冊の「冒険日誌」が、この大規模な開拓の口火を切った。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 冒険日誌と大地図の魔導フレーム枠 -->
+          <div class="prologue-visual reveal-on-scroll">
+            <div class="visual-card antique-frame">
+              <div class="map-art-frame">
+                <img src="assets/images/item-map-diary.webp" alt="伝説の冒険者が遺した大地図と日誌">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         04. ゲームコンセプト（サイクル）セクション
+         【役割】探索・開拓・準備・遠征の4大コアループ（ステップ別固有カラー）
+         【連携】css/components.css (03-A サイクルステップ別カラー)
+         ========================================================================== -->
+    <section class="section cycle-section">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-subtitle">GAME CONCEPT</span>
+          <h2 class="section-title">歩み、拓き、その先へ至る循環</h2>
+          <p class="section-desc">開拓で世界を変え、変わった世界を足場に、さらに過酷な未踏域へ。</p>
+        </div>
+
+        <div class="cycle-grid">
+          <!-- STEP 01: 探索（スカイブルー） -->
+          <div class="cycle-card reveal-on-scroll" data-step="01">
+            <div class="card-icon-wrap">
+              <span class="step-num">01</span>
+              <span class="step-symbol">DISCOVER</span>
+            </div>
+            <h3 class="card-heading">未踏の大地を探索</h3>
+            <p class="card-text">
+              危険に満ちた未知の気候帯へ進み、希少素材や古代遺跡、孤立した集落を発見する。
+            </p>
+          </div>
+
+          <!-- STEP 02: 開拓（フレッシュグリーン） -->
+          <div class="cycle-card reveal-on-scroll" data-step="02">
+            <div class="card-icon-wrap">
+              <span class="step-num">02</span>
+              <span class="step-symbol">CULTIVATE</span>
+            </div>
+            <h3 class="card-heading">拠点を育てる</h3>
+            <p class="card-text">
+              持ち帰った素材と現地住民との交流で、キャンプを安全な生産・補給基地へ発展させる。
+            </p>
+          </div>
+
+          <!-- STEP 03: 準備（ウォームアンバー） -->
+          <div class="cycle-card reveal-on-scroll" data-step="03">
+            <div class="card-icon-wrap">
+              <span class="step-num">03</span>
+              <span class="step-symbol">PREPARE</span>
+            </div>
+            <h3 class="card-heading">生活が力になる</h3>
+            <p class="card-text">
+              良質なベッドでの休息、耐性を補う温かな料理、鍛えた武具が次の遠征の足腰となる。
+            </p>
+          </div>
+
+          <!-- STEP 04: 遠征（ミスティックパープル） -->
+          <div class="cycle-card reveal-on-scroll" data-step="04">
+            <div class="card-icon-wrap">
+              <span class="step-num">04</span>
+              <span class="step-symbol">ADVANCE</span>
+            </div>
+            <h3 class="card-heading">さらに遥かな極地へ</h3>
+            <p class="card-text">
+              整えた拠点を足場に、前回の遠征では耐えられなかった未踏の極限領域を踏破する。
+            </p>
+          </div>
+        </div>
+
+        <div class="section-cta text-center reveal-on-scroll">
+          <a href="explore.html" class="btn btn-secondary">ゲームシステムの詳細を見る</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         05. 五大地域セクション（カルーセルスライダー）
+         【役割】大型パノラマカード、左右アロー操作、属性別発光カラー（青・緑・黄・橙・赤）
+         【連携】js/interactions.js (initRegionCarousel), css/components.css (04)
+         ========================================================================== -->
+    <section class="section regions-section">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-subtitle">REGIONS</span>
+          <h2 class="section-title">待ち受ける五つの未知なる大地</h2>
+          <p class="section-desc">左右にスライドして、開拓の舞台となる五大領域を確かめよう。</p>
+        </div>
+
+        <div class="regions-carousel-container reveal-on-scroll">
+          <div class="regions-grid carousel-track" id="regionsTrack">
+            <!-- 1. 草原エリア（青発光） -->
+            <article class="region-card card-grass">
+              <div class="region-bg-art"></div>
+              <div class="region-content">
+                <span class="region-tag">農業・牧畜・料理</span>
+                <h3 class="region-name">草原エリア（青）</h3>
+                <p class="region-desc">農地や牧場を開墾し、遠征の基盤となる食料を安定確保する平穏な大地。</p>
+              </div>
+            </article>
+
+            <!-- 2. 森林エリア（濃緑発光） -->
+            <article class="region-card card-forest">
+              <div class="region-bg-art"></div>
+              <div class="region-content">
+                <span class="region-tag">木材・薬草・精霊</span>
+                <h3 class="region-name">森林エリア（濃緑）</h3>
+                <p class="region-desc">自然由来の魔法素材と巨木が息づく樹海。エルフとの交流が新たな力を開く。</p>
+              </div>
+            </article>
+
+            <!-- 3. 山岳エリア（黄発光） -->
+            <article class="region-card card-mountain">
+              <div class="region-bg-art"></div>
+              <div class="region-content">
+                <span class="region-tag">石材・防衛・峠道</span>
+                <h3 class="region-name">山岳エリア（黄）</h3>
+                <p class="region-desc">強固な石材で要塞拠点を築き、険峰を貫くショートカットルートを切り拓く。</p>
+              </div>
+            </article>
+
+            <!-- 4. 鉱山エリア（橙発光） -->
+            <article class="region-card card-mine">
+              <div class="region-bg-art"></div>
+              <div class="region-content">
+                <span class="region-tag">鉱石・精錬・鍛冶</span>
+                <h3 class="region-name">鉱山エリア（橙）</h3>
+                <p class="region-desc">地底に眠る鉱脈とドワーフの技術。極限に耐えうる屈強な上位装備を鍛造する。</p>
+              </div>
+            </article>
+
+            <!-- 5. 火山エリア（赤発光） -->
+            <article class="region-card card-volcano">
+              <div class="region-bg-art"></div>
+              <div class="region-content">
+                <span class="region-tag">耐熱・希少素材</span>
+                <h3 class="region-name">火山エリア（赤）</h3>
+                <p class="region-desc">高熱がすべてを拒む極限領域。十分な適応準備を揃えた者だけが最高峰の素材を得る。</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- カルーセル左右アローボタン -->
+          <div class="carousel-controls">
+            <button class="carousel-btn" id="regionPrev" aria-label="前の地域へ">‹</button>
+            <button class="carousel-btn" id="regionNext" aria-label="次の地域へ">›</button>
+          </div>
+        </div>
+
+        <div class="section-cta text-center reveal-on-scroll">
+          <a href="world.html" class="btn btn-secondary">世界観と地域を詳しく見る</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         06. 冒険者プレビューセクション
+         【役割】3大プリセットキャラクターのカード型ピックアップ紹介
+         【連携】css/components.css (05 キャラクタープレビュー)
+         ========================================================================== -->
+    <section class="section adventurers-section">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-subtitle">ADVENTURERS</span>
+          <h2 class="section-title">物語を刻む、君自身の姿</h2>
+          <p class="section-desc">種族、生い立ち、得意分野。すべての選択が冒険の可能性を切り拓く。</p>
+        </div>
+
+        <div class="characters-preview reveal-on-scroll">
+          <!-- プリセット01：ファイター -->
+          <div class="char-card">
+            <div class="char-badge">PRESET 01</div>
+            <div class="char-avatar">
+              <img src="assets/images/char-fighter.webp" alt="村育ちの若いファイター" class="char-avatar-img">
+            </div>
+            <div class="char-info">
+              <span class="char-role">FIGHTER / 牧畜・開拓</span>
+              <h3 class="char-name">村育ちの若いファイター</h3>
+              <p class="char-summary">
+                強靭な身体能力と地形踏破力を誇る青年。家畜の世話で培ったモンスター調教の技に長ける。
+              </p>
+            </div>
+          </div>
+
+          <!-- プリセット02：魔女 -->
+          <div class="char-card">
+            <div class="char-badge">PRESET 02</div>
+            <div class="char-avatar">
+              <img src="assets/images/char-witch.webp" alt="王都育ちの若い魔女" class="char-avatar-img">
+            </div>
+            <div class="char-info">
+              <span class="char-role">WITCHCRAFT / 魔法学校首席</span>
+              <h3 class="char-name">王都育ちの若い魔女</h3>
+              <p class="char-summary">
+                近接戦は不慣れだが、抜群の知性と魔導適性を備える。交渉術と経験値獲得ボーナスで急成長する。
+              </p>
+            </div>
+          </div>
+
+          <!-- プリセット03：斥候 -->
+          <div class="char-card">
+            <div class="char-badge">PRESET 03</div>
+            <div class="char-avatar">
+              <img src="assets/images/char-scout.webp" alt="ベテランの老練な斥候" class="char-avatar-img">
+            </div>
+            <div class="char-info">
+              <span class="char-role">SCOUT / スラム出身の斥候</span>
+              <h3 class="char-name">ベテランの老練な斥候</h3>
+              <p class="char-summary">
+                数々の遠征を生き抜いた熟練者。直接の白兵戦を避け、罠解除や道具作成で隊を安全に先導する。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-cta text-center reveal-on-scroll">
+          <a href="adventurers.html" class="btn btn-secondary">キャラクター作成の詳細を見る</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         07. 最新情報（NEWS & TOPICS）
+         【役割】直近のお知らせ3件のピックアップ表示
+         【連携】css/components.css (06 ニュースセクション)
+         ========================================================================== -->
+    <section class="section news-section">
+      <div class="container narrow">
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-subtitle">NEWS & TOPICS</span>
+          <h2 class="section-title">最新情報</h2>
+        </div>
+
+        <ul class="news-list reveal-on-scroll">
+          <li class="news-item">
+            <time class="news-date" datetime="2026-10-14">2026.10.14</time>
+            <span class="news-badge info">INFO</span>
+            <a href="information.html" class="news-link">『WORLD STRANGER』ティザー公式サイトを公開いたしました。</a>
+          </li>
+          <li class="news-item">
+            <time class="news-date" datetime="2026-10-14">2026.10.14</time>
+            <span class="news-badge update">WORLD</span>
+            <a href="world.html" class="news-link">世界観紹介および五大開拓地域（草原・森林・山岳・鉱山・火山）の情報を更新。</a>
+          </li>
+          <li class="news-item">
+            <time class="news-date" datetime="2026-10-14">2026.10.14</time>
+            <span class="news-badge system">SYSTEM</span>
+            <a href="explore.html" class="news-link">「探索と開拓の循環」「休息・食事システム」のコンセプト概要を掲載しました。</a>
+          </li>
+        </ul>
+
+        <div class="section-cta text-center reveal-on-scroll">
+          <a href="information.html" class="btn btn-text">お知らせ一覧へ <span>→</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       08. サイトフッター
+       【役割】全ページ共通最下部・公式ロゴ画像・サイトマップ・免責・著作権表示
+       【連携】css/style.css (07 サイトフッター)
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <img src="assets/images/logo-title.webp" alt="WORLD STRANGER" class="footer-logo-img">
+          </a>
+          <p class="footer-catch">君の足跡が世界を作る。</p>
+        </div>
+
+        <nav class="footer-nav">
+          <ul class="footer-nav-list">
+            <li><a href="index.html">TOP</a></li>
+            <li><a href="world.html">WORLD</a></li>
+            <li><a href="adventurers.html">ADVENTURERS</a></li>
+            <li><a href="explore.html">EXPLORE</a></li>
+            <li><a href="information.html">INFORMATION</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-disclaimer">
+          ※当サイトは架空のゲーム作品『WORLD STRANGER』の企画・プロモーション用Webサイトです。実在の人物・団体・商品とは一切関係ありません。
+        </p>
+        <p class="footer-copyright">
+          &copy; 2026 WORLD STRANGER Project. All Rights Reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 分割JSスクリプトの読み込み（基本制御 ➔ ユーザー操作ギミック） -->
+  <script src="js/main.js"></script>
+  <script src="js/interactions.js"></script>
+</body>
+
+</html>

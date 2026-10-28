@@ -1,0 +1,123 @@
+/* レスポンシブ */
+
+/* --- 1024px以下（タブレット・中間サイズ） --- */
+@media (max-width:1024px) {
+  .grid3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .work-large,
+  .work-large.reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .work-large img,
+  .work-large.reverse img {
+    order: 1;
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 1px solid var(--line);
+    min-height: 0;
+    aspect-ratio: 16/10;
+  }
+
+  .work-large .body,
+  .work-large.reverse .body {
+    order: 2;
+  }
+}
+
+/* --- 720px以下（スマートフォン） --- */
+@media (max-width:720px) {
+  .grid3 {
+    grid-template-columns: 1fr;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--accent);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 12px 24px;
+    display: none;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .nav a {
+    padding: 12px 8px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  /* ↓ 余白を 0 にしてヘッダー直下に密着させます */
+  .hero {
+    padding: 0;
+  }
+
+  section.block {
+    padding: 56px 0;
+  }
+
+  .profile {
+    grid-template-columns: 1fr;
+  }
+
+  .profile img {
+    max-width: 240px;
+  }
+
+  body {
+    background-size: 64px 64px;
+  }
+
+  .hero-content {
+    padding: 36px 20px;
+  }
+
+  .hero-visual {
+    height: auto;
+    min-height: 520px;
+    padding: 48px 0; /* 写真内のコンテンツ余白を調整 */
+  }
+
+  .hero-overlay {
+    background: rgba(255, 250, 250, 0.75);
+  }
+
+  :root[data-theme="dark"] .hero-overlay {
+    background: rgba(32, 55, 68, 0.8);
+  }
+}
+
+/* --- 420px以下（小さめのスマートフォン） --- */
+@media (max-width:420px) {
+  .site-header .wrap {
+    gap: 8px;
+  }
+
+  .logo {
+    font-size: .78rem;
+    letter-spacing: 0;
+  }
+
+  .tools {
+    gap: 4px;
+    flex-shrink: 0;
+  }
+
+  .btn-sm {
+    padding: 5px 6px;
+    font-size: .68rem;
+  }
+}

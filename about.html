@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>自己紹介 | TAKUMAのホームページ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/js.js"></script>
+  <script src="js/translation.js" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="index.html"><i></i>TAKUMAのホームページ</a>
+      <nav class="nav" id="nav" aria-label="メイン">
+        <a href="index.html" data-i18n="nav.home">ホーム</a>
+        <a href="contents.html" data-i18n="nav.contents">作品集</a>
+        <a href="about.html" data-i18n="nav.about" aria-current="page">自己紹介</a>
+      </nav>
+      <div class="tools">
+        <button class="btn-sm" id="themeBtn" type="button" aria-label="Theme">LIGHT / DARK</button>
+        <button class="btn-sm" id="langBtn" type="button" aria-label="Language">EN</button>
+        <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false"
+          aria-controls="nav"><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="block">
+      <div class="wrap">
+        <div class="sec-head"><span class="no">[ 01 ]</span>
+          <h1 style="font-size:1.7rem;font-weight:900" data-i18n="a.h1">プロフィール</h1>
+        </div>
+        <div class="profile">
+          <img class="plus" src="img/profile.webp" alt="プロフィール写真" width="280" height="280">
+          <div class="panel plus">
+            <h2 data-i18n="a.name">TAKUMA</h2>
+            <p data-i18n="a.bio">
+              幼少期からパソコンに慣れ親しみながら育つ。学生時代にＩＴ技術を学ぶも、うつ病を発症し長い療養生活を送る。社会復帰し数年間、正社員として働いたのち、転職活動の傍ら職業訓練に通っています。<br>趣味はゲームやネットサーフィン、RPGからアクション、シミュレーションまで幅広く遊びます。<br>
+              専攻分野はIT技術。調べ物をして学習するのが得意です。<br>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- about.html の スキル セクション -->
+    <section class="block">
+      <div class="wrap">
+        <div class="sec-head"><span class="no">[ 02 ]</span>
+          <h2 data-i18n="a.h2">スキル</h2>
+        </div>
+
+        <!-- 横並びのカードグリッド -->
+        <div class="grid3">
+          <!-- スキルカード 1 -->
+          <div class="skill-card plus">
+            <div class="skill-card-head">
+              <h3 data-i18n="a.s1.t">officeソフト</h3>
+            </div>
+            <div class="skill-card-body">
+              <p data-i18n="a.s1.d">
+                ・ｺﾝﾋﾟｭｰﾀｻｰﾋﾞｽ技能試験　表計算部門　２級表計算技士　取得<br>・ｺﾝﾋﾟｭｰﾀｻｰﾋﾞｽ技能試験　表計算部門　２級ﾜｰﾌﾟﾛ技士　取得<br>基本的な文章製作、関数利用などを学んできました。
+              </p>
+            </div>
+          </div>
+
+          <!-- スキルカード 2 -->
+          <div class="skill-card plus">
+            <div class="skill-card-head">
+              <h3 data-i18n="a.s2.t">Web制作</h3>
+            </div>
+            <div class="skill-card-body">
+              <p data-i18n="a.s2.d">・Webクリエイター能力認定試験　エキスパート級<br>・HTML、CSSの編集を学びました<br>・Java scriptなど個人での学習を継続中。</p>
+            </div>
+          </div>
+
+          <!-- スキルカード 3 -->
+          <div class="skill-card plus">
+            <div class="skill-card-head">
+              <h3 data-i18n="a.s3.t">生成AI活用</h3>
+            </div>
+            <div class="skill-card-body">
+              <p data-i18n="a.s3.d">
+                ・文章製作、メディアコンテンツの生成、ホームページ制作などを学習<br>・全てをＡＩに任せきりにするのではなく、人の手とＡＩを併用することを意識しています。<br>・当ホームページもベースをＡＩで制作、人の手で装飾や文章を整えて制作しています。
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- about.html の お問い合わせセクションの sec-head 部分 -->
+    <section class="block">
+      <div class="wrap">
+        <div class="sec-head"><span class="no">[ 03 ]</span>
+          <h2 data-i18n="a.h3">お問い合わせ</h2>
+        </div>
+        <form id="contactForm">
+          <label><span data-i18n="a.n">お名前</span><input name="name" required autocomplete="name"></label>
+          <label><span data-i18n="a.e">メールアドレス</span><input name="email" type="email" required
+              autocomplete="email"></label>
+          <label><span data-i18n="a.m">メッセージ</span><textarea name="message" rows="5" required></textarea></label>
+          <button class="btn primary" type="submit" data-i18n="a.send">メールで送る</button>
+          <p class="hud" data-i18n="a.mailnote">送信すると、お使いのメールアプリが開きます。</p>
+        </form>
+      </div>
+    </section>
+  </main> <!-- ← ここが抜けていたため補完しました -->
+
+  <footer>
+    <div class="wrap hud"><span data-i18n="f.note">TAKUMAのホームページ</span><span>&copy; <span id="year">2026</span>
+        TAKUMA's HP</span></div>
+  </footer>
+</body>
+
+</html>

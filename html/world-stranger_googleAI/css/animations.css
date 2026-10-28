@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   01. スクロール連動フェードイン（Intersection Observer連携）
+   【役割】画面内に入った要素を下から滑らかにフェードイン浮遊表示
+   【連携】js/main.js の IntersectionObserver から .is-visible が付与される
+   ========================================================================== */
+.reveal-up,
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+/* 画面内に到達したときに発火する表示状態 */
+.reveal-up.is-visible,
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   02. アニメーションキーフレーム定義 (@keyframes)
+   【役割】サイト各所の動的演出（光の粒子・スクロールバー・タブフェード）を定義
+   ========================================================================== */
+
+/* 1. 浮遊光パーティクルのゆらぎ演出
+   【使用箇所】TOP・下層ファーストビューの .light-dot */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.8);
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-60px) translateX(20px) scale(1.3);
+    opacity: 0.3;
+  }
+}
+
+/* 2. スクロール誘導ラインの流下演出
+   【使用箇所】TOPファーストビューの .scroll-bar::after */
+@keyframes scrollDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  50% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(200%);
+  }
+}
+
+/* 3. パネル切り替え時の滑らかな浮き上がり
+   【使用箇所】WORLD・ADVENTURERSのタブ詳細パネル、アコーディオン展開 */
+@keyframes fadeInPanel {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 4. 背景雲レイヤーの緩やかな水平移動
+   【使用箇所】旧ヒーロー背景演出用（必要に応じて再利用可能） */
+@keyframes cloudDrift {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ==========================================================================
+   03. アクセシビリティ（prefers-reduced-motion）
+   【役割】OSで「視覚効果を減らす」が設定されているユーザーへの配慮
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* フェードイン待ちを解除し最初から表示 */
+  .reveal-up,
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

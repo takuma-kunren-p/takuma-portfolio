@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="『WORLD STRANGER（ワールドストレンジャー）』の世界観・地域・伝承。広大な未踏の大地と「世界の先端」の謎に迫る。">
+  <title>WORLD（世界観） | WORLD STRANGER 公式サイト</title>
+
+  <!-- Google Fonts（欧文Cinzel・和文Shippori Mincho / Noto Sans JP） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@500;700&display=swap"
+    rel="stylesheet">
+
+  <!-- 機能別分割CSSの読み込み -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body class="page-world">
+
+  <!-- ==========================================================================
+       01. グローバルヘッダー
+       【役割】全ページ共通ナビゲーション・公式ロゴ・スクロール追従背景ガラス化
+       【連携】js/main.js, css/style.css
+       ========================================================================== -->
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">
+        <img src="assets/images/logo-title.webp" alt="WORLD STRANGER" class="site-logo-img">
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="メニューを開閉する" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link">TOP</a></li>
+          <li class="nav-item"><a href="world.html" class="nav-link current">WORLD</a></li>
+          <li class="nav-item"><a href="adventurers.html" class="nav-link">ADVENTURERS</a></li>
+          <li class="nav-item"><a href="explore.html" class="nav-link">EXPLORE</a></li>
+          <li class="nav-item"><a href="information.html" class="nav-link">INFORMATION</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ==========================================================================
+         02. シネマティックヘッダー（ファーストビュー）
+         【役割】大地図背景（item-map-diary）、4色浮遊光、タイトル発光、五大属性オーブ
+         【連携】js/main.js (initFloatingLights), css/style.css (05)
+         ========================================================================== -->
+    <section class="page-hero">
+      <div class="floating-lights" id="floatingLights"></div>
+
+      <div class="container text-center">
+        <div class="page-hero-content">
+          <div class="page-hero-badge reveal-up">
+            <span class="badge-icon">✦</span>
+            <span>UNEXPLORED REALM</span>
+          </div>
+
+          <h1 class="page-title reveal-up" data-delay="100">WORLD</h1>
+
+          <p class="page-lead reveal-up" data-delay="200">
+            観測されながらも踏破されぬ空白の大地。<br>
+            未知の生態系、多様な種族、そして世界の果てに眠る伝承。
+          </p>
+
+          <!-- 五大属性オーブバー（青・緑・黄・橙・赤） -->
+          <div class="element-orb-bar reveal-up" data-delay="300">
+            <span class="orb-dot blue" title="草原（青）"></span>
+            <span class="orb-dot green" title="森林（濃緑）"></span>
+            <span class="orb-dot yellow" title="山岳（黄）"></span>
+            <span class="orb-dot orange" title="鉱山（橙）"></span>
+            <span class="orb-dot red" title="火山（赤）"></span>
+            <span class="orb-bar-label">FIVE REALMS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         03. 人類の領域と多様な種族 & 未踏域の二大脅威
+         【役割】世界観解説、NPC立ち絵（エルフ・ドワーフ）、敵対魔族・原生獣カード
+         【連携】js/interactions.js (initAccordionSystem), css/components.css (07)
+         ========================================================================== -->
+    <section class="section world-intro-section">
+      <div class="container">
+        <div class="intro-grid">
+          <!-- 左カラム：世界観解説 & アコーディオン -->
+          <div class="intro-content reveal-on-scroll">
+            <span class="section-subtitle">THE KNOWN & UNKNOWN</span>
+            <h2 class="section-title">観測された大地と、<br>空白の地図</h2>
+
+            <p class="intro-text">
+              魔法と科学の発展は、遠方に広大な大陸が続くことを証明した。<br>
+              だが、過酷な極限気候と凶暴な生態系、そして敵対的な「魔族」が侵入を阻み、地図の内側は未だ誰の足跡も刻まれていない。
+            </p>
+
+            <div class="highlight-box">
+              <h3 class="highlight-title">世界観の核</h3>
+              <p class="highlight-desc">
+                観測記録はあっても、踏破者は皆無。<br>
+                既存の知識は通用せず、現地での観察と判断が生死を分かつ。
+              </p>
+            </div>
+
+            <!-- 背景設定折りたたみアコーディオン -->
+            <div class="accordion-item">
+              <button class="accordion-trigger" type="button" aria-expanded="false">
+                <span>魔法・科学と未踏領域の境界について読む</span>
+                <span class="accordion-icon">+</span>
+              </button>
+              <div class="accordion-content">
+                <p>
+                  望遠魔導具によって遠隔地の地形は部分的に把握されているものの、猛烈な磁場嵐や瘴気、強大なモンスターの群れが遠征隊を壊滅させてきました。
+                </p>
+                <p>
+                  文明圏の外側に眠る未知の資源や太古の遺産は、人類の生活を一変させる可能性を秘めていますが、安全を保障する術は現地での直接観察以外に存在しません。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 右カラム：種族紹介（エルフ・ドワーフのNPC立ち絵入り） -->
+          <div class="intro-visual reveal-on-scroll">
+            <div class="spec-card">
+              <h3 class="spec-card-title">共存する多様な種族</h3>
+              <p class="spec-card-summary">
+                異なる文化と専門技術を持ち、開拓を共にする主要種族。
+              </p>
+              <ul class="race-list">
+                <!-- 人間（青系タグ） -->
+                <li class="race-item">
+                  <div class="race-tag" style="background:#E0F2FE; color:#0369A1; border:1px solid #38BDF8;">HUMAN</div>
+                  <div class="race-info">
+                    <h4>人間</h4>
+                    <p>高い適応力と旺盛な開拓精神で、新天地の先頭に立つ多数派種族。</p>
+                  </div>
+                </li>
+
+                <!-- エルフ（緑系タグ & npc-elf_2.webp 立ち絵） -->
+                <li class="race-item-with-npc">
+                  <div class="race-npc-thumb">
+                    <img src="assets/images/npc-elf_2.webp" alt="エルフNPC" class="race-npc-img">
+                  </div>
+                  <div class="race-info">
+                    <span class="race-tag" style="background:#D1FAE5; color:#047857; border:1px solid #10B981; margin-bottom:4px; display:inline-block;">ELF</span>
+                    <h4>エルフ / ウッドエルフ</h4>
+                    <p>自然界の理と古代魔導に精通。原生林の調薬技術と樹木加工を司る。</p>
+                  </div>
+                </li>
+
+                <!-- ドワーフ（橙系タグ & npc-dwar_2.webp 立ち絵） -->
+                <li class="race-item-with-npc">
+                  <div class="race-npc-thumb">
+                    <img src="assets/images/npc-dwar_2.webp" alt="ドワーフNPC" class="race-npc-img">
+                  </div>
+                  <div class="race-info">
+                    <span class="race-tag" style="background:#FEF3C7; color:#B45309; border:1px solid #F59E0B; margin-bottom:4px; display:inline-block;">DWARF</span>
+                    <h4>ドワーフ</h4>
+                    <p>堅牢な工房を率いる鍛冶の名匠。過酷な環境を切り開く採掘技術を保持。</p>
+                  </div>
+                </li>
+
+                <!-- マーメイド（水色系タグ） -->
+                <li class="race-item">
+                  <div class="race-tag" style="background:#CFFAFE; color:#0E7490; border:1px solid #06B6D4;">MERMAID</div>
+                  <div class="race-info">
+                    <h4>マーメイド</h4>
+                    <p>未知の海域や水路を掌握する水棲種族。水流の知識と希少な海中素材を提供。</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 未踏域の二大脅威（魔族 & 原生モンスター画像カード） -->
+        <div class="threats-section reveal-on-scroll" style="margin-top: 60px;">
+          <div class="text-center" style="margin-bottom: 24px;">
+            <span class="section-subtitle">UNMAPPED THREATS</span>
+            <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--color-primary, #0F1923);">
+              人類の進出を阻む二大障壁</h3>
+          </div>
+
+          <div class="threats-grid">
+            <!-- 脅威1: 魔族（creature-fiend.webp 適用 / 紫発光） -->
+            <div class="threat-card fiend">
+              <div class="threat-img-wrap">
+                <span class="threat-badge fiend">HOSTILE RACE</span>
+                <img src="assets/images/creature-fiend.webp" alt="敵対的異種族「魔族」" class="threat-img">
+              </div>
+              <div class="threat-body">
+                <h4 class="threat-title" style="color: #7E22CE;">敵対的異種族「魔族」</h4>
+                <p class="threat-desc">
+                  暗黒の魔力を操り、未踏域の奥深くに潜む人類排斥の急先鋒。独自の階級社会と強力な武装を持ち、人類の開拓隊を執拗に殲滅せんと立ちはだかる。
+                </p>
+              </div>
+            </div>
+
+            <!-- 脅威2: 原生モンスター（creature-beast.webp 適用 / 青発光） -->
+            <div class="threat-card beast">
+              <div class="threat-img-wrap">
+                <span class="threat-badge beast">PRIMITIVE BEAST</span>
+                <img src="assets/images/creature-beast.webp" alt="未踏域の原生モンスター" class="threat-img">
+              </div>
+              <div class="threat-body">
+                <h4 class="threat-title" style="color: #0284C7;">未踏域の原生モンスター</h4>
+                <p class="threat-desc">
+                  文明圏では見られない特殊な環境に適応した凶暴な獣たち。強靭な外殻や属性攻撃を繰り出し、侵入者を容赦なく襲撃するが、倒せば極めて希少な素材をもたらす。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         04. 謎の伝承「世界の先端」
+         【役割】3大伝承発光カード（金・紫・赤）、冒険日誌カード（item-map-diary）
+         【連携】css/components.css (07 三代伝承)
+         ========================================================================== -->
+    <section class="section edge-section">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-subtitle">THE EDGE OF THE WORLD</span>
+          <h2 class="section-title">語り継がれる三つの伝説</h2>
+          <p class="section-desc">「世界の先端」を誰ひとり直接目にした者はいない。伝承のどれが真実なのか。</p>
+        </div>
+
+        <div class="legends-grid reveal-on-scroll">
+          <!-- 伝説1：神々の国（ゴールド発光） -->
+          <div class="legend-card" style="border-top: 3px solid #FACC15;">
+            <div class="legend-icon" style="color:#FACC15;">✦</div>
+            <span class="legend-type" style="color:#FEF08A;">伝承其の一</span>
+            <h3 class="legend-name">神々の国</h3>
+            <p class="legend-desc">
+              永久に枯れぬ豊かな大地が広がり、高潔なる神々が住まう安息の聖域。人知を超えた叡智と恵みが授けられるとされる。
+            </p>
+          </div>
+
+          <!-- 伝説2：破滅の地（ミスティックパープル発光） -->
+          <div class="legend-card" style="border-top: 3px solid #C084FC;">
+            <div class="legend-icon" style="color:#C084FC;">✕</div>
+            <span class="legend-type" style="color:#E9D5FF;">伝承其の二</span>
+            <h3 class="legend-name">破滅の地</h3>
+            <p class="legend-desc">
+              生命が息づく余地のない崩壊の果て。荒れ狂う嵐と虚無が広がり、足を踏み入れた探求者を等しく破滅へと呑み込むとされる。
+            </p>
+          </div>
+
+          <!-- 伝説3：魔物の王国（クリムゾンレッド発光） -->
+          <div class="legend-card" style="border-top: 3px solid #F87171;">
+            <div class="legend-icon" style="color:#F87171;">❖</div>
+            <span class="legend-type" style="color:#FECACA;">伝承其の三</span>
+            <h3 class="legend-name">魔物の王国</h3>
+            <p class="legend-desc">
+              人類を憎悪するモンスターの王が君臨する領域。大軍団を従え、人類を滅ぼすべく力を蓄えていると囁かれる。
+            </p>
+          </div>
+        </div>
+
+        <!-- 冒険日誌カード -->
+        <div class="diary-note-card reveal-on-scroll">
+          <div class="decree-with-banner">
+            <img src="assets/images/item-map-diary.webp" alt="老練な伝説の冒険者が遺した日誌" class="decree-thumb-img">
+            <div>
+              <div class="diary-header">
+                <span class="diary-label">冒険日誌の遺言（国王献上品）</span>
+                <span class="diary-author">ある老練な冒険者の手記より</span>
+              </div>
+              <p class="diary-text">
+                「我が命尽きるとも、世界の先端の言葉は嘘ではない。この大陸の先、まだ見ぬ水平線の彼方に真実がある。我が日誌を王へ託す――」
+              </p>
+              <p class="diary-footer">※「世界の先端」の正体はあえて確定しておらず、真実は君の足跡によってのみ実証される。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         05. 五大開拓領域（インタラクティブタブ図鑑）
+         【役割】属性別タブボタン（青・緑・黄・橙・赤）、地域詳細パネル
+         【連携】js/interactions.js (initTabSystem), css/components.css (07)
+         ========================================================================== -->
+    <section class="section regions-detail-section" id="regions">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-subtitle">REGIONAL IDENTITY</span>
+          <h2 class="section-title">五つの開拓領域と獲得できる恵み</h2>
+          <p class="section-desc">ある地域で得た資源や技術が、別の過酷な大地を踏破する足がかりとなる。</p>
+        </div>
+
+        <!-- 地域切り替えタブナビゲーション -->
+        <div class="region-tabs-nav reveal-on-scroll" role="tablist" aria-label="開拓地域の切り替え">
+          <button class="region-tab-btn active" role="tab" aria-selected="true" aria-controls="panel-grass" id="tab-grass">
+            <span class="tab-en" style="color:#38BDF8;">GRASSLAND</span>
+            <span class="tab-jp">草原エリア（青）</span>
+          </button>
+          <button class="region-tab-btn" role="tab" aria-selected="false" aria-controls="panel-forest" id="tab-forest">
+            <span class="tab-en" style="color:#10B981;">FOREST</span>
+            <span class="tab-jp">森林エリア（濃緑）</span>
+          </button>
+          <button class="region-tab-btn" role="tab" aria-selected="false" aria-controls="panel-mountain" id="tab-mountain">
+            <span class="tab-en" style="color:#FACC15;">MOUNTAIN</span>
+            <span class="tab-jp">山岳エリア（黄）</span>
+          </button>
+          <button class="region-tab-btn" role="tab" aria-selected="false" aria-controls="panel-mine" id="tab-mine">
+            <span class="tab-en" style="color:#FB923C;">MINE</span>
+            <span class="tab-jp">鉱山エリア（橙）</span>
+          </button>
+          <button class="region-tab-btn" role="tab" aria-selected="false" aria-controls="panel-volcano" id="tab-volcano">
+            <span class="tab-en" style="color:#F87171;">VOLCANO</span>
+            <span class="tab-jp">火山エリア（赤）</span>
+          </button>
+        </div>
+
+        <!-- 地域詳細パネル群 -->
+        <div class="region-panels-container reveal-on-scroll">
+          <!-- 1. 草原エリア（青） -->
+          <div class="region-detail-panel active" id="panel-grass" role="tabpanel" aria-labelledby="tab-grass">
+            <div class="panel-layout">
+              <div class="panel-visual panel-visual-grass">
+                <div class="panel-tag" style="border-color:#38BDF8; color:#7DD3FC;">REGION 01</div>
+                <div class="panel-visual-inner">
+                  <span class="panel-badge">生命の原点</span>
+                  <h3 class="panel-visual-title">草原エリア</h3>
+                  <p class="panel-visual-sub">平穏な風と肥沃な農牧地帯</p>
+                </div>
+              </div>
+              <div class="panel-body">
+                <div class="panel-theme-badge" style="color:#0284C7;">特徴：農業・牧畜・滋養料理・交易</div>
+                <h4 class="panel-heading">遠征の足腰を鍛える、食料と休息の拠点</h4>
+                <p class="panel-text">
+                  文明圏に最も近い平穏な大地。農地や放牧地を開墾して安定した食材を確保し、遠征時のスタミナ維持やHP回復の基盤となる高機能料理のレシピを解放する。
+                </p>
+                <div class="panel-benefits">
+                  <div class="benefit-item">
+                    <span class="benefit-label">採取できる主な資源</span>
+                    <span class="benefit-val">新鮮な穀物 / 野草 / 家畜ミルク・肉 / 清らかな湧水</span>
+                  </div>
+                  <div class="benefit-item">
+                    <span class="benefit-label">開拓によって得られる恩恵</span>
+                    <span class="benefit-val">農場・放牧地の設営 / 遠征用保存食・温シチューの調理解放</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. 森林エリア（濃緑） -->
+          <div class="region-detail-panel" id="panel-forest" role="tabpanel" aria-labelledby="tab-forest" hidden>
+            <div class="panel-layout">
+              <div class="panel-visual panel-visual-forest">
+                <div class="panel-tag" style="border-color:#10B981; color:#A7F3D0;">REGION 02</div>
+                <div class="panel-visual-inner">
+                  <span class="panel-badge">精霊の郷</span>
+                  <h3 class="panel-visual-title">森林エリア</h3>
+                  <p class="panel-visual-sub">巨木と自然魔導素材の宝庫</p>
+                </div>
+              </div>
+              <div class="panel-body">
+                <div class="panel-theme-badge" style="color:#059669;">特徴：木材・高純度薬草・魔法・エルフ交流</div>
+                <h4 class="panel-heading">自然の理と調薬技術が息づく深緑の樹海</h4>
+                <p class="panel-text">
+                  堅牢な建築用木材や希少な魔法薬草が自生する密林。奥地に隠れ住むウッドエルフや隠れ魔女の里と交流し、状態異常を治す回復薬や魔法技術を学ぶ。
+                </p>
+                <div class="panel-benefits">
+                  <div class="benefit-item">
+                    <span class="benefit-label">採取できる主な資源</span>
+                    <span class="benefit-val">神木木材 / 発光キノコ / 魔導樹皮 / 高純度解毒薬草</span>
+                  </div>
+                  <div class="benefit-item">
+                    <span class="benefit-label">開拓によって得られる恩恵</span>
+                    <span class="benefit-val">木工工房・調薬ラボの建設 / 猛毒・麻痺を解除する秘薬の開発</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. 山岳エリア（黄） -->
+          <div class="region-detail-panel" id="panel-mountain" role="tabpanel" aria-labelledby="tab-mountain" hidden>
+            <div class="panel-layout">
+              <div class="panel-visual panel-visual-mountain">
+                <div class="panel-tag" style="border-color:#FACC15; color:#FEF08A;">REGION 03</div>
+                <div class="panel-visual-inner">
+                  <span class="panel-badge">難所の防壁</span>
+                  <h3 class="panel-visual-title">山岳エリア</h3>
+                  <p class="panel-visual-sub">雲海を臨む険峰と堅牢な石材</p>
+                </div>
+              </div>
+              <div class="panel-body">
+                <div class="panel-theme-badge" style="color:#D97706;">特徴：硬質石材・防衛砦・峠道ルート開拓</div>
+                <h4 class="panel-heading">要塞拠点の建造と、難所を貫く短縮ルート</h4>
+                <p class="panel-text">
+                  切り立った断崖と寒風が旅人を拒む岩山。強固な石材を切り出して頑丈な砦拠点を築き、高所の崖を整備して遠隔地へのショートカット峠道を開通させる。
+                </p>
+                <div class="panel-benefits">
+                  <div class="benefit-item">
+                    <span class="benefit-label">採取できる主な資源</span>
+                    <span class="benefit-val">硬質花崗岩 / 結晶石 / 高山寒冷植物 / 猛禽の剛羽</span>
+                  </div>
+                  <div class="benefit-item">
+                    <span class="benefit-label">開拓によって得られる恩恵</span>
+                    <span class="benefit-val">石造り防衛砦の建設 / 隔絶地域を結ぶ峠道（ショートカット）開通</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. 鉱山エリア（橙） -->
+          <div class="region-detail-panel" id="panel-mine" role="tabpanel" aria-labelledby="tab-mine" hidden>
+            <div class="panel-layout">
+              <div class="panel-visual panel-visual-mine">
+                <div class="panel-tag" style="border-color:#FB923C; color:#FED7AA;">REGION 04</div>
+                <div class="panel-visual-inner">
+                  <span class="panel-badge">名匠の炉</span>
+                  <h3 class="panel-visual-title">鉱山エリア</h3>
+                  <p class="panel-visual-sub">地底に眠る鉱脈とドワーフの鍛冶</p>
+                </div>
+              </div>
+              <div class="panel-body">
+                <div class="panel-theme-badge" style="color:#EA580C;">特徴：希少鉱石・精錬技術・上位装備鍛造</div>
+                <h4 class="panel-heading">過酷な環境を切り裂く、屈強な武具の鍛冶場</h4>
+                <p class="panel-text">
+                  複雑な地下洞窟と鉱脈が広がるエリア。鉄、銅、ミスリルを採掘・精錬。ドワーフの熟練鍛冶職人と巡り合い、探索者の生存力を飛躍させる上位武具を打つ。
+                </p>
+                <div class="panel-benefits">
+                  <div class="benefit-item">
+                    <span class="benefit-label">採取できる主な資源</span>
+                    <span class="benefit-val">鉄鉱石 / 黒曜石 / 銀鉱 / 未知の魔力鉱石</span>
+                  </div>
+                  <div class="benefit-item">
+                    <span class="benefit-label">開拓によって得られる恩恵</span>
+                    <span class="benefit-val">高炉・鍛冶工房の設営 / 上位武器・防具の精錬製作ツールの強化</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. 火山エリア（赤） -->
+          <div class="region-detail-panel" id="panel-volcano" role="tabpanel" aria-labelledby="tab-volcano" hidden>
+            <div class="panel-layout">
+              <div class="panel-visual panel-visual-volcano">
+                <div class="panel-tag" style="border-color:#F87171; color:#FECACA;">REGION 05</div>
+                <div class="panel-visual-inner">
+                  <span class="panel-badge">紅蓮の試練</span>
+                  <h3 class="panel-visual-title">火山エリア</h3>
+                  <p class="panel-visual-sub">灼熱のマグマと最高峰の素材</p>
+                </div>
+              </div>
+              <div class="panel-body">
+                <div class="panel-theme-badge" style="color:#DC2626;">特徴：耐熱技術・極限希少素材・特殊鍛冶</div>
+                <h4 class="panel-heading">高熱環境が育む、最高峰の武具特殊付与</h4>
+                <p class="panel-text">
+                  灼熱の熱気が立ち込める極限領域。耐熱装備と適応料理を揃えた者だけが踏破可能。ここでしか得られない超高熱耐性の素材で、最終遠征に向けた最強装備を完成させる。
+                </p>
+                <div class="panel-benefits">
+                  <div class="benefit-item">
+                    <span class="benefit-label">採取できる主な資源</span>
+                    <span class="benefit-val">溶岩結晶 / 緋緋色金 / 灼熱の竜鱗 / 火霊石</span>
+                  </div>
+                  <div class="benefit-item">
+                    <span class="benefit-label">開拓によって得られる恩恵</span>
+                    <span class="benefit-val">耐熱特殊拠点の建造 / 武具への特殊属性付与・最強武具の完成</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-note text-center reveal-on-scroll">
+          <p>※ある地域で得た素材や知識は、他の過酷な地域を開拓するための重要な足場となります。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         06. 次ページ導線バナー（ADVENTURERSへ）
+         【役割】次のステップであるキャラクター作成ページへのリンク
+         【連携】css/components.css (12 次ページ共通導線バナー)
+         ========================================================================== -->
+    <section class="section next-page-banner">
+      <div class="container text-center reveal-on-scroll">
+        <span class="next-subtitle">CHOOSE YOUR IDENTITY</span>
+        <h2 class="next-title">君はこの大地に、どんな姿で足跡を残すか</h2>
+        <p class="next-desc">
+          出自や前職、得意な役割によって冒険の切り口は無限に広がる。<br>
+          次に、君の分身となる冒険者たちの可能性を確かめよう。
+        </p>
+        <a href="adventurers.html" class="btn btn-primary">ADVENTURERS（キャラクター）を見る <span>→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       07. サイトフッター
+       【役割】全ページ共通最下部・公式ロゴ画像・サイトマップ・免責・著作権表示
+       【連携】css/style.css (07 サイトフッター)
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <img src="assets/images/logo-title.webp" alt="WORLD STRANGER" class="footer-logo-img">
+          </a>
+          <p class="footer-catch">君の足跡が世界を作る。</p>
+        </div>
+
+        <nav class="footer-nav">
+          <ul class="footer-nav-list">
+            <li><a href="index.html">TOP</a></li>
+            <li><a href="world.html">WORLD</a></li>
+            <li><a href="adventurers.html">ADVENTURERS</a></li>
+            <li><a href="explore.html">EXPLORE</a></li>
+            <li><a href="information.html">INFORMATION</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-disclaimer">
+          ※当サイトは架空のゲーム作品『WORLD STRANGER』の企画・プロモーション用Webサイトです。実在の人物・団体・商品とは一切関係ありません。
+        </p>
+        <p class="footer-copyright">
+          &copy; 2026 WORLD STRANGER Project. All Rights Reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 分割JSスクリプトの読み込み -->
+  <script src="js/main.js"></script>
+  <script src="js/interactions.js"></script>
+</body>
+
+</html>

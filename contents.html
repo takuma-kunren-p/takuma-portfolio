@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>作品集 | TAKUMAのホームページ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;700;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/js.js"></script>
+  <script src="js/translation.js" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="index.html"><i></i>TAKUMAのホームページ</a>
+      <nav class="nav" id="nav" aria-label="メイン">
+        <a href="index.html" data-i18n="nav.home">ホーム</a>
+        <a href="contents.html" data-i18n="nav.contents" aria-current="page">作品集</a>
+        <a href="about.html" data-i18n="nav.about">自己紹介</a>
+      </nav>
+      <div class="tools">
+        <button class="btn-sm" id="themeBtn" type="button" aria-label="Theme">LIGHT / DARK</button>
+        <button class="btn-sm" id="langBtn" type="button" aria-label="Language">EN</button>
+        <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false"
+          aria-controls="nav"><span></span></button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="block">
+      <div class="wrap">
+        <div class="sec-head"><span class="no">[ 01 ]</span>
+          <h1 style="font-size:1.7rem;font-weight:900" data-i18n="c.h">作品集</h1>
+        </div>
+        <div class="zone-label hud"><b data-i18n="c.large">最新の作品紹介</b><span>New!</span></div>
+
+        <!-- 大型作品 1 -->
+        <article class="work-large plus">
+          <img src="img/s/WSgame_s.webp" alt="WORLD STRANGERのスクリーンショット" width="800" height="500">
+          <div class="body">
+            <span class="hud">PROJECT / WORLD STRANGER</span>
+            <h2 data-i18n="c.l.t" style="font-size:1.6rem">WORLD STRANGER公式ホームページ</h2>
+            <p data-i18n="c.l.p">職業訓練中に制作した、架空のゲームの公式ホームページ。「全ての作業をAIツール上で完結させる」がコンセプト。手動での修正を一切せずにAIへの指示のみで制作。</p>
+            <div class="tags"><span>HTML</span><span>Google AI studio</span></div>
+            <div class="actions">
+              <a class="btn primary" href="html/world-stranger_googleAI/index.html" target="_blank"
+                rel="noopener noreferrer" data-i18n="c.view">作品を見る</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ↓ class の中に「reverse」が入っているかご確認ください -->
+        <article class="work-large reverse plus">
+          <!-- ひとまず確実に存在する「work-main.svg」等にしておくことで真っ白が解消されます -->
+          <img src="img/s/onsen_s.webp" alt="onsen-siteのスクリーンショット" width="800" height="500">
+          <div class="body">
+            <span class="hud">PROJECT / onsen-site</span>
+            <h2 data-i18n="c.l2.t" style="font-size:1.5rem">温泉公式ホームページ</h2>
+            <p data-i18n="c.l2.p">職業訓練中に制作した、架空の温泉の公式ホームページ。Google AI studioを始めて使用した。</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Google AI studio</span>
+            </div>
+            <div class="actions">
+              <a class="btn primary" href="html/onsen-site_v3/index.html" target="_blank" rel="noopener noreferrer"
+                data-i18n="c.view">作品を見る</a>
+            </div>
+          </div>
+        </article>
+
+        <div class="zone-label hud"><b data-i18n="c.small">その他の作品/学習</b><span>other</span></div>
+
+        <!-- 小規模作品グリッド -->
+        <div class="grid3">
+          <!-- 小作品 A -->
+          <article class="work-small plus">
+            <img src="img/s/cofe2_s.webp" alt="小作品Aのスクリーンショット" width="480" height="300">
+            <div class="body">
+              <h3 data-i18n="c.s1">カフェサイト2</h3>
+              <p class="hud" data-i18n="c.s1p">授業中制作したカフェサイト。JavaScriptの組み込み練習。</p>
+              <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+              <div class="actions">
+                <a class="btn primary" href="html/Cafe-2JavaScript/index.html" target="_blank" rel="noopener noreferrer"
+                  data-i18n="c.view">作品を見る</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 小作品 B -->
+          <article class="work-small plus">
+            <img src="img/s/cofe1_s.webp" alt="小作品Bのスクリーンショット" width="480" height="300">
+            <div class="body">
+              <h3 data-i18n="c.s2">カフェサイト</h3>
+              <p class="hud" data-i18n="c.s2p">授業中制作したカフェサイト。</p>
+              <div class="tags"><span>HTML</span><span>CSS</span></div>
+              <div class="actions">
+                <a class="btn primary" href="html/cafe-test2/index.html" target="_blank" rel="noopener noreferrer"
+                  data-i18n="c.view">作品を見る</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 小作品 C -->
+          <article class="work-small plus">
+            <img src="img/s/pc-t_s.webp" alt="小作品Cのスクリーンショット" width="480" height="300">
+            <div class="body">
+              <h3 data-i18n="c.s3">パソコン教室サイト</h3>
+              <p class="hud" data-i18n="c.s3p">授業中制作したパソコン教室サイト。HTMLとCSSのみで制作した。</p>
+              <div class="tags"><span>HTML</span><span>CSS</span></div>
+              <div class="actions">
+                <a class="btn primary" href="html/pc-t/index.html" target="_blank" rel="noopener noreferrer"
+                  data-i18n="c.view">作品を見る</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 小作品 D -->
+          <article class="work-small plus">
+            <img src="img/s/transcript_AI.webp" alt="小作品Dのスクリーンショット" width="480" height="300">
+            <div class="body">
+              <h3 data-i18n="c.s4">会議の書き起こし</h3>
+              <p class="hud" data-i18n="c.s4p">トランスクリプトを活用した会議の文字起こしと議事録制作のグループワーク。</p>
+              <div class="tags"><span>MS Office</span><span>ChatGPT</span><span>Claude</span></div>
+              <!-- <div class="actions">
+                <a class="btn primary" href="#" target="_blank" rel="noopener noreferrer" data-i18n="c.view">作品を見る</a>
+              </div> -->
+            </div>
+          </article>
+
+          <!-- 小作品 E -->
+          <article class="work-small plus">
+            <img src="img/s/chatGPT_1.webp" alt="小作品Eのスクリーンショット" width="480" height="300">
+            <div class="body">
+              <h3 data-i18n="c.s5">ChatGPTを利用した広告制作</h3>
+              <p class="hud" data-i18n="c.s5p">AI画像生成を活用した広告制作ワークショップ。プロンプトもAIを使って生成。</p>
+              <div class="tags"><span>ChatGPT</span><span>Gemini</span></div>
+              <!-- <div class="actions">
+                <a class="btn primary" href="#" target="_blank" rel="noopener noreferrer" data-i18n="c.view">作品を見る</a>
+              </div> -->
+            </div>
+          </article>
+
+          <!-- 小作品 F -->
+          <article class="work-small plus">
+            <img src="img/s/mirai_AI_work.webp" alt="小作品Gのスクリーンショット" width="480" height="300">
+            <div class="body">
+              <h3 data-i18n="c.s7">AI文章製作ワークショップ</h3>
+              <p class="hud" data-i18n="c.s7p">AIを利用した文章、資料制作のワークショップ。発表資料もAIで制作。</p>
+              <div class="tags"><span>ChatGPT</span><span>Gemini</span><span>Claude</span></div>
+              <!-- <div class="actions">
+                <a class="btn primary" href="#" target="_blank" rel="noopener noreferrer" data-i18n="c.view">作品を見る</a>
+              </div> -->
+            </div> <!-- ← コメントの外に出す -->
+          </article>
+
+          <!-- 小作品 G -->
+          <article class="work-small plus">
+            <img src="img/s/office_AI.webp" alt="小作品Fのスクリーンショット" width="480" height="300">
+            <div class="body">
+              <h3 data-i18n="c.s6">MS OfficeとAI</h3>
+              <p class="hud" data-i18n="c.s6p">AIを活用したofficeソフトでの文章製作、表計算、スライド制作など。</p>
+              <div class="tags"><span>Word</span><span>Excel</span><span>PowerPoint</span><span>ChatGPT</span></div>
+              <!-- <div class="actions">
+                <a class="btn primary" href="#" target="_blank" rel="noopener noreferrer" data-i18n="c.view">作品を見る</a>
+              </div> -->
+            </div>
+          </article>
+
+          <!-- 小作品 H -->
+          <article class="work-small plus">
+            <img src="img/s/web_s.webp" alt="小作品Hのスクリーンショット" width="480" height="300">
+            <div class="body">
+              <h3 data-i18n="c.s8">Web開発実習</h3>
+              <p class="hud" data-i18n="c.s8p">カルーセルスライド、ハンバーガーメニューなど基礎的なWebサイトの機能を学習。</p>
+              <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+              <!-- <div class="actions">
+                <a class="btn primary" href="#" target="_blank" rel="noopener noreferrer" data-i18n="c.view">作品を見る</a>
+              </div> -->
+            </div> <!-- ← コメントの外に出す -->
+          </article>
+
+        </div>
+    </section>
+
+  </main>
+  <footer>
+    <div class="wrap hud"><span data-i18n="f.note">TAKUMAのホームページ</span><span>&copy; <span id="year">2026</span>
+        TAKUMA's HP</span></div>
+  </footer>
+</body>
+
+</html>

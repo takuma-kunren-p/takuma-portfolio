@@ -1,0 +1,320 @@
+@charset "UTF-8";
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+    color: #333333;
+    background-color: #f7f9fc;
+    line-height: 1.7;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+a {
+    color: #1f6fb2;
+    text-decoration: none;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 2-1 */
+
+header {
+    background-color: #1f6fb2;
+    color: #ffffff;
+    padding: 20px 0;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.site-logo h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.logo-mark {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: #ffffff;
+    color: #1f6fb2;
+    font-weight: bold;
+    border-radius: 50%;
+}
+
+nav ul {
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav a {
+    display: block;
+    padding: 10px 14px;
+    color: #ffffff;
+    border-radius: 4px;
+}
+
+nav a:hover {
+    background-color: #155688;
+    opacity: 1;
+}
+
+/* 2-2 */
+
+section {
+    padding: 60px 0;
+}
+
+h1 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+h2,
+h3 {
+    color: #1f4f7a;
+}
+
+.page-title {
+    background-color: #e8f1f8;
+}
+
+.page-title h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 32px;
+}
+
+.page-title p {
+    margin: 0;
+}
+
+/* 2-3 */
+
+.main-visual {
+    padding-bottom: 30px;
+}
+
+.main-visual img {
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.intro-image {
+    float: left;
+    width: 40%;
+    margin-right: 30px;
+    border-radius: 8px;
+}
+
+.intro-text h2 {
+    margin-top: 0;
+}
+
+.feature-section {
+    background-color: #ffffff;
+}
+
+.feature-list {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 30px 0 0;
+}
+
+.feature-list li {
+    flex: 1;
+    background-color: #eef6fb;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+}
+
+.info-table th,
+.info-table td {
+    border: 1px solid #c8d6e5;
+    padding: 14px;
+    text-align: left;
+}
+
+.info-table th {
+    width: 30%;
+    background-color: #e8f1f8;
+}
+
+.map-area iframe {
+    width: 100%;
+    height: 320px;
+    border: none;
+    border-radius: 8px;
+    background-color: #eaeaea;
+}
+
+.access-list {
+    padding-left: 20px;
+}
+
+/* 2-6 */
+
+form {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #bbbbbb;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    display: inline-block;
+    padding: 12px 24px;
+    border: none;
+    background-color: #1f6fb2;
+    color: #ffffff;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #155688;
+}
+
+/* 2-7 */
+
+footer {
+    background-color: #1f4f7a;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+/* 3 */
+
+@media (max-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+
+    section {
+        padding: 40px 0;
+
+    }
+
+    .header-inner {
+        display: block;
+        text-align: center;
+    }
+
+    .site-logo {
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+
+    .site-logo h1 {
+        font-size: 24px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .intro-image {
+        float: none;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .feature-list {
+        flex-direction: column;
+    }
+
+    .info-table th,
+    .info-table td {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .map-dummy,
+    .map-area iframe {
+        height: 240px;
+    }
+
+    .contact-form {
+        padding: 20px;
+    }
+}

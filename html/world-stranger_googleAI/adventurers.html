@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="『WORLD STRANGER（ワールドストレンジャー）』のキャラクターメイクシステムと3人のプリセット冒険者。前職、ロール、スキルが君だけの物語を紡ぐ。">
+  <title>ADVENTURERS（冒険者たち） | WORLD STRANGER 公式サイト</title>
+
+  <!-- Google Fonts（欧文Cinzel・和文Shippori Mincho / Noto Sans JP） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@500;700&display=swap"
+    rel="stylesheet">
+
+  <!-- 機能別分割CSSの読み込み -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body class="page-adventurers">
+
+  <!-- ==========================================================================
+       01. グローバルヘッダー
+       【役割】全ページ共通ナビゲーション・公式ロゴ・スクロール追従背景ガラス化
+       【連携】js/main.js, css/style.css
+       ========================================================================== */
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">
+        <img src="assets/images/logo-title.webp" alt="WORLD STRANGER" class="site-logo-img">
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="メニューを開閉する" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link">TOP</a></li>
+          <li class="nav-item"><a href="world.html" class="nav-link">WORLD</a></li>
+          <li class="nav-item"><a href="adventurers.html" class="nav-link current">ADVENTURERS</a></li>
+          <li class="nav-item"><a href="explore.html" class="nav-link">EXPLORE</a></li>
+          <li class="nav-item"><a href="information.html" class="nav-link">INFORMATION</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ==========================================================================
+         02. シネマティックヘッダー（ファーストビュー）
+         【役割】キービジュアル背景（hero-main）、4色浮遊光、3大ロールバッジ（赤・紫・金）
+         【連携】js/main.js (initFloatingLights), css/style.css (05, 06)
+         ========================================================================== -->
+    <section class="page-hero">
+      <div class="floating-lights" id="floatingLights"></div>
+
+      <div class="container text-center">
+        <div class="page-hero-content">
+          <div class="page-hero-badge reveal-up">
+            <span class="badge-icon">✦</span>
+            <span>CHOOSE YOUR IDENTITY</span>
+          </div>
+
+          <h1 class="page-title reveal-up" data-delay="100">ADVENTURERS</h1>
+
+          <p class="page-lead reveal-up" data-delay="200">
+            選ばれし勇者ではなく、自らの足で歩み出すひとりの冒険者。<br>
+            経歴や得意分野が、未知の世界を切り拓く新たな選択肢を生み出す。
+          </p>
+
+          <!-- 3大ロールバッジ（ファイター:赤 / 魔女:紫 / 斥候:金） -->
+          <div class="hero-role-tags reveal-up" data-delay="300">
+            <span class="hero-role-pill fighter">FIGHTER / 剛力・調教</span>
+            <span class="hero-role-pill witch">WITCHCRAFT / 魔導・交渉</span>
+            <span class="hero-role-pill scout">SCOUT / 斥候・看破</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         03. キャラクターメイクの基本方針
+         【役割】キャラメイク3大要素カード（前職・ロール・スキル）、開発思想アコーディオン
+         【連携】js/interactions.js (initAccordionSystem), css/components.css (08)
+         ========================================================================== -->
+    <section class="section char-system-section">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-subtitle">CREATION SYSTEM</span>
+          <h2 class="section-title">無限に広がる、君だけの冒険の原点</h2>
+          <p class="section-desc">外見だけでなく「生い立ち」や「役割」を自由に組み合わせるキャラクターメイク。</p>
+        </div>
+
+        <div class="creation-elements-grid reveal-on-scroll">
+          <!-- 要素1: 前職（ゴールドテーマ） -->
+          <div class="element-card" style="border-top: 3px solid #F59E0B;">
+            <div class="element-icon" style="color:#D97706;">01</div>
+            <span class="element-type" style="color:#B45309;">BACKGROUND</span>
+            <h3 class="element-name">前職（生い立ち）</h3>
+            <p class="element-desc">
+              冒険者になる前の生活経験。<br>
+              <strong>牧畜、魔法学校、鍛冶、狩人など</strong><br>
+              基礎知識や対話の選択肢、開拓地での生産適性に直結する。
+            </p>
+          </div>
+
+          <!-- 要素2: ロール（クリムゾンレッドテーマ） -->
+          <div class="element-card" style="border-top: 3px solid #EF4444;">
+            <div class="element-icon" style="color:#DC2626;">02</div>
+            <span class="element-type" style="color:#B91C1C;">CLASS ROLE</span>
+            <h3 class="element-name">ロール（現在の役割）</h3>
+            <p class="element-desc">
+              戦闘と探索の基本スタンス。<br>
+              <strong>ファイター、魔女、斥候など</strong><br>
+              装備可能な武具、遠征時の基本アクション、立ち回りを決定する。
+            </p>
+          </div>
+
+          <!-- 要素3: スキル（スカイブルーテーマ） -->
+          <div class="element-card" style="border-top: 3px solid #0EA5E9;">
+            <div class="element-icon" style="color:#0284C7;">03</div>
+            <span class="element-type" style="color:#0369A1;">SPECIFIC SKILLS</span>
+            <h3 class="element-name">スキル（得意分野）</h3>
+            <p class="element-desc">
+              具体的に実行できる専門技術。<br>
+              <strong>動物調教、古代魔法解読、危険察知など</strong><br>
+              隠しルートの発見や、採取素材の品質向上をもたらす。
+            </p>
+          </div>
+        </div>
+
+        <!-- 開発思想コールアウト & 詳細アコーディオン -->
+        <div class="policy-callout reveal-on-scroll">
+          <div class="policy-badge">PHILOSOPHY</div>
+          <h3 class="policy-title">キャラクターの得意分野は「可能性を狭めるため」ではない</h3>
+          <p class="policy-desc">
+            本作には「特定のスキルがないとクリアできない」行き止まりはありません。<br>
+            得意分野は追加クエストや特別な発見、有利な開拓ルートを生み出すための選択肢。苦手なことは仲間や拠点の力で解決できます。
+          </p>
+
+          <!-- 詳しい育成自由度のアコーディオン -->
+          <div class="accordion-item" style="margin-top: 16px;">
+            <button class="accordion-trigger" type="button" aria-expanded="false"
+              style="padding: 12px 18px; font-size: 0.95rem;">
+              <span>キャラクター作成の自由度と成長思想について読む</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content" style="padding: 12px 18px 18px;">
+              <p>
+                プレイヤーは「選ばれた勇者」として固定されるのではなく、多様な出自を持つ冒険者のひとりとして世界に足を踏み入れます。
+              </p>
+              <p>
+                前職やロールによって初期ステータスや経験値獲得率（急成長型・晩成型など）に特性が生まれますが、探索での工夫、クラフトした上位装備、仲間との連携によってあらゆる難所を踏破できるバランスを基本としています。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         04. 3人のプリセット冒険者詳細
+         【役割】タブ切り替えナビ、透過立ち絵、プロフィール、ステータスバー、スキルタグ
+         【連携】js/interactions.js (initTabSystem), css/components.css (08)
+         ========================================================================== -->
+    <section class="section preset-section">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-subtitle">PRESET ARCHETYPES</span>
+          <h2 class="section-title">冒険の切り口が異なる三つの実例</h2>
+          <p class="section-desc">経歴と能力値の違いによって、同じ大地でも体験の質と進め方が劇的に変化する。</p>
+        </div>
+
+        <!-- プリセット選択タブ（赤・紫・金） -->
+        <div class="preset-nav reveal-on-scroll" role="tablist">
+          <button class="preset-nav-btn active" role="tab" aria-selected="true" aria-controls="preset-fighter"
+            id="tab-p-fighter">
+            <span class="p-num" style="color:#EF4444;">01</span>
+            <span class="p-name">若いファイター（剛力・調教）</span>
+          </button>
+          <button class="preset-nav-btn" role="tab" aria-selected="false" aria-controls="preset-witch" id="tab-p-witch">
+            <span class="p-num" style="color:#A855F7;">02</span>
+            <span class="p-name">若い魔女（魔導・急成長）</span>
+          </button>
+          <button class="preset-nav-btn" role="tab" aria-selected="false" aria-controls="preset-scout" id="tab-p-scout">
+            <span class="p-num" style="color:#F59E0B;">03</span>
+            <span class="p-name">老練な斥候（即戦力・看破）</span>
+          </button>
+        </div>
+
+        <!-- プリセット詳細パネル群 -->
+        <div class="preset-panels-wrap reveal-on-scroll">
+          <!-- プリセット01: ファイター（真紅テーマ） -->
+          <article class="preset-detail-panel active" id="preset-fighter" role="tabpanel"
+            aria-labelledby="tab-p-fighter">
+            <div class="preset-grid">
+              <div class="preset-visual visual-fighter">
+                <img src="assets/images/char-fighter_2.webp" alt="村育ちの若いファイター 立ち絵" class="char-portrait-img">
+              </div>
+
+              <div class="preset-data">
+                <div class="char-header-info">
+                  <span class="char-category" style="color:#DC2626;">HUMAN / FIGHTER</span>
+                  <h3 class="char-full-name">村育ちの若いファイター</h3>
+                  <p class="char-quote">「この大地を開き、誰よりも先に世界の先端を踏みしめる。」</p>
+                </div>
+
+                <div class="profile-block">
+                  <dl class="profile-dl">
+                    <div>
+                      <dt>前職</dt>
+                      <dd>農牧従事（平和な農村）</dd>
+                    </div>
+                    <div>
+                      <dt>成長特性</dt>
+                      <dd>標準的な成長曲線（平均型）</dd>
+                    </div>
+                    <div>
+                      <dt>動機</dt>
+                      <dd>未知の外の世界への純粋な憧憬</dd>
+                    </div>
+                    <div>
+                      <dt>適性</dt>
+                      <dd>悪路走破 / モンスター調教</dd>
+                    </div>
+                  </dl>
+                </div>
+
+                <div class="char-traits">
+                  <h4 class="traits-title">能力と探索スタイル</h4>
+                  <p class="traits-desc">
+                    農村育ちの強靭なスタミナと地形踏破力を誇る。家畜の世話で培った観察眼から野生モンスターの調教に長けるが、魔法や繊細な道具の扱いは不得意。
+                  </p>
+
+                  <!-- ステータスバー（能力値S〜D） -->
+                  <div class="status-bars">
+                    <div class="status-row">
+                      <span class="st-label">体力・筋力</span>
+                      <div class="st-bar-wrap">
+                        <div class="st-bar" style="width: 85%; background: linear-gradient(90deg, #F87171, #DC2626);"></div>
+                      </div>
+                      <span class="st-val" style="color:#DC2626;">A</span>
+                    </div>
+                    <div class="status-row">
+                      <span class="st-label">地形踏破</span>
+                      <div class="st-bar-wrap">
+                        <div class="st-bar" style="width: 80%; background: linear-gradient(90deg, #F87171, #DC2626);"></div>
+                      </div>
+                      <span class="st-val" style="color:#DC2626;">A</span>
+                    </div>
+                    <div class="status-row">
+                      <span class="st-label">魔力・学識</span>
+                      <div class="st-bar-wrap">
+                        <div class="st-bar" style="width: 25%; background: linear-gradient(90deg, #CBD5E1, #94A3B8);"></div>
+                      </div>
+                      <span class="st-val">D</span>
+                    </div>
+                    <div class="status-row">
+                      <span class="st-label">道具・看破</span>
+                      <div class="st-bar-wrap">
+                        <div class="st-bar" style="width: 40%; background: linear-gradient(90deg, #CBD5E1, #94A3B8);"></div>
+                      </div>
+                      <span class="st-val">C</span>
+                    </div>
+                  </div>
+
+                  <div class="skills-tags">
+                    <span class="skill-tag" style="background:#FEE2E2; color:#B91C1C; border-color:#FCA5A5;">モンスター調教</span>
+                    <span class="skill-tag" style="background:#FEE2E2; color:#B91C1C; border-color:#FCA5A5;">農牧開拓適性</span>
+                    <span class="skill-tag" style="background:#FEE2E2; color:#B91C1C; border-color:#FCA5A5;">悪路走破</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- プリセット02: 魔女（神秘紫テーマ） -->
+          <article class="preset-detail-panel" id="preset-witch" role="tabpanel" aria-labelledby="tab-p-witch" hidden>
+            <div class="preset-grid">
+              <div class="preset-visual visual-witch">
+                <img src="assets/images/char-witch_2.webp" alt="王都育ちの若い魔女 立ち絵" class="char-portrait-img">
+              </div>
+
+              <div class="preset-data">
+                <div class="char-header-info">
+                  <span class="char-category" style="color:#9333EA;">HUMAN / WITCHCRAFT</span>
+                  <h3 class="char-full-name">王都育ちの若い魔女</h3>
+                  <p class="char-quote">「書物では知り得ない真実が、この未踏の大地にあるはずです。」</p>
+                </div>
+
+                <div class="profile-block">
+                  <dl class="profile-dl">
+                    <div>
+                      <dt>前職</dt>
+                      <dd>王立魔法学校 首席特待生</dd>
+                    </div>
+                    <div>
+                      <dt>成長特性</dt>
+                      <dd><strong style="color:#9333EA;">獲得経験値 +10% ボーナス</strong>（急成長型）</dd>
+                    </div>
+                    <div>
+                      <dt>動機</dt>
+                      <dd>未知の魔力と古代伝承の解明</dd>
+                    </div>
+                    <div>
+                      <dt>適性</dt>
+                      <dd>古代語解読 / 属性交渉術</dd>
+                    </div>
+                  </dl>
+                </div>
+
+                <div class="char-traits">
+                  <h4 class="traits-title">能力と探索スタイル</h4>
+                  <p class="traits-desc">
+                    白兵戦や体力には乏しいが、卓越した知性と魔導適性を備える。交渉術で交易を有利にし、他者より10%多くの経験値を吸収して急成長を遂げる。
+                  </p>
+
+                  <div class="status-bars">
+                    <div class="status-row">
+                      <span class="st-label">体力・筋力</span>
+                      <div class="st-bar-wrap">
+                        <div class="st-bar" style="width: 30%; background: linear-gradient(90deg, #CBD5E1, #94A3B8);"></div>
+                      </div>
+                      <span class="st-val">D</span>
+                    </div>
+                    <div class="status-row">
+                      <span class="st-label">地形踏破</span>
+                      <div class="st-bar-wrap">
+                        <div class="st-bar" style="width: 35%; background: linear-gradient(90deg, #CBD5E1, #94A3B8);"></div>
+                      </div>
+                      <span class="st-val">D</span>
+                    </div>
+                    <div class="status-row">
+                      <span class="st-label">魔力・学識</span>
+                      <div class="st-bar-wrap">
+                        <div class="st-bar" style="width: 95%; background: linear-gradient(90deg, #C084FC, #9333EA);"></div>
+                      </div>
+                      <span class="st-val" style="color:#9333EA;">S</span>
+                    </div>
+                    <div class="status-row">
+                      <span class="st-label">道具・看破</span>
+                      <div class="st-bar-wrap">
+                        <div class="st-bar" style="width: 75%; background: linear-gradient(90deg, #C084FC, #9333EA);"></div>
+                      </div>
+                      <span class="st-val" style="color:#9333EA;">B</span>
+                    </div>
+                  </div>
+
+                  <div class="skills-tags">
+                    <span class="skill-tag" style="background:#F3E8FF; color:#7E22CE; border-color:#D8B4FE;">古代語解読</span>
+                    <span class="skill-tag" style="background:#F3E8FF; color:#7E22CE; border-color:#D8B4FE;">交渉術（交易恩恵）</span>
+                    <span class="skill-tag" style="background:#F3E8FF; color:#7E22CE; border-color:#D8B4FE;">魔素濃度察知</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- プリセット03: 斥候（琥珀金テーマ） -->
+          <article class="preset-detail-panel" id="preset-scout" role="tabpanel" aria-labelledby="tab-p-scout" hidden>
+            <div class="preset-grid">
+              <div class="preset-visual visual-scout">
+                <img src="assets/images/char-scout_2.webp" alt="ベテランの老練な斥候 立ち絵" class="char-portrait-img">
+              </div>
+
+              <div class="preset-data">
+                <div class="char-header-info">
+                  <span class="char-category" style="color:#D97706;">HUMAN / SCOUT</span>
+                  <h3 class="char-full-name">ベテランの老練な斥候</h3>
+                  <p class="char-quote">「生き残る秘訣は、勝てない戦いを始めないことさ。」</p>
+                </div>
+
+                <div class="profile-block">
+                  <dl class="profile-dl">
+                    <div>
+                      <dt>前職</dt>
+                      <dd>元盗賊 / 遠征隊の先導人</dd>
+                    </div>
+                    <div>
+                      <dt>成長特性</dt>
+                      <dd><strong style="color:#D97706;">獲得経験値 -30% ペナルティ</strong>（初期完成型）</dd>
+                    </div>
+                    <div>
+                      <dt>動機</dt>
+                      <dd>伝説の冒険者日誌の真実検証</dd>
+                    </div>
+                    <div>
+                      <dt>適性</dt>
+                      <dd>罠解除 / 奇襲回避 / 道具作成</dd>
+                    </div>
+                  </dl>
+                </div>
+
+                <div class="char-traits">
+                  <h4 class="traits-title">能力と探索スタイル</h4>
+                  <p class="traits-desc">
+                    初期能力と生存スキルが完成された即戦力。直接戦闘を避けつつ、鋭い気配察知、罠解除、即席ツールの作成で隊の生存率を劇的に底上げする。
+                  </p>
+
+                  <div class="status-bars">
+                    <div class="status-row">
+                      <span class="st-label">体力・筋力</span>
+                      <div class="st-bar-wrap">
+                        <div class="st-bar" style="width: 50%; background: linear-gradient(90deg, #FDE68A, #F59E0B);"></div>
+                      </div>
+                      <span class="st-val">C</span>
+                    </div>
+                    <div class="status-row">
+                      <span class="st-label">地形踏破</span>
+                      <div class="st-bar-wrap">
+                        <div class="st-bar" style="width: 70%; background: linear-gradient(90deg, #FDE68A, #F59E0B);"></div>
+                      </div>
+                      <span class="st-val" style="color:#D97706;">B</span>
+                    </div>
+                    <div class="status-row">
+                      <span class="st-label">魔力・学識</span>
+                      <div class="st-bar-wrap">
+                        <div class="st-bar" style="width: 45%; background: linear-gradient(90deg, #CBD5E1, #94A3B8);"></div>
+                      </div>
+                      <span class="st-val">C</span>
+                    </div>
+                    <div class="status-row">
+                      <span class="st-label">道具・看破</span>
+                      <div class="st-bar-wrap">
+                        <div class="st-bar" style="width: 95%; background: linear-gradient(90deg, #FDE68A, #D97706);"></div>
+                      </div>
+                      <span class="st-val" style="color:#D97706;">S</span>
+                    </div>
+                  </div>
+
+                  <div class="skills-tags">
+                    <span class="skill-tag" style="background:#FEF3C7; color:#B45309; border-color:#FCD34D;">罠探知・解除</span>
+                    <span class="skill-tag" style="background:#FEF3C7; color:#B45309; border-color:#FCD34D;">気配察知・奇襲防止</span>
+                    <span class="skill-tag" style="background:#FEF3C7; color:#B45309; border-color:#FCD34D;">即席野営具作成</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         05. 次ページ導線バナー（EXPLOREへ）
+         【役割】次のステップである探索・開拓システムページへのリンク
+         【連携】css/components.css (12 次ページ共通導線バナー)
+         ========================================================================== */
+    <section class="section next-page-banner">
+      <div class="container text-center reveal-on-scroll">
+        <span class="next-subtitle">EXPEDITION & OUTPOSTS</span>
+        <h2 class="next-title">己の力と仲間を揃え、探索と開拓の循環へ</h2>
+        <p class="next-desc">
+          休息、食事、そして拠点の発展。<br>
+          過酷な未踏域を生き抜くためのゲームプレイの核を確かめよう。
+        </p>
+        <a href="explore.html" class="btn btn-primary">EXPLORE（探索と開拓）を見る <span>→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       06. サイトフッター
+       【役割】全ページ共通最下部・公式ロゴ画像・サイトマップ・免責・著作権表示
+       【連携】css/style.css (07 サイトフッター)
+       ========================================================================== */
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <img src="assets/images/logo-title.webp" alt="WORLD STRANGER" class="footer-logo-img">
+          </a>
+          <p class="footer-catch">君の足跡が世界を作る。</p>
+        </div>
+
+        <nav class="footer-nav">
+          <ul class="footer-nav-list">
+            <li><a href="index.html">TOP</a></li>
+            <li><a href="world.html">WORLD</a></li>
+            <li><a href="adventurers.html">ADVENTURERS</a></li>
+            <li><a href="explore.html">EXPLORE</a></li>
+            <li><a href="information.html">INFORMATION</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-disclaimer">
+          ※当サイトは架空のゲーム作品『WORLD STRANGER』の企画・プロモーション用Webサイトです。実在の人物・団体・商品とは一切関係ありません。
+        </p>
+        <p class="footer-copyright">
+          &copy; 2026 WORLD STRANGER Project. All Rights Reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 分割JSスクリプトの読み込み -->
+  <script src="js/main.js"></script>
+  <script src="js/interactions.js"></script>
+</body>
+
+</html>

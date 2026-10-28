@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>温泉・施設紹介 | 湯煙の里 翠泉閣</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- チラつき防止：HTMLタグに即座に反映させるスクリプト -->
+  <script>
+    (function () {
+      const saved = localStorage.getItem("theme");
+      const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (saved === "dark" || (!saved && systemDark)) {
+        document.documentElement.classList.add("dark-mode");
+      }
+    })();
+  </script>
+</head>
+
+<body>
+
+  <!-- ヘッダーエリア -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="site-logo">
+        <a href="index.html">
+          <span class="logo-sub" data-i18n="logo.sub">奥日光の名湯 源泉掛け流し</span>
+          <span class="logo-main" data-i18n="logo.main">湯煙の里 翠泉閣</span>
+        </a>
+      </div>
+
+      <div class="header-right">
+        <nav class="global-nav">
+          <ul>
+            <li><a href="index.html" data-i18n="nav.home">ホーム</a></li>
+            <li><a href="onsen.html" class="active" data-i18n="nav.onsen">温泉・施設</a></li>
+            <li><a href="price.html" data-i18n="nav.price">料金・プラン</a></li>
+            <li><a href="access.html" data-i18n="nav.access">アクセス</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">お問い合わせ</a></li>
+          </ul>
+        </nav>
+
+        <!-- 言語切り替えボタン -->
+        <button id="lang-toggle" class="lang-toggle" aria-label="言語切り替え">EN</button>
+
+        <!-- ライト/ダークモード切り替えボタン -->
+        <button id="theme-toggle" class="theme-toggle" aria-label="テーマ切り替え">🌙</button>
+
+        <!-- スマホ用メニューボタン -->
+        <button class="nav-toggle" aria-label="メニュー開閉">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ページヒーロー -->
+  <div class="page-hero">
+    <div class="container">
+      <h1 data-i18n="onsen.page_title">温泉・施設案内</h1>
+      <p data-i18n="onsen.page_sub">ONSEN & FACILITIES</p>
+    </div>
+  </div>
+
+  <!-- 温泉セクション -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title fade-up">
+        <h2 data-i18n="onsen.main_title">名湯「翠泉の湯」</h2>
+        <span data-i18n="onsen.main_sub">NATURAL HOT SPRING</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;" class="fade-up">
+
+        <!-- 左カラム：軽量動画プレイヤー -->
+        <div class="lazy-video-container" id="lazy-video-box">
+          <video id="onsen-video" preload="none" playsinline controls>
+            <source src="movie/syukuhaku.mp4" type="video/mp4">
+            お使いのブラウザは動画タグに対応していません。
+          </video>
+
+          <div class="video-cover" id="video-cover">
+            <img src="img/gaikan_top.jpg" alt="翠泉閣 外観・紹介映像" class="video-poster-img">
+            <button class="video-play-btn" type="button" aria-label="紹介動画を再生する">
+              <span class="play-icon">▶</span>
+            </button>
+            <span class="video-label" data-i18n="onsen.video_label">館内の雰囲気を動画で見る</span>
+          </div>
+        </div>
+
+        <!-- 右カラム：文章エリア -->
+        <div>
+          <h3
+            style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--color-primary); margin-bottom: 16px;"
+            data-i18n="onsen.intro_title">
+            地底から湧き出る生きた源泉
+          </h3>
+          <p style="margin-bottom: 16px;" data-i18n="onsen.intro_text">
+            翠泉閣の温泉は、毎分約200リットル湧出する極上の単純硫黄温泉。空気に触れることで乳白色へと色を変え、古くから湯治場として多くの旅人を癒やしてきました。
+          </p>
+          <ul style="list-style: square; padding-left: 20px; line-height: 2;">
+            <li><strong data-i18n="onsen.spec_type">泉質：</strong><span
+                data-i18n="onsen.spec_type_val">含硫黄-カルシウム・ナトリウム-硫酸塩・炭酸水素塩温泉</span></li>
+            <li><strong data-i18n="onsen.spec_temp">泉温：</strong><span
+                data-i18n="onsen.spec_temp_val">68.5℃（湯守による自然放熱管理）</span></li>
+            <li><strong data-i18n="onsen.spec_eff">効能：</strong><span
+                data-i18n="onsen.spec_eff_val">神経痛、筋肉痛、冷え性、美肌作用、疲労回復</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 施設ギャラリー -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-title fade-up">
+        <h2 data-i18n="onsen.fac_title">館内設備</h2>
+        <span data-i18n="onsen.fac_sub">HOTEL FACILITIES</span>
+      </div>
+
+      <div class="grid-cards">
+        <!-- 施設1: 貸切家族風呂 -->
+        <article class="card fade-up">
+          <img src="img/onsen_kodate.jpg" alt="貸切檜露天風呂" class="card-img">
+          <div class="card-body">
+            <h3 data-i18n="onsen.fac1_title">貸切檜露天風呂</h3>
+            <p data-i18n="onsen.fac1_text">ご家族やカップルで気兼ねなく湯浴みを楽しめるプライベート風呂。豊かな檜の薫りが漂います。（要予約制）</p>
+          </div>
+        </article>
+
+        <!-- 施設2: 食事処 -->
+        <article class="card fade-up">
+          <img src="img/onsen_syokuzidokoro.jpg" alt="個室食事処「月あかり」" class="card-img">
+          <div class="card-body">
+            <h3 data-i18n="onsen.fac2_title">個室食事処「月あかり」</h3>
+            <p data-i18n="onsen.fac2_text">坪庭を望む全席掘りごたつ式の個室空間。周囲を気にせずゆったりと会席料理をご堪能いただけます。</p>
+          </div>
+        </article>
+
+        <!-- 施設3: 湯上がりラウンジ -->
+        <article class="card fade-up">
+          <img src="img/onsen_raunzi.jpg" alt="湯上がり処「森の調べ」" class="card-img">
+          <div class="card-body">
+            <h3 data-i18n="onsen.fac3_title">湯上がり処「森の調べ」</h3>
+            <p data-i18n="onsen.fac3_text">清らかな湧水と特製麦茶をご用意。暖炉の火を眺めながら、読書やお寛ぎのひとときをお過ごしください。</p>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <div class="footer-logo" data-i18n="logo.main">湯煙の里 翠泉閣</div>
+          <p data-i18n-html="footer.address">
+            〒321-1662 栃木県日光市湯元温泉2048<br>
+            TEL: 0288-00-0000（受付時間 9:00〜21:00）<br>
+            チェックイン 15:00 / チェックアウト 10:00
+          </p>
+        </div>
+        <div class="footer-nav">
+          <h4 data-i18n="footer.nav1_title">館内案内</h4>
+          <ul>
+            <li><a href="onsen.html" data-i18n="nav.onsen">温泉・施設</a></li>
+            <li><a href="price.html" data-i18n="nav.price">宿泊・日帰り料金</a></li>
+            <li><a href="access.html" data-i18n="nav.access">周辺観光案内</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav">
+          <h4 data-i18n="footer.nav2_title">インフォメーション</h4>
+          <ul>
+            <li><a href="contact.html" data-i18n="nav.contact">ご予約・お問い合わせ</a></li>
+            <li><span data-i18n="footer.privacy">プライバシーポリシー</span></li>
+            <li><span data-i18n="footer.faq">よくあるご質問</span></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copyright" data-i18n="footer.rights">&copy; 2026 湯煙の里 翠泉閣 All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/transla.js"></script>
+  <script src="js/js.js"></script>
+</body>
+
+</html>

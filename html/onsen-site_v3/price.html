@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ブラウザに最初からダークモード対応であることを伝える -->
+  <meta name="color-scheme" content="light dark">
+  <title>料金・コース案内 | 湯煙の里 翠泉閣</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- ★チラつき防止：HTMLタグに即座に反映させるスクリプト -->
+  <script>
+    (function () {
+      const saved = localStorage.getItem("theme");
+      const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (saved === "dark" || (!saved && systemDark)) {
+        document.documentElement.classList.add("dark-mode");
+      }
+    })();
+  </script>
+</head>
+
+<body>
+  <!-- ヘッダーエリア -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="site-logo">
+        <a href="index.html">
+          <span class="logo-sub" data-i18n="logo.sub">奥日光の名湯 源泉掛け流し</span>
+          <span class="logo-main" data-i18n="logo.main">湯煙の里 翠泉閣</span>
+        </a>
+      </div>
+
+      <div class="header-right">
+        <nav class="global-nav">
+          <ul>
+            <li><a href="index.html" data-i18n="nav.home">ホーム</a></li>
+            <li><a href="onsen.html" data-i18n="nav.onsen">温泉・施設</a></li>
+            <li><a href="price.html" class="active" data-i18n="nav.price">料金・プラン</a></li>
+            <li><a href="access.html" data-i18n="nav.access">アクセス</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">お問い合わせ</a></li>
+          </ul>
+        </nav>
+
+        <!-- 言語切り替えボタン（JP / EN） -->
+        <button id="lang-toggle" class="lang-toggle" aria-label="言語切り替え">EN</button>
+
+        <!-- ライト/ダークモード切り替えボタン -->
+        <button id="theme-toggle" class="theme-toggle" aria-label="テーマ切り替え">🌙</button>
+
+        <!-- スマホ用メニューボタン -->
+        <button class="nav-toggle" aria-label="メニュー開閉">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ページヒーロー -->
+  <div class="page-hero">
+    <div class="container">
+      <h1 data-i18n="price.page_title">料金・コース案内</h1>
+      <p data-i18n="price.page_sub">PLANS & PRICING</p>
+    </div>
+  </div>
+
+  <!-- 宿泊プラン一覧 -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title fade-up">
+        <h2 data-i18n="price.plan_sec_title">ご宿泊プラン</h2>
+        <span data-i18n="price.plan_sec_sub">ACCOMMODATION</span>
+      </div>
+
+      <div class="fade-up" style="max-width: 900px; margin: 0 auto 50px;">
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th data-i18n="price.th_planname">プラン名</th>
+              <th data-i18n="price.th_desc">内容・特徴</th>
+              <th style="width: 180px;" data-i18n="price.th_price">料金（1名様 / 1泊2食）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong data-i18n="price.plan1_title">翠泉スタンダード会席プラン</strong></td>
+              <td data-i18n="price.plan1_desc">当館一番人気の定番プラン。旬の食材を散りばめた季節会席と源泉かけ流しの湯を堪能。</td>
+              <td class="price">¥19,800〜</td>
+            </tr>
+            <tr>
+              <td><strong data-i18n="price.plan2_title">特選とちぎ和牛三昧極みプラン</strong></td>
+              <td data-i18n="price.plan2_desc">厳選ブランド「とちぎ和牛」のサーロインステーキとすき焼きを両方味わえる贅沢コース。</td>
+              <td class="price">¥26,400〜</td>
+            </tr>
+            <tr>
+              <td><strong data-i18n="price.plan3_title">記念日・アニバーサリープラン</strong></td>
+              <td data-i18n="price.plan3_desc">貸切露天風呂1回無料＋スパークリングワイン＆特製デザートプレート付き。</td>
+              <td class="price">¥24,000〜</td>
+            </tr>
+            <tr>
+              <td><strong data-i18n="price.plan4_title">連泊湯治ワーケーションプラン</strong></td>
+              <td data-i18n="price.plan4_desc">静かな渓谷を望むワークスペース完備。3泊以上からご利用いただける特別割引プラン。</td>
+              <td class="price">¥14,500〜</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="font-size: 0.85rem; color: var(--color-text-sub);" data-i18n="price.note">
+          ※上記料金は平日2名1室利用時の1名様あたりの税込金額です。入湯税別途150円を頂戴いたします。
+        </p>
+      </div>
+
+      <!-- 日帰り温泉料金 -->
+      <div class="section-title fade-up">
+        <h2 data-i18n="price.day_sec_title">日帰り温泉・立寄り湯</h2>
+        <span data-i18n="price.day_sec_sub">DAY TRIP ONSEN</span>
+      </div>
+
+      <div class="fade-up" style="max-width: 900px; margin: 0 auto;">
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th data-i18n="price.th_type">区分</th>
+              <th data-i18n="price.th_hours">ご利用時間</th>
+              <th style="width: 180px;" data-i18n="price.th_fee">料金（税込）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-i18n="price.day_adult">大人（中学生以上）</td>
+              <td data-i18n="price.day_time1">11:00 〜 19:00（最終受付 18:00）</td>
+              <td class="price">¥1,200</td>
+            </tr>
+            <tr>
+              <td data-i18n="price.day_child">小人（4歳〜小学生）</td>
+              <td data-i18n="price.day_time1">11:00 〜 19:00（最終受付 18:00）</td>
+              <td class="price">¥600</td>
+            </tr>
+            <tr>
+              <td data-i18n="price.day_private">貸切檜風呂（1枠 45分）</td>
+              <td data-i18n="price.day_time2">12:00 〜 17:00（要当日電話予約）</td>
+              <td class="price">¥3,300 / 室</td>
+            </tr>
+            <tr>
+              <td data-i18n="price.day_set">日帰り昼食＋入浴セットプラン</td>
+              <td data-i18n="price.day_time3">11:30 〜 15:00（要前日予約）</td>
+              <td class="price">¥4,500</td>
+            </tr>
+          </tbody>
+        </table>
+        <div style="text-align: center; margin-top: 30px;">
+          <a href="contact.html" class="btn btn-primary" data-i18n="price.btn_inquiry">宿泊・プランの空き状況を問い合わせる</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- フッターエリア -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <div class="footer-logo" data-i18n="logo.main">湯煙の里 翠泉閣</div>
+          <p data-i18n-html="footer.address">
+            〒321-1662 栃木県日光市湯元温泉2048<br>
+            TEL: 0288-00-0000（受付時間 9:00〜21:00）<br>
+            チェックイン 15:00 / チェックアウト 10:00
+          </p>
+        </div>
+        <div class="footer-nav">
+          <h4 data-i18n="footer.nav1_title">館内案内</h4>
+          <ul>
+            <li><a href="onsen.html" data-i18n="nav.onsen">温泉・施設</a></li>
+            <li><a href="price.html" data-i18n="nav.price">宿泊・日帰り料金</a></li>
+            <li><a href="access.html" data-i18n="nav.access">周辺観光案内</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav">
+          <h4 data-i18n="footer.nav2_title">インフォメーション</h4>
+          <ul>
+            <li><a href="contact.html" data-i18n="nav.contact">ご予約・お問い合わせ</a></li>
+            <li><span data-i18n="footer.privacy">プライバシーポリシー</span></li>
+            <li><span data-i18n="footer.faq">よくあるご質問</span></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copyright" data-i18n="footer.rights">&copy; 2026 湯煙の里 翠泉閣 All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- 翻訳スクリプトを先に読み込み、その後にメインスクリプトを実行 -->
+  <script src="js/transla.js"></script>
+  <script src="js/js.js"></script>
+</body>
+
+</html>

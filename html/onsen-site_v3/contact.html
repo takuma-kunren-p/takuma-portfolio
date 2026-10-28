@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>お問い合わせ | 湯煙の里 翠泉閣</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- チラつき防止：HTMLタグに即座に反映させるスクリプト -->
+  <script>
+    (function () {
+      const saved = localStorage.getItem("theme");
+      const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (saved === "dark" || (!saved && systemDark)) {
+        document.documentElement.classList.add("dark-mode");
+      }
+    })();
+  </script>
+</head>
+
+<body>
+
+  <!-- ヘッダーエリア -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="site-logo">
+        <a href="index.html">
+          <span class="logo-sub" data-i18n="logo.sub">奥日光の名湯 源泉掛け流し</span>
+          <span class="logo-main" data-i18n="logo.main">湯煙の里 翠泉閣</span>
+        </a>
+      </div>
+
+      <div class="header-right">
+        <nav class="global-nav">
+          <ul>
+            <li><a href="index.html" data-i18n="nav.home">ホーム</a></li>
+            <li><a href="onsen.html" data-i18n="nav.onsen">温泉・施設</a></li>
+            <li><a href="price.html" data-i18n="nav.price">料金・プラン</a></li>
+            <li><a href="access.html" data-i18n="nav.access">アクセス</a></li>
+            <li><a href="contact.html" class="active" data-i18n="nav.contact">お問い合わせ</a></li>
+          </ul>
+        </nav>
+
+        <!-- 言語切り替えボタン -->
+        <button id="lang-toggle" class="lang-toggle" aria-label="言語切り替え">EN</button>
+
+        <!-- ライト/ダークモード切り替えボタン -->
+        <button id="theme-toggle" class="theme-toggle" aria-label="テーマ切り替え">🌙</button>
+
+        <!-- スマホ用メニューボタン -->
+        <button class="nav-toggle" aria-label="メニュー開閉">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ページヒーロー -->
+  <div class="page-hero">
+    <div class="container">
+      <h1 data-i18n="contact.page_title">お問い合わせ</h1>
+      <p data-i18n="contact.page_sub">CONTACT & INQUIRY</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title fade-up">
+        <h2 data-i18n="contact.sec_title">ご予約・お問い合わせ</h2>
+        <span data-i18n="contact.sec_sub">MESSAGE FORM</span>
+      </div>
+
+      <div class="fade-up">
+        <p style="text-align: center; margin-bottom: 30px; font-size: 0.95rem;" data-i18n-html="contact.desc">
+          ご宿泊の相談、アレルギー対応、送迎バスのお申し込みなど、お気軽にお問い合わせください。<br>
+          お電話（0288-00-0000 / 9:00〜21:00）でも承っております。
+        </p>
+
+        <!-- 問い合わせフォーム -->
+        <form id="contact-form" class="contact-form">
+          <div id="form-status" class="form-status"></div>
+
+          <div class="form-group">
+            <label for="name">
+              <span data-i18n="contact.lbl_name">お名前</span>
+              <span class="required" data-i18n="contact.req">必須</span>
+            </label>
+            <input type="text" id="name" name="name" class="form-control" data-i18n-ph="contact.ph_name"
+              placeholder="例：山田 太郎" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">
+              <span data-i18n="contact.lbl_email">メールアドレス</span>
+              <span class="required" data-i18n="contact.req">必須</span>
+            </label>
+            <input type="email" id="email" name="email" class="form-control" data-i18n-ph="contact.ph_email"
+              placeholder="例：yamada@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">
+              <span data-i18n="contact.lbl_phone">お電話番号</span>
+            </label>
+            <input type="tel" id="phone" name="phone" class="form-control" data-i18n-ph="contact.ph_phone"
+              placeholder="例：090-1234-5678">
+          </div>
+
+          <div class="form-group">
+            <label for="category">
+              <span data-i18n="contact.lbl_category">お問い合わせ種別</span>
+              <span class="required" data-i18n="contact.req">必須</span>
+            </label>
+            <select id="category" name="category" class="form-control" required>
+              <option value="" data-i18n="contact.opt_select">選択してください</option>
+              <option value="reservation" data-i18n="contact.opt_res">宿泊予約について</option>
+              <option value="daytrip" data-i18n="contact.opt_day">日帰り温泉について</option>
+              <option value="shuttle" data-i18n="contact.opt_shuttle">無料送迎バスの予約</option>
+              <option value="other" data-i18n="contact.opt_other">その他のお問い合わせ</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">
+              <span data-i18n="contact.lbl_message">お問い合わせ内容</span>
+              <span class="required" data-i18n="contact.req">必須</span>
+            </label>
+            <textarea id="message" name="message" class="form-control" data-i18n-ph="contact.ph_message"
+              placeholder="ご希望の日程やご質問内容を入力してください。" required></textarea>
+          </div>
+
+          <div style="text-align: center; margin-top: 30px;">
+            <button type="submit" class="btn btn-primary" style="width: 220px; font-size: 1rem;"
+              data-i18n="contact.btn_submit">送信する</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <div class="footer-logo" data-i18n="logo.main">湯煙の里 翠泉閣</div>
+          <p data-i18n-html="footer.address">
+            〒321-1662 栃木県日光市湯元温泉2048<br>
+            TEL: 0288-00-0000（受付時間 9:00〜21:00）<br>
+            チェックイン 15:00 / チェックアウト 10:00
+          </p>
+        </div>
+        <div class="footer-nav">
+          <h4 data-i18n="footer.nav1_title">館内案内</h4>
+          <ul>
+            <li><a href="onsen.html" data-i18n="nav.onsen">温泉・施設</a></li>
+            <li><a href="price.html" data-i18n="nav.price">宿泊・日帰り料金</a></li>
+            <li><a href="access.html" data-i18n="nav.access">周辺観光案内</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav">
+          <h4 data-i18n="footer.nav2_title">インフォメーション</h4>
+          <ul>
+            <li><a href="contact.html" data-i18n="nav.contact">ご予約・お問い合わせ</a></li>
+            <li><span data-i18n="footer.privacy">プライバシーポリシー</span></li>
+            <li><span data-i18n="footer.faq">よくあるご質問</span></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copyright" data-i18n="footer.rights">&copy; 2026 湯煙の里 翠泉閣 All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/transla.js"></script>
+  <script src="js/js.js"></script>
+</body>
+
+</html>

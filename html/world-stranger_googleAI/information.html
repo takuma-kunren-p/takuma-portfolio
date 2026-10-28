@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="『WORLD STRANGER（ワールドストレンジャー）』の作品概要、最新トピックス、およびプロジェクト仕様情報。">
+  <title>INFORMATION（作品概要・情報） | WORLD STRANGER 公式サイト</title>
+
+  <!-- Google Fonts（欧文Cinzel・和文Shippori Mincho / Noto Sans JP） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@500;700&display=swap"
+    rel="stylesheet">
+
+  <!-- 機能別分割CSSの読み込み -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body class="page-information">
+
+  <!-- ==========================================================================
+       01. グローバルヘッダー
+       【役割】全ページ共通ナビゲーション・公式ロゴ・スクロール追従背景ガラス化
+       【連携】js/main.js, css/style.css
+       ========================================================================== -->
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">
+        <img src="assets/images/logo-title.webp" alt="WORLD STRANGER" class="site-logo-img">
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="メニューを開閉する" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link">TOP</a></li>
+          <li class="nav-item"><a href="world.html" class="nav-link">WORLD</a></li>
+          <li class="nav-item"><a href="adventurers.html" class="nav-link">ADVENTURERS</a></li>
+          <li class="nav-item"><a href="explore.html" class="nav-link">EXPLORE</a></li>
+          <li class="nav-item"><a href="information.html" class="nav-link current">INFORMATION</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ==========================================================================
+         02. シネマティックヘッダー（ファーストビュー）
+         【役割】キービジュアル背景（item_2）、4色浮遊光、公式ティザーステータスバッジ
+         【連携】js/main.js (initFloatingLights), css/style.css (05, 06)
+         ========================================================================== -->
+    <section class="page-hero">
+      <div class="floating-lights" id="floatingLights"></div>
+
+      <div class="container text-center">
+        <div class="page-hero-content">
+          <div class="page-hero-badge reveal-up">
+            <span class="badge-icon">✦</span>
+            <span>PROJECT ARCHIVE</span>
+          </div>
+
+          <h1 class="page-title reveal-up" data-delay="100">INFORMATION</h1>
+
+          <p class="page-lead reveal-up" data-delay="200">
+            『WORLD STRANGER』の作品スペック、世界観更新情報、<br>
+            およびプロジェクトの最新お知らせ一覧。
+          </p>
+
+          <!-- 公式ステータスインジケーター -->
+          <div class="hero-info-status reveal-up" data-delay="300">
+            <span class="status-dot"></span>
+            <span class="status-label">OFFICIAL TEASER ACTIVE</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         03. 作品概要（公式スペック仕様表）
+         【役割】タイトル、ジャンル、コンセプト、ビジュアル方針の公式データ表
+         【連携】css/components.css (10 スペック表)
+         ========================================================================== -->
+    <section class="section specs-section">
+      <div class="container narrow">
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-subtitle">OVERVIEW</span>
+          <h2 class="section-title">作品概要</h2>
+          <p class="section-desc">本作の根幹をなすテーマと制作指針。</p>
+        </div>
+
+        <div class="specs-table-wrap reveal-on-scroll">
+          <table class="specs-table">
+            <tbody>
+              <tr>
+                <th>タイトル</th>
+                <td>
+                  <span class="spec-main-title">ワールドストレンジャー</span>
+                  <span class="spec-en-title">WORLD STRANGER</span>
+                </td>
+              </tr>
+              <tr>
+                <th>キャッチコピー</th>
+                <td class="spec-catch">君の足跡が世界を作る。</td>
+              </tr>
+              <tr>
+                <th>ジャンル</th>
+                <td>世界踏破アクションRPG</td>
+              </tr>
+              <tr>
+                <th>基本コンセプト</th>
+                <td>
+                  未踏の土地を探索し、発見した資源や文化をもとに開拓地を育て、その成果を次の冒険へつなげる「探索と開拓の循環」。
+                </td>
+              </tr>
+              <tr>
+                <th>物語の目標</th>
+                <td>伝説として語り継がれる「世界の先端」の実証と踏破。</td>
+              </tr>
+              <tr>
+                <th>ビジュアル方針</th>
+                <td>
+                  フォトリアルではなく、アジア圏で親しまれる王道アニメ調3Dファンタジー（鮮やかな色彩、表情豊かな造形、壮大な背景表現）。
+                </td>
+              </tr>
+              <tr>
+                <th>主人公の定義</th>
+                <td>
+                  特別な使命を宿した「選ばれた勇者」ではなく、自らの出自・動機・スキルを持って大地に挑む多様な冒険者のひとり。
+                </td>
+              </tr>
+              <tr>
+                <th>対応機種 / 発売時期</th>
+                <td class="spec-tba">未定（企画進行中 / 決定次第本サイトにて発表いたします）</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         04. 最新お知らせアーカイブ（カテゴリーフィルター付き）
+         【役割】INFO / WORLD / SYSTEM の切り替えフィルタリング可能なニュース一覧
+         【連携】js/interactions.js (initNewsFilter), css/components.css (10 フィルター・アーカイブ)
+         ========================================================================== -->
+    <section class="section news-archive-section">
+      <div class="container narrow">
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-subtitle">NEWS & ARCHIVES</span>
+          <h2 class="section-title">お知らせ一覧</h2>
+          <p class="section-desc">プロジェクトの更新状況や世界観公開情報。</p>
+        </div>
+
+        <!-- カテゴリーフィルターボタン群 -->
+        <div class="news-filter-nav reveal-on-scroll" role="group" aria-label="お知らせカテゴリーフィルター">
+          <button class="filter-btn active" data-filter="all">ALL</button>
+          <button class="filter-btn" data-filter="info">INFO</button>
+          <button class="filter-btn" data-filter="world">WORLD</button>
+          <button class="filter-btn" data-filter="system">SYSTEM</button>
+        </div>
+
+        <!-- ニュースアーカイブリスト -->
+        <div class="archive-list reveal-on-scroll">
+          <article class="archive-item" data-category="info">
+            <div class="archive-meta">
+              <time datetime="2026-10-14" class="archive-date">2026.10.14</time>
+              <span class="news-badge info">INFO</span>
+            </div>
+            <div class="archive-content">
+              <h3 class="archive-title">『WORLD STRANGER』ティザー公式サイトを開設いたしました。</h3>
+              <p class="archive-desc">
+                世界踏破アクションRPG『WORLD STRANGER』のティザーサイトを公開。世界観、キャラクター、ゲームシステムの概要ページをオープンしました。
+              </p>
+            </div>
+          </article>
+
+          <article class="archive-item" data-category="world">
+            <div class="archive-meta">
+              <time datetime="2026-10-14" class="archive-date">2026.10.14</time>
+              <span class="news-badge update">WORLD</span>
+            </div>
+            <div class="archive-content">
+              <h3 class="archive-title">世界観・五大開拓地域（草原・森林・山岳・鉱山・火山）の情報を掲載。</h3>
+              <p class="archive-desc">
+                未踏の大地に広がる五つの特色ある地域情報と、古より伝承される「世界の先端」に関する3つの伝説の概要を公開しました。
+              </p>
+            </div>
+          </article>
+
+          <article class="archive-item" data-category="system">
+            <div class="archive-meta">
+              <time datetime="2026-10-14" class="archive-date">2026.10.14</time>
+              <span class="news-badge system">SYSTEM</span>
+            </div>
+            <div class="archive-content">
+              <h3 class="archive-title">「探索と開拓の循環」「サバイバルと準備」システムを公開。</h3>
+              <p class="archive-desc">
+                未踏地の発見からキャンプの育成、休息・料理が次の遠征を助ける本作独自のサイクルシステムの詳細をEXPLOREページにて紹介しています。
+              </p>
+            </div>
+          </article>
+
+          <article class="archive-item" data-category="info">
+            <div class="archive-meta">
+              <time datetime="2026-10-01" class="archive-date">2026.10.01</time>
+              <span class="news-badge info">INFO</span>
+            </div>
+            <div class="archive-content">
+              <h3 class="archive-title">架空ゲーム公式サイト制作プロジェクト始動。</h3>
+              <p class="archive-desc">
+                「君の足跡が世界を作る。」をテーマに掲げ、世界観・キャラクター・Webデザインの統合設計プロジェクトを開始いたしました。
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         05. 企画趣旨・免責・合言葉
+         【役割】制作の合言葉（クレド）およびコンセプトWebサイトの免責表記ボックス
+         【連携】css/components.css (10 クレドボックス)
+         ========================================================================== -->
+    <section class="section notes-section">
+      <div class="container narrow">
+        <div class="policy-callout reveal-on-scroll">
+          <div class="policy-badge">PHILOSOPHY & PRODUCTION NOTES</div>
+          <h3 class="policy-title">制作の合言葉</h3>
+          <blockquote class="credo-quote">
+            「未知の世界を見せる。冒険の理由を伝える。開拓したくなる期待を生む。」
+          </blockquote>
+          <p class="policy-desc">
+            本サイトは架空のゲーム作品『WORLD STRANGER』のプロモーションおよび世界観提示を目的として制作されたポートフォリオ・コンセプトWebサイトです。<br>
+            実在の企業、団体、商品、発売中のタイトルとは一切関係ありません。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         06. トップへ戻る導線バナー
+         【役割】最下部からTOPページへ回遊させるリンク
+         【連携】css/components.css (12 次ページ共通導線バナー)
+         ========================================================================== -->
+    <section class="section next-page-banner">
+      <div class="container text-center reveal-on-scroll">
+        <span class="next-subtitle">RETURN TO EXPEDITION</span>
+        <h2 class="next-title">君だけの足跡を、この世界に刻もう</h2>
+        <p class="next-desc">
+          空白の大地と、語り継がれる伝承が君の訪れを待っている。
+        </p>
+        <a href="index.html" class="btn btn-primary">TOPページへ戻る <span>↑</span></a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       07. サイトフッター
+       【役割】全ページ共通最下部・公式ロゴ画像・サイトマップ・免責・著作権表示
+       【連携】css/style.css (07 サイトフッター)
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <img src="assets/images/logo-title.webp" alt="WORLD STRANGER" class="footer-logo-img">
+          </a>
+          <p class="footer-catch">君の足跡が世界を作る。</p>
+        </div>
+
+        <nav class="footer-nav">
+          <ul class="footer-nav-list">
+            <li><a href="index.html">TOP</a></li>
+            <li><a href="world.html">WORLD</a></li>
+            <li><a href="adventurers.html">ADVENTURERS</a></li>
+            <li><a href="explore.html">EXPLORE</a></li>
+            <li><a href="information.html">INFORMATION</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-disclaimer">
+          ※当サイトは架空のゲーム作品『WORLD STRANGER』の企画・プロモーション用Webサイトです。実在の人物・団体・商品とは一切関係ありません。
+        </p>
+        <p class="footer-copyright">
+          &copy; 2026 WORLD STRANGER Project. All Rights Reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 分割JSスクリプトの読み込み -->
+  <script src="js/main.js"></script>
+  <script src="js/interactions.js"></script>
+</body>
+
+</html>

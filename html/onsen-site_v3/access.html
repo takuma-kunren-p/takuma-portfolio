@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>アクセス・周辺観光 | 湯煙の里 翠泉閣</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- チラつき防止：HTMLタグに即座に反映させるスクリプト -->
+  <script>
+    (function () {
+      const saved = localStorage.getItem("theme");
+      const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (saved === "dark" || (!saved && systemDark)) {
+        document.documentElement.classList.add("dark-mode");
+      }
+    })();
+  </script>
+</head>
+
+<body>
+
+  <!-- ヘッダーエリア -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="site-logo">
+        <a href="index.html">
+          <span class="logo-sub" data-i18n="logo.sub">奥日光の名湯 源泉掛け流し</span>
+          <span class="logo-main" data-i18n="logo.main">湯煙の里 翠泉閣</span>
+        </a>
+      </div>
+
+      <div class="header-right">
+        <nav class="global-nav">
+          <ul>
+            <li><a href="index.html" data-i18n="nav.home">ホーム</a></li>
+            <li><a href="onsen.html" data-i18n="nav.onsen">温泉・施設</a></li>
+            <li><a href="price.html" data-i18n="nav.price">料金・プラン</a></li>
+            <li><a href="access.html" class="active" data-i18n="nav.access">アクセス</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">お問い合わせ</a></li>
+          </ul>
+        </nav>
+
+        <!-- 言語切り替えボタン -->
+        <button id="lang-toggle" class="lang-toggle" aria-label="言語切り替え">EN</button>
+
+        <!-- ライト/ダークモード切り替えボタン -->
+        <button id="theme-toggle" class="theme-toggle" aria-label="テーマ切り替え">🌙</button>
+
+        <!-- スマホ用メニューボタン -->
+        <button class="nav-toggle" aria-label="メニュー開閉">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ページヒーロー -->
+  <div class="page-hero">
+    <div class="container">
+      <h1 data-i18n="access.page_title">交通アクセス・周辺観光</h1>
+      <p data-i18n="access.page_sub">ACCESS & SIGHTSEEING</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- Googleマップ -->
+      <div class="fade-up" style="margin-bottom: 50px;">
+        <div class="section-title">
+          <h2 data-i18n="access.map_title">アクセスマップ</h2>
+          <span data-i18n="access.map_sub">LOCATION MAP</span>
+        </div>
+
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6392.942839583204!2d139.59565132728756!3d36.75925676693306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601fa6c553212035%3A0xab505b717af00e94!2z5pel5YWJ5p2x54Wn5a6u!5e0!3m2!1sja!2sjp!4v1790662209943!5m2!1sja!2sjp"
+          width="1140" height="450" style="border:0; width:100%; border-radius: 6px;" allowfullscreen="" loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+
+      <!-- ルート案内グリッド -->
+      <div class="grid-cards fade-up">
+        <!-- 電車・バス -->
+        <article class="card">
+          <div class="card-body">
+            <h3 data-i18n="access.train_title">電車でお越しの方</h3>
+            <p style="margin-bottom: 12px; font-weight: bold; color: var(--color-secondary);"
+              data-i18n="access.train_sub">東武日光駅・JR日光駅より</p>
+            <p data-i18n="access.train_text">東武日光駅より東武バス「湯元温泉行き」に乗車（約75分）。終点「湯元温泉」バス停より徒歩3分。</p>
+            <div class="card-info-box" data-i18n-html="access.train_bus">
+              <strong>無料送迎バス（要予約）</strong><br>
+              東武日光駅発：14:00 / 15:30<br>
+              翠泉閣発：10:15 / 11:30
+            </div>
+          </div>
+        </article>
+
+        <!-- お車 -->
+        <article class="card">
+          <div class="card-body">
+            <h3 data-i18n="access.car_title">お車でお越しの方</h3>
+            <p style="margin-bottom: 12px; font-weight: bold; color: var(--color-secondary);"
+              data-i18n="access.car_sub">日光宇都宮道路 清滝ICより</p>
+            <p data-i18n="access.car_text">日光宇都宮有料道路「清滝IC」より国道120号（いろは坂経由）で約45分。中禅寺湖を抜けて湯ノ湖方面へ。</p>
+            <div class="card-info-box" data-i18n-html="access.car_parking">
+              <strong>無料駐車場完備</strong><br>
+              乗用車50台収容可能（大型バス対応可）<br>
+              ※冬季（11月〜4月）はスタッドレスタイヤ携行必須
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- 周辺観光スポット -->
+      <div class="section-title fade-up" style="margin-top: 80px;">
+        <h2 data-i18n="access.spot_sec_title">周辺の観光スポット</h2>
+        <span data-i18n="access.spot_sec_sub">NEARBY HIGHLIGHTS</span>
+      </div>
+
+      <div class="grid-cards fade-up">
+        <div class="card">
+          <img src="img/access_yunokoa.jpg" alt="湯ノ湖・湯滝" class="card-img">
+          <div class="card-body">
+            <h4 data-i18n="access.spot1_title">湯ノ湖・湯滝</h4>
+            <p style="font-size: 0.9rem;" data-i18n="access.spot1_text">周囲3kmの美しい湖。湖畔沿いの散策路はマイナスイオンに満ち溢れています。</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="img/access_senzo.jpg" alt="戦場ヶ原" class="card-img">
+          <div class="card-body">
+            <h4 data-i18n="access.spot2_title">戦場ヶ原</h4>
+            <p style="font-size: 0.9rem;" data-i18n="access.spot2_text">日本有数の広大な湿原。木道が整備されており、四季折々の高山植物に出会えます。</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="img/access_tousyo.jpg" alt="日光東照宮" class="card-img">
+          <div class="card-body">
+            <h4 data-i18n="access.spot3_title">日光の社寺 (世界遺産)</h4>
+            <p style="font-size: 0.9rem;" data-i18n="access.spot3_text">徳川家康を祀る絢爛豪華な国宝建築。当館への行き帰りのお立ち寄りに最適です。</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <div class="footer-logo" data-i18n="logo.main">湯煙の里 翠泉閣</div>
+          <p data-i18n-html="footer.address">
+            〒321-1662 栃木県日光市湯元温泉2048<br>
+            TEL: 0288-00-0000（受付時間 9:00〜21:00）<br>
+            チェックイン 15:00 / チェックアウト 10:00
+          </p>
+        </div>
+        <div class="footer-nav">
+          <h4 data-i18n="footer.nav1_title">館内案内</h4>
+          <ul>
+            <li><a href="onsen.html" data-i18n="nav.onsen">温泉・施設</a></li>
+            <li><a href="price.html" data-i18n="nav.price">宿泊・日帰り料金</a></li>
+            <li><a href="access.html" data-i18n="nav.access">周辺観光案内</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav">
+          <h4 data-i18n="footer.nav2_title">インフォメーション</h4>
+          <ul>
+            <li><a href="contact.html" data-i18n="nav.contact">ご予約・お問い合わせ</a></li>
+            <li><span data-i18n="footer.privacy">プライバシーポリシー</span></li>
+            <li><span data-i18n="footer.faq">よくあるご質問</span></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copyright" data-i18n="footer.rights">&copy; 2026 湯煙の里 翠泉閣 All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/transla.js"></script>
+  <script src="js/js.js"></script>
+</body>
+
+</html>

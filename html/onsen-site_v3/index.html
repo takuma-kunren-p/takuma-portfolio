@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>湯煙の里 翠泉閣 | 源泉掛け流しの静寂と癒やしの湯宿</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- チラつき防止：HTMLタグに即座に反映させるスクリプト -->
+  <script>
+    (function () {
+      const saved = localStorage.getItem("theme");
+      const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (saved === "dark" || (!saved && systemDark)) {
+        document.documentElement.classList.add("dark-mode");
+      }
+    })();
+  </script>
+</head>
+
+<body>
+
+  <!-- ヘッダーエリア -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="site-logo">
+        <a href="index.html">
+          <span class="logo-sub" data-i18n="logo.sub">奥日光の名湯 源泉掛け流し</span>
+          <span class="logo-main" data-i18n="logo.main">湯煙の里 翠泉閣</span>
+        </a>
+      </div>
+
+      <div class="header-right">
+        <nav class="global-nav">
+          <ul>
+            <li><a href="index.html" class="active" data-i18n="nav.home">ホーム</a></li>
+            <li><a href="onsen.html" data-i18n="nav.onsen">温泉・施設</a></li>
+            <li><a href="price.html" data-i18n="nav.price">料金・プラン</a></li>
+            <li><a href="access.html" data-i18n="nav.access">アクセス</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">お問い合わせ</a></li>
+          </ul>
+        </nav>
+
+        <!-- 言語切り替えボタン -->
+        <button id="lang-toggle" class="lang-toggle" aria-label="言語切り替え">EN</button>
+
+        <!-- ライト/ダークモード切り替えボタン -->
+        <button id="theme-toggle" class="theme-toggle" aria-label="テーマ切り替え">🌙</button>
+
+        <!-- スマホ用メニューボタン -->
+        <button class="nav-toggle" aria-label="メニュー開閉">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- カルーセルスライダー -->
+  <section class="carousel">
+    <div class="carousel-track">
+
+      <!-- スライド 1: 露天風呂 -->
+      <div class="carousel-slide active">
+        <img src="img/onsen_top.jpg" alt="渓流を望む大露天風呂">
+        <div class="slide-caption">
+          <h2 data-i18n="home.hero1_title">悠久の時を紡ぐ、至福のにごり湯</h2>
+          <p data-i18n-html="home.hero1_sub">創業八十年、守り継ぐ<br>源泉かけ流しの贅</p>
+        </div>
+      </div>
+
+      <!-- スライド 2: 料理 -->
+      <div class="carousel-slide">
+        <img src="img/washoku_top.jpg" alt="旬の会席料理">
+        <div class="slide-caption">
+          <h2 data-i18n="home.hero2_title">旬彩を味わう、滋味深き山海の幸</h2>
+          <p data-i18n-html="home.hero2_sub">地元契約農家の朝採れ野菜と<br>銘柄牛会席</p>
+        </div>
+      </div>
+
+      <!-- スライド 3: 客室 -->
+      <div class="carousel-slide">
+        <img src="img/washitu_top.jpg" alt="数寄屋造りの和室">
+        <div class="slide-caption">
+          <h2 data-i18n="home.hero3_title">木の薫りに抱かれ、心澄みわたる宿</h2>
+          <p data-i18n-html="home.hero3_sub">全室渓谷ビューの<br>静謐なくつろぎ空間</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- カルーセル操作部 -->
+    <button class="carousel-btn prev" aria-label="前へ">&#10094;</button>
+    <button class="carousel-btn next" aria-label="次へ">&#10095;</button>
+
+    <div class="carousel-indicators">
+      <div class="indicator active"></div>
+      <div class="indicator"></div>
+      <div class="indicator"></div>
+    </div>
+  </section>
+
+  <!-- 旅館のごあいさつ -->
+  <section class="section">
+    <div class="container fade-up" style="max-width: 800px; text-align: center;">
+      <div class="section-title">
+        <h2 data-i18n="home.concept_title">ごあいさつ</h2>
+        <span data-i18n="home.concept_sub">CONCEPT</span>
+      </div>
+      <p style="margin-bottom: 24px; font-size: 1.05rem; line-height: 2;" data-i18n-html="home.concept_text">
+        奥日光の清澄な大自然と、滔々と湧き出る乳白色の名湯。<br>
+        「翠泉閣」は、日々の喧騒から離れ、五感を解放する特別な時間をお届けいたします。<br>
+        四季の移ろいを肌で感じながら、木の温もりに満ちた湯の宿でゆったりとお寛ぎください。
+      </p>
+      <a href="onsen.html" class="btn btn-outline" data-i18n="home.concept_btn">温泉の魅力を詳しく見る</a>
+    </div>
+  </section>
+
+  <!-- おすすめコンテンツ紹介カード -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-title fade-up">
+        <h2 data-i18n="home.features_title">翠泉閣の見どころ</h2>
+        <span data-i18n="home.features_sub">FACILITIES & SERVICE</span>
+      </div>
+
+      <div class="grid-cards">
+        <!-- カード1: 温泉 -->
+        <article class="card fade-up">
+          <img src="img/onsen_top1.jpg" alt="源泉かけ流しの大露天風呂" class="card-img">
+          <div class="card-body">
+            <h3 data-i18n="home.card1_title">源泉かけ流しの天然湯</h3>
+            <p data-i18n="home.card1_text">一切の加水・加温を行わない天然硫黄泉。肌に吸い付くような柔らかな湯触りをご堪能ください。</p>
+            <div>
+              <a href="onsen.html" class="btn btn-primary" style="padding: 8px 18px; font-size: 0.85rem;"
+                data-i18n="home.card1_btn">詳細を見る</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- カード2: 料理 -->
+        <article class="card fade-up">
+          <img src="img/washoku_top2.jpg" alt="四季の味覚 厳選会席料理" class="card-img">
+          <div class="card-body">
+            <h3 data-i18n="home.card2_title">四季の味覚 厳選会席</h3>
+            <p data-i18n="home.card2_text">地元契約農家の新鮮野菜やブランド和牛など、料理長が毎朝厳選した山海の幸を美しく仕立てます。</p>
+            <div>
+              <a href="price.html" class="btn btn-primary" style="padding: 8px 18px; font-size: 0.85rem;"
+                data-i18n="home.card2_btn">宿泊プランを見る</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- カード3: アクセス -->
+        <article class="card fade-up">
+          <img src="img/gaikan_top.jpg" alt="翠泉閣の外観と庭園" class="card-img">
+          <div class="card-body">
+            <h3 data-i18n="home.card3_title">都心から好アクセスの秘湯</h3>
+            <p data-i18n="home.card3_text">特急電車と無料送迎バスで快適にお越しいただけます。周辺には名勝やハイキング道も充実。</p>
+            <div>
+              <a href="access.html" class="btn btn-primary" style="padding: 8px 18px; font-size: 0.85rem;"
+                data-i18n="home.card3_btn">アクセスを見る</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- フッターエリア -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <div class="footer-logo" data-i18n="logo.main">湯煙の里 翠泉閣</div>
+          <p data-i18n-html="footer.address">
+            〒321-1662 栃木県日光市湯元温泉2048<br>
+            TEL: 0288-00-0000（受付時間 9:00〜21:00）<br>
+            チェックイン 15:00 / チェックアウト 10:00
+          </p>
+        </div>
+        <div class="footer-nav">
+          <h4 data-i18n="footer.nav1_title">館内案内</h4>
+          <ul>
+            <li><a href="onsen.html" data-i18n="nav.onsen">温泉・施設</a></li>
+            <li><a href="price.html" data-i18n="nav.price">宿泊・日帰り料金</a></li>
+            <li><a href="access.html" data-i18n="nav.access">周辺観光案内</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav">
+          <h4 data-i18n="footer.nav2_title">インフォメーション</h4>
+          <ul>
+            <li><a href="contact.html" data-i18n="nav.contact">ご予約・お問い合わせ</a></li>
+            <li><span data-i18n="footer.privacy">プライバシーポリシー</span></li>
+            <li><span data-i18n="footer.faq">よくあるご質問</span></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copyright" data-i18n="footer.rights">&copy; 2026 湯煙の里 翠泉閣 All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/transla.js"></script>
+  <script src="js/js.js"></script>
+</body>
+
+</html>
